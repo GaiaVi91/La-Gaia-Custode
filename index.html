@@ -7,343 +7,241 @@
   <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori">
   <meta name="theme-color" content="#6d8659">
   <meta name="author" content="La Gaia Custode">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="La Gaia Custode | Operatrice Materno Infantile">
-  <meta property="og:description" content="Accompagno mamme, papà e bambini con amore e competenza nei momenti più importanti della loro vita.">
-  <meta property="og:url" content="https://lagaiacustode.it">
-  <meta property="og:image" content="https://lagaiacustode.it/og-image.jpg">
-  <meta property="og:locale" content="it_IT">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="La Gaia Custode | Operatrice Materno Infantile">
-  <meta name="twitter:description" content="Accompagno mamme, papà e bambini con amore e competenza.">
-  <meta name="twitter:image" content="https://lagaiacustode.it/og-image.jpg">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://lagaiacustode.it">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  
+
   <title>La Gaia Custode | Operatrice Materno Infantile</title>
-  
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Structured Data (Schema.org) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "La Gaia Custode",
-    "description": "Operatrice Materno Infantile specializzata in accompagnamento alla nascita, allattamento, babywearing e supporto genitoriale",
-    "url": "https://lagaiacustode.it",
-    "telephone": "+39XXXXXXXXXX",
-    "email": "contatti@lagaiacustode.it",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "IT",
-      "postalCode": "00000"
-    },
-    "areaServed": "IT",
-    "priceRange": "€€",
-    "serviceType": ["Accompagnamento alla nascita", "Consulenza allattamento", "Lezioni babywearing", "Supporto genitoriale"]
-  }
-  </script>
+
+  <!-- STILE MINIMAL ELEGANTE -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #333;
+      --accent: #7a8c8d;
+      --soft: #f7f7f7;
+      --card: #fafafa;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      background: var(--soft);
+    }
+
+    .hero img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: .5rem;
+    }
+
+    /* NAV */
+    nav {
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: .95rem;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+      font-weight: 600;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* CARD SERVIZI */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.8rem;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    /* IMMAGINI ELEGANTI */
+    .gallery {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    /* CONTATTI */
+    .contact-box {
+      background: var(--soft);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      border: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      border-top: 1px solid #e5e5e5;
+      font-size: .9rem;
+      color: #777;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Skip to main content link for accessibility -->
-  <a href="#main" class="skip-link">Salta al contenuto principale</a>
 
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="header__content">
-      <h1 class="header__title">La Gaia Custode</h1>
-      <p class="header__subtitle">Operatrice Materno Infantile</p>
-      <p class="header__tagline">🤱 Accompagno mamme, papà e bambini con amore e competenza</p>
-    </div>
-  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=400" alt="Mamma e bambino">
+    <h1>La Gaia Custode</h1>
+    <p>Operatrice Materno Infantile</p>
+  </section>
 
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Navigazione principale">
-    <ul class="nav__list">
-      <li class="nav__item"><a href="#chi-sono" class="nav__link">Chi sono</a></li>
-      <li class="nav__item"><a href="#servizi" class="nav__link">Servizi</a></li>
-      <li class="nav__item"><a href="#testimonianze" class="nav__link">Testimonianze</a></li>
-      <li class="nav__item"><a href="#contatti" class="nav__link">Contatti</a></li>
-    </ul>
+  <!-- NAV -->
+  <nav>
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#contatti">Contatti</a>
   </nav>
 
-  <!-- Main Content -->
-  <main id="main" class="main">
-    
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="welcome-title">
-      <div class="container">
-        <h2 id="welcome-title" class="hero__title">Benvenuta</h2>
-        <p class="hero__text">
-          Sono <strong>Gaia</strong>, Operatrice Materno Infantile specializzata in accompagnamento alla nascita 
-          e supporto nell'allattamento. Credo che ogni mamma, papà e bambino meriti ascolto, competenza e amore.
-        </p>
-        <p class="hero__text">
-          Sono qui per guidarti nei momenti più delicati e preziosi della tua vita: gravidanza, nascita, 
-          allattamento e i primi mesi insieme al tuo piccolo.
-        </p>
-        <a href="#contatti" class="btn btn--primary btn--large">Contattami per una consulenza</a>
-      </div>
+  <main class="container">
+
+    <!-- CHI SONO -->
+    <section id="chi-sono">
+      <h2>Chi sono</h2>
+      <p>
+        Sono Gaia, Operatrice Materno Infantile.  
+        Accompagno mamme, papà e bambini nei momenti più delicati della vita:
+        gravidanza, nascita, allattamento e primi mesi insieme.
+      </p>
     </section>
 
-    <!-- Chi Sono Section -->
-    <section id="chi-sono" class="about" aria-labelledby="about-title">
-      <div class="container">
-        <h2 id="about-title" class="section-title">Chi sono</h2>
-        <div class="about__content">
-          <p>
-            Mi chiamo <strong>Gaia</strong> e da anni dedico la mia vita all'accompagnamento di mamme, papà e bambini 
-            in uno dei momenti più importanti e trasformativi della loro vita.
-          </p>
-          <p>
-            La mia formazione spazia da:
-          </p>
-          <ul class="about__list">
-            <li>Corsi specialistici di accompagnamento alla nascita</li>
-            <li>Formazione avanzata sull'allattamento materno</li>
-            <li>Tecniche di babywearing e contatto precoce</li>
-            <li>Supporto emotivo e counseling genitoriale</li>
-          </ul>
-          <p>
-            Credo fermamente che il supporto competente, amorevole e non giudicante sia fondamentale 
-            per vivere serenamente questi momenti straordinari.
-          </p>
+    <!-- SERVIZI -->
+    <section id="servizi">
+      <h2>Servizi</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="">
+          <h3>Custode della Nascita®</h3>
+          <p>Supporto emotivo e pratico durante gravidanza, parto e post-parto.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- Servizi Section -->
-    <section id="servizi" class="services" aria-labelledby="services-title">
-      <div class="container">
-        <h2 id="services-title" class="section-title">Cosa posso offrirti</h2>
-        <div class="services__grid">
-          
-          <article class="service-card">
-            <h3 class="service-card__title">🌱 Custode della Nascita®</h3>
-            <p class="service-card__desc">
-              Accompagnamento personalizzato durante la gravidanza, il travaglio e il puerperio. 
-              Supporto emotivo e pratico per affrontare la nascita consapevolmente.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <h3 class="service-card__title">🤱 Allattamento</h3>
-            <p class="service-card__desc">
-              Consulenze specifiche su posizioni, attacco, difficoltà e benessere durante l'allattamento. 
-              Ascolto e supporto per vivere questo momento con serenità.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <h3 class="service-card__title">👶 Babywearing</h3>
-            <p class="service-card__desc">
-              Lezioni pratiche su come portare il bambino in sicurezza e comodità. 
-              Scopri i benefici del contatto precoce e della vicinanza.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <h3 class="service-card__title">💚 Supporto Genitoriale</h3>
-            <p class="service-card__desc">
-              Spazi di ascolto per affrontare dubbi, paure e le sfide dei primi mesi. 
-              Perché la salute emotiva dei genitori è fondamentale.
-            </p>
-          </article>
-
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="">
+          <h3>Allattamento</h3>
+          <p>Consulenze personalizzate per un allattamento sereno e consapevole.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- Testimonianze Section -->
-    <section id="testimonianze" class="testimonials" aria-labelledby="testimonials-title">
-      <div class="container">
-        <h2 id="testimonials-title" class="section-title">Testimonianze</h2>
-        <div class="testimonials__grid">
-          
-          <article class="testimonial">
-            <blockquote class="testimonial__quote" lang="it">
-              "Gaia è stata la mia ancora durante la gravidanza. Con competenza e dolcezza mi ha guidato verso 
-              la nascita di mio figlio. Non saprei come avrei affrontato tutto senza di lei."
-            </blockquote>
-            <p class="testimonial__author">— <strong>Elena M.</strong></p>
-          </article>
-
-          <article class="testimonial">
-            <blockquote class="testimonial__quote" lang="it">
-              "L'allattamento era difficile, ma Gaia ha saputo ascoltarmi senza giudicare e darmi soluzioni pratiche. 
-              Ora mio figlio sta benissimo e allatto con gioia."
-            </blockquote>
-            <p class="testimonial__author">— <strong>Martina L.</strong></p>
-          </article>
-
-          <article class="testimonial">
-            <blockquote class="testimonial__quote" lang="it">
-              "La lezione di babywearing con Gaia è stata rivoluzionaria. Ora porto mia figlia ovunque e lei è serena, 
-              e io finalmente ho le mani libere!"
-            </blockquote>
-            <p class="testimonial__author">— <strong>Sara & Marco</strong></p>
-          </article>
-
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="">
+          <h3>Babywearing</h3>
+          <p>Supporto nella scelta e nell’utilizzo dei supporti più adatti.</p>
         </div>
+
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="">
+          <h3>Sonno 0–3 anni</h3>
+          <p>Accompagnamento dolce e rispettoso dei bisogni del bambino.</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- Contatti Section -->
-    <section id="contatti" class="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title" class="section-title">Contattami</h2>
-        <p class="contact__intro">
-          Hai domande? Vuoi prenotare una consulenza? Scrivimi pure, sarò felice di conoscerti e ascoltarti.
-        </p>
-        
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-          
-          <div class="form-group">
-            <label for="name" class="form-label">Nome <span aria-label="obbligatorio">*</span></label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              class="form-input" 
-              required 
-              aria-required="true"
-              aria-describedby="name-error"
-              placeholder="Il tuo nome"
-            >
-            <span class="form-error" id="name-error" role="alert"></span>
-          </div>
+    <!-- GALLERY -->
+    <section>
+      <h2>Immagini</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="">
+        <img src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?q=80&w=800" alt="">
+      </div>
+    </section>
 
-          <div class="form-group">
-            <label for="email" class="form-label">Email <span aria-label="obbligatorio">*</span></label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              class="form-input" 
-              required 
-              aria-required="true"
-              aria-describedby="email-error"
-              placeholder="La tua email"
-            >
-            <span class="form-error" id="email-error" role="alert"></span>
-          </div>
+    <!-- CONTATTI -->
+    <section id="contatti">
+      <h2>Contatti</h2>
 
-          <div class="form-group">
-            <label for="phone" class="form-label">Telefono <span class="form-optional">(opzionale)</span></label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              class="form-input" 
-              placeholder="Il tuo numero"
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="service" class="form-label">Quale servizio ti interessa? <span aria-label="obbligatorio">*</span></label>
-            <select id="service" name="service" class="form-input" required aria-required="true" aria-describedby="service-error">
-              <option value="">Seleziona un servizio</option>
-              <option value="nascita">Custode della Nascita</option>
-              <option value="allattamento">Allattamento</option>
-              <option value="babywearing">Babywearing</option>
-              <option value="supporto">Supporto Genitoriale</option>
-              <option value="altro">Altro</option>
-            </select>
-            <span class="form-error" id="service-error" role="alert"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="message" class="form-label">Messaggio <span aria-label="obbligatorio">*</span></label>
-            <textarea 
-              id="message" 
-              name="message" 
-              class="form-input form-textarea" 
-              rows="5" 
-              required 
-              aria-required="true"
-              aria-describedby="message-error"
-              placeholder="Scrivi il tuo messaggio..."
-            ></textarea>
-            <span class="form-error" id="message-error" role="alert"></span>
-          </div>
-
-          <div class="form-group form-group--checkbox">
-            <input 
-              type="checkbox" 
-              id="privacy" 
-              name="privacy" 
-              class="form-checkbox" 
-              required 
-              aria-required="true"
-              aria-describedby="privacy-error"
-            >
-            <label for="privacy" class="form-checkbox-label">
-              Accetto la <a href="#privacy-policy" class="link">politica sulla privacy</a> <span aria-label="obbligatorio">*</span>
-            </label>
-            <span class="form-error" id="privacy-error" role="alert"></span>
-          </div>
-
-          <div class="form-message" id="form-message" aria-live="polite" aria-atomic="true"></div>
-
-          <button type="submit" class="btn btn--primary">Invia il messaggio</button>
-          <p class="form-note"><span aria-label="obbligatorio">*</span> = Campo obbligatorio</p>
-        </form>
-
+      <div class="contact-box">
+        <p><strong>Email:</strong> gaiav.moimas@gmail.com</p>
+        <p><strong>Telefono:</strong> +39 331 8004383</p>
+        <p><strong>Instagram:</strong> @gaiadoula_sonno_e_babywearing</p>
+        <p><strong>Facebook:</strong> Gaia Operatrice Materno Infantile</p>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__section">
-          <h3 class="footer__title">La Gaia Custode</h3>
-          <p>&copy; 2026 <strong>La Gaia Custode</strong> · Operatrice Materno Infantile</p>
-          <p class="footer__note">Realizzato con ❤️ per le mamme, i papà e i bambini</p>
-        </div>
-        
-        <div class="footer__section">
-          <h4 class="footer__subtitle">Contatti</h4>
-          <p>
-            <a href="mailto:contatti@lagaiacustode.it" class="footer__link">contatti@lagaiacustode.it</a>
-          </p>
-          <p>
-            <a href="tel:+39XXXXXXXXXX" class="footer__link">+39 XXX XXX XXXX</a>
-          </p>
-        </div>
-        
-        <div class="footer__section">
-          <h4 class="footer__subtitle">Seguimi</h4>
-          <ul class="social-links">
-            <li><a href="https://instagram.com/lagaiacustode" class="social-link" aria-label="Seguimi su Instagram">Instagram</a></li>
-            <li><a href="https://facebook.com/lagaiacustode" class="social-link" aria-label="Seguimi su Facebook">Facebook</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <nav class="footer__nav" aria-label="Link footer">
-        <ul>
-          <li><a href="#privacy-policy" class="footer__link">Privacy Policy</a></li>
-          <li><a href="#cookie-policy" class="footer__link">Cookie Policy</a></li>
-          <li><a href="#disclaimer" class="footer__link">Disclaimer</a></li>
-        </ul>
-      </nav>
-    </div>
+  <footer>
+    © 2026 · La Gaia Custode
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
+
