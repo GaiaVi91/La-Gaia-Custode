@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e sonno.">
-  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori, doula">
+  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e consulenze sul sonno infantile.">
+  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori, doula, consulenze sonno infantile">
   <meta name="theme-color" content="#6d8659">
   <meta name="author" content="La Gaia Custode">
 
@@ -262,6 +262,52 @@
       margin-bottom: 1rem;
     }
 
+    /* SEZIONE SONNO APPROFONDITA */
+    .sleep-section {
+      background: var(--card);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    .sleep-intro {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 2rem;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .sleep-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .benefit-item {
+      background: var(--soft);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .benefit-item h4 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .benefit-item ul {
+      margin: 1rem 0 0 0;
+      padding-left: 1.5rem;
+    }
+
+    .benefit-item li {
+      margin-bottom: 0.5rem;
+    }
+
     /* IMMAGINI ELEGANTI CON LAZY LOADING */
     .gallery {
       margin-top: 2rem;
@@ -393,8 +439,16 @@
         grid-template-columns: 1fr;
       }
 
+      .sleep-benefits {
+        grid-template-columns: 1fr;
+      }
+
       .contact-links {
         justify-content: center;
+      }
+
+      .sleep-section {
+        padding: 1.5rem;
       }
     }
 
@@ -462,6 +516,7 @@
     <ul id="nav-menu" class="nav-links">
       <li><a href="#chi-sono">Chi sono</a></li>
       <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#sonno">Sonno Infantile</a></li>
       <li><a href="#contatti">Contatti</a></li>
     </ul>
   </nav>
@@ -483,7 +538,7 @@
       <a href="#servizi" class="btn">Scopri i servizi</a>
     </section>
 
-    <!-- SERVIZI -->
+    <!-- SERVIZI PRINCIPALI -->
     <section id="servizi" aria-labelledby="servizi-title">
       <h2 id="servizi-title">Servizi</h2>
 
@@ -510,19 +565,101 @@
           <a href="#contatti" class="btn">Prenota una consulenza</a>
         </div>
 
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="Icona: Sonno 0-3 anni" loading="lazy">
-          <h3>Sonno 0–3 anni</h3>
-          <p>Accompagnamento dolce e rispettoso dei bisogni del bambino.</p>
-          <a href="#contatti" class="btn">Prenota una consulenza</a>
+      </div>
+    </section>
+
+    <!-- SEZIONE CONSULENZE SONNO INFANTILE -->
+    <section id="sonno" aria-labelledby="sonno-title">
+      <h2 id="sonno-title">🌙 Consulenze sul Sonno Infantile</h2>
+
+      <div class="sleep-section">
+        <p class="sleep-intro">
+          Il sonno è uno dei bisogni fondamentali del bambino e una priorità per il benessere dell'intera famiglia. 
+          Offro consulenze personalizzate che rispettano i ritmi naturali e i bisogni emotivi del piccolo, 
+          senza metodi rigidi o stressanti.
+        </p>
+
+        <h3>Cosa Offro</h3>
+
+        <div class="sleep-benefits">
+          <div class="benefit-item">
+            <h4>🛏️ Valutazione del Sonno</h4>
+            <p>Analisi approfondita delle abitudini di sonno del bambino, delle routine notturne e dei fattori che influenzano il riposo.</p>
+            <ul>
+              <li>Osservazione dei ritmi del piccolo</li>
+              <li>Identificazione dei disturbi di sonno</li>
+              <li>Analisi dell'ambiente e dell'igiene del sonno</li>
+            </ul>
+          </div>
+
+          <div class="benefit-item">
+            <h4>💤 Strategie Dolci e Rispettose</h4>
+            <p>Sviluppo di approcci che favoriscono l'autonomia del sonno mantenendo sicurezza emotiva e consapevolezza.</p>
+            <ul>
+              <li>Costruzione di routine serene</li>
+              <li>Tecniche di rilassamento per il bambino e i genitori</li>
+              <li>Supporto al co-sleeping consapevole se desiderato</li>
+            </ul>
+          </div>
+
+          <div class="benefit-item">
+            <h4>👨‍👩‍👧 Supporto ai Genitori</h4>
+            <p>Accompagnamento emotivo per affrontare la fatica notturna e le emozioni legate alla transizione del sonno.</p>
+            <ul>
+              <li>Gestione della stanchezza genitoriale</li>
+              <li>Comunicazione con il partner</li>
+              <li>Consapevolezza e fiducia nelle scelte familiari</li>
+            </ul>
+          </div>
+
+          <div class="benefit-item">
+            <h4>👶 Per Quali Età</h4>
+            <p>Consulenze personalizzate dal neonato fino ai 3 anni, adattate alle diverse fasi dello sviluppo.</p>
+            <ul>
+              <li>Neonati (0-6 mesi): ritmi naturali e legittimi risvegli</li>
+              <li>Lattanti (6-12 mesi): transizioni di sonno e primi risvegli notturni</li>
+              <li>Bambini (1-3 anni): autonomia notturna graduale e rispettosa</li>
+            </ul>
+          </div>
+
+          <div class="benefit-item">
+            <h4>✨ Vantaggi della Consulenza</h4>
+            <ul>
+              <li>Maggior riposo per tutta la famiglia</li>
+              <li>Riduzione dell'ansia notturna</li>
+              <li>Comprensione profonda dei bisogni del bambino</li>
+              <li>Strategie personalizzate sulla tua situazione</li>
+              <li>Follow-up e supporto continuativo</li>
+            </ul>
+          </div>
+
+          <div class="benefit-item">
+            <h4>📋 Come Funziona</h4>
+            <ul>
+              <li><strong>Primo Incontro:</strong> Raccolta informazioni e comprensione della situazione</li>
+              <li><strong>Analisi:</strong> Studio del caso e sviluppo del piano personalizzato</li>
+              <li><strong>Implementazione:</strong> Supporto durante l'applicazione delle strategie</li>
+              <li><strong>Follow-up:</strong> Incontri di verifica e adattamento se necessario</li>
+            </ul>
+          </div>
         </div>
 
+        <p style="margin-top: 2rem; padding: 1.5rem; background: var(--soft); border-radius: 8px;">
+          <strong>📌 Ricorda:</strong> Non esiste un "sonno perfetto" né un unico metodo che funziona per tutti. 
+          L'obiettivo è trovare equilibrio e serenità rispettando i bisogni unici della tua famiglia.
+        </p>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="#contatti" class="btn">
+            💬 Richiedi una consulenza sul sonno
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- GALLERY -->
     <section aria-labelledby="gallery-title">
-      <h2 id="gallery-title">Immagini</h2>
+      <h2 id="gallery-title">Momenti di Maternità</h2>
       <div class="gallery" role="region" aria-label="Galleria immagini">
         <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="Mamma con bambino in momenti di tenerezza" loading="lazy">
         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="Genitore e neonato in contatto pelle a pelle" loading="lazy">
