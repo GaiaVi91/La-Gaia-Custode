@@ -3,17 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e sonno.">
-  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori, doula">
-  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e consulenze sul sonno infantile.">
-  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori, doula, consulenze sonno infantile">
+  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing, sonno infantile e supporto genitoriale.">
+  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, sonno infantile, supporto genitori">
   <meta name="theme-color" content="#6d8659">
   <meta name="author" content="La Gaia Custode">
 
   <title>La Gaia Custode | Operatrice Materno Infantile</title>
 
-  <!-- STILE MINIMAL ELEGANTE CON DARK MODE -->
   <style>
     :root {
       --bg: #ffffff;
+      --text: #333;
+      --accent: #7a8c8d;
+      --soft: #f7f7f7;
+      --card: #fafafa;
+      --btn: #6d8659;
+      --btn-text: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      background: var(--soft);
+    }
+
+    .hero img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: .5rem;
+    }
+
+    /* NAV */
+    nav {
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: .95rem;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+      font-weight: 600;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* CARD SERVIZI */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.8rem;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    /* IMMAGINI */
+    .gallery {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    /* CTA BUTTONS */
+    .cta-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons a {
+      background: var(--btn);
+      color: var(--btn-text);
+      padding: .8rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .cta-buttons a:hover {
+      background: #5a724a;
+    }
+
+    /* CONTATTI */
+    .contact-box {
+      background: var(--soft);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      border: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      border-top: 1px solid #e5e5e5;
+      font-size: .9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?q=80&w=400" alt="Mamma che tiene il bambino">
+    <h1>La Gaia Custode</h1>
+    <p>Operatrice Materno Infantile</p>
+  </section>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#sonno">Sonno infantile</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+
+  <main class="container">
+
+    <!-- CHI SONO -->
+    <section id="chi-sono">
+      <h2>Chi sono</h2>
+      <p>
+        Sono Gaia, Operatrice Materno Infantile.  
+        Accompagno mamme, papà e bambini nei momenti più delicati della vita:
+        gravidanza, nascita, allattamento, babywearing e primi mesi insieme.
+      </p>
+    </section>
+
+    <!-- SERVIZI -->
+    <section id="servizi">
+      <h2>Servizi</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="">
+          <h3>Custode della Nascita®</h3>
+          <p>Supporto emotivo e pratico durante gravidanza, parto e post-parto.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="">
+          <h3>Allattamento</h3>
+          <p>Consulenze personalizzate per un allattamento sereno e consapevole.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="">
+          <h3>Babywearing</h3>
+          <p>Supporto nella scelta e nell’utilizzo dei supporti più adatti.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="">
+          <h3>Sonno 0–3 anni</h3>
+          <p>Accompagnamento dolce e rispettoso dei bisogni del bambino.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEZIONE SONNO INFANTILE -->
+    <section id="sonno">
+      <h2>Sonno infantile</h2>
+      <p>
+        Il sonno dei bambini è un viaggio unico, fatto di bisogni, ritmi e fasi di sviluppo.
+        Offro un accompagnamento dolce, rispettoso e basato sulla relazione, senza metodi rigidi
+        o training che ignorano i bisogni emotivi del bambino.
+      </p>
+
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="">
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti">
+      <h2>Contatti</h2>
+
+      <div class="contact-box">
+        <p><strong>Email:</strong> gaiav.moimas@gmail.com</p>
+        <p><strong>Telefono:</strong> +39 331 8004383</p>
+
+        <div class="cta-buttons">
+          <a href="https://instagram.com/gaiadoula_sonno_e_babywearing" target="_blank">Instagram</a>
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="mailto:gaiav.moimas@gmail.com">Scrivimi</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 · La Gaia Custode
+  </footer>
+
+</body>
 </html>
+
+
