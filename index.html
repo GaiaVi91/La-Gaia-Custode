@@ -3,11 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza.">
+  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e supporto genitoriale.">
+  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori">
   <meta name="theme-color" content="#6d8659">
+  <meta name="author" content="La Gaia Custode">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="La Gaia Custode | Operatrice Materno Infantile">
+  <meta property="og:description" content="Accompagno mamme, papà e bambini con amore e competenza nei momenti più importanti della loro vita.">
+  <meta property="og:url" content="https://lagaiacustode.it">
+  <meta property="og:image" content="https://lagaiacustode.it/og-image.jpg">
+  <meta property="og:locale" content="it_IT">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La Gaia Custode | Operatrice Materno Infantile">
+  <meta name="twitter:description" content="Accompagno mamme, papà e bambini con amore e competenza.">
+  <meta name="twitter:image" content="https://lagaiacustode.it/og-image.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lagaiacustode.it">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
   <title>La Gaia Custode | Operatrice Materno Infantile</title>
   
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Gaia Custode",
+    "description": "Operatrice Materno Infantile specializzata in accompagnamento alla nascita, allattamento, babywearing e supporto genitoriale",
+    "url": "https://lagaiacustode.it",
+    "telephone": "+39XXXXXXXXXX",
+    "email": "contatti@lagaiacustode.it",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "IT",
+      "postalCode": "00000"
+    },
+    "areaServed": "IT",
+    "priceRange": "€€",
+    "serviceType": ["Accompagnamento alla nascita", "Consulenza allattamento", "Lezioni babywearing", "Supporto genitoriale"]
+  }
+  </script>
 </head>
 
 <body>
@@ -48,6 +93,7 @@
           Sono qui per guidarti nei momenti più delicati e preziosi della tua vita: gravidanza, nascita, 
           allattamento e i primi mesi insieme al tuo piccolo.
         </p>
+        <a href="#contatti" class="btn btn--primary btn--large">Contattami per una consulenza</a>
       </div>
     </section>
 
@@ -126,7 +172,7 @@
         <div class="testimonials__grid">
           
           <article class="testimonial">
-            <blockquote class="testimonial__quote">
+            <blockquote class="testimonial__quote" lang="it">
               "Gaia è stata la mia ancora durante la gravidanza. Con competenza e dolcezza mi ha guidato verso 
               la nascita di mio figlio. Non saprei come avrei affrontato tutto senza di lei."
             </blockquote>
@@ -134,7 +180,7 @@
           </article>
 
           <article class="testimonial">
-            <blockquote class="testimonial__quote">
+            <blockquote class="testimonial__quote" lang="it">
               "L'allattamento era difficile, ma Gaia ha saputo ascoltarmi senza giudicare e darmi soluzioni pratiche. 
               Ora mio figlio sta benissimo e allatto con gioia."
             </blockquote>
@@ -142,7 +188,7 @@
           </article>
 
           <article class="testimonial">
-            <blockquote class="testimonial__quote">
+            <blockquote class="testimonial__quote" lang="it">
               "La lezione di babywearing con Gaia è stata rivoluzionaria. Ora porto mia figlia ovunque e lei è serena, 
               e io finalmente ho le mani libere!"
             </blockquote>
@@ -164,7 +210,7 @@
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
           
           <div class="form-group">
-            <label for="name" class="form-label">Nome *</label>
+            <label for="name" class="form-label">Nome <span aria-label="obbligatorio">*</span></label>
             <input 
               type="text" 
               id="name" 
@@ -172,13 +218,14 @@
               class="form-input" 
               required 
               aria-required="true"
+              aria-describedby="name-error"
               placeholder="Il tuo nome"
             >
-            <span class="form-error" id="name-error"></span>
+            <span class="form-error" id="name-error" role="alert"></span>
           </div>
 
           <div class="form-group">
-            <label for="email" class="form-label">Email *</label>
+            <label for="email" class="form-label">Email <span aria-label="obbligatorio">*</span></label>
             <input 
               type="email" 
               id="email" 
@@ -186,13 +233,14 @@
               class="form-input" 
               required 
               aria-required="true"
+              aria-describedby="email-error"
               placeholder="La tua email"
             >
-            <span class="form-error" id="email-error"></span>
+            <span class="form-error" id="email-error" role="alert"></span>
           </div>
 
           <div class="form-group">
-            <label for="phone" class="form-label">Telefono (opzionale)</label>
+            <label for="phone" class="form-label">Telefono <span class="form-optional">(opzionale)</span></label>
             <input 
               type="tel" 
               id="phone" 
@@ -203,8 +251,8 @@
           </div>
 
           <div class="form-group">
-            <label for="service" class="form-label">Quale servizio ti interessa? *</label>
-            <select id="service" name="service" class="form-input" required aria-required="true">
+            <label for="service" class="form-label">Quale servizio ti interessa? <span aria-label="obbligatorio">*</span></label>
+            <select id="service" name="service" class="form-input" required aria-required="true" aria-describedby="service-error">
               <option value="">Seleziona un servizio</option>
               <option value="nascita">Custode della Nascita</option>
               <option value="allattamento">Allattamento</option>
@@ -212,11 +260,11 @@
               <option value="supporto">Supporto Genitoriale</option>
               <option value="altro">Altro</option>
             </select>
-            <span class="form-error" id="service-error"></span>
+            <span class="form-error" id="service-error" role="alert"></span>
           </div>
 
           <div class="form-group">
-            <label for="message" class="form-label">Messaggio *</label>
+            <label for="message" class="form-label">Messaggio <span aria-label="obbligatorio">*</span></label>
             <textarea 
               id="message" 
               name="message" 
@@ -224,9 +272,10 @@
               rows="5" 
               required 
               aria-required="true"
+              aria-describedby="message-error"
               placeholder="Scrivi il tuo messaggio..."
             ></textarea>
-            <span class="form-error" id="message-error"></span>
+            <span class="form-error" id="message-error" role="alert"></span>
           </div>
 
           <div class="form-group form-group--checkbox">
@@ -237,17 +286,18 @@
               class="form-checkbox" 
               required 
               aria-required="true"
+              aria-describedby="privacy-error"
             >
             <label for="privacy" class="form-checkbox-label">
-              Accetto la politica sulla privacy *
+              Accetto la <a href="#privacy-policy" class="link">politica sulla privacy</a> <span aria-label="obbligatorio">*</span>
             </label>
-            <span class="form-error" id="privacy-error"></span>
+            <span class="form-error" id="privacy-error" role="alert"></span>
           </div>
 
           <div class="form-message" id="form-message" aria-live="polite" aria-atomic="true"></div>
 
           <button type="submit" class="btn btn--primary">Invia il messaggio</button>
-          <p class="form-note">I campi contrassegnati con * sono obbligatori</p>
+          <p class="form-note"><span aria-label="obbligatorio">*</span> = Campo obbligatorio</p>
         </form>
 
       </div>
@@ -258,11 +308,39 @@
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>&copy; 2026 <strong>La Gaia Custode</strong> · Operatrice Materno Infantile</p>
-      <p class="footer__contact">
-        <a href="mailto:contatti@example.com" class="footer__link">contatti@example.com</a>
-      </p>
-      <p class="footer__note">Realizzato con ❤️ per le mamme, i papà e i bambini</p>
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3 class="footer__title">La Gaia Custode</h3>
+          <p>&copy; 2026 <strong>La Gaia Custode</strong> · Operatrice Materno Infantile</p>
+          <p class="footer__note">Realizzato con ❤️ per le mamme, i papà e i bambini</p>
+        </div>
+        
+        <div class="footer__section">
+          <h4 class="footer__subtitle">Contatti</h4>
+          <p>
+            <a href="mailto:contatti@lagaiacustode.it" class="footer__link">contatti@lagaiacustode.it</a>
+          </p>
+          <p>
+            <a href="tel:+39XXXXXXXXXX" class="footer__link">+39 XXX XXX XXXX</a>
+          </p>
+        </div>
+        
+        <div class="footer__section">
+          <h4 class="footer__subtitle">Seguimi</h4>
+          <ul class="social-links">
+            <li><a href="https://instagram.com/lagaiacustode" class="social-link" aria-label="Seguimi su Instagram">Instagram</a></li>
+            <li><a href="https://facebook.com/lagaiacustode" class="social-link" aria-label="Seguimi su Facebook">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <nav class="footer__nav" aria-label="Link footer">
+        <ul>
+          <li><a href="#privacy-policy" class="footer__link">Privacy Policy</a></li>
+          <li><a href="#cookie-policy" class="footer__link">Cookie Policy</a></li>
+          <li><a href="#disclaimer" class="footer__link">Disclaimer</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
 
