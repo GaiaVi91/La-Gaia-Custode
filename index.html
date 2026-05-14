@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e supporto genitoriale.">
-  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori">
+  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagno mamme, papà e bambini con amore e competenza. Servizi di accompagnamento alla nascita, allattamento, babywearing e sonno.">
+  <meta name="keywords" content="operatrice materno infantile, accompagnamento nascita, consulente allattamento, babywearing, supporto genitori, doula">
   <meta name="theme-color" content="#6d8659">
   <meta name="author" content="La Gaia Custode">
 
   <title>La Gaia Custode | Operatrice Materno Infantile</title>
 
-  <!-- STILE MINIMAL ELEGANTE -->
+  <!-- STILE MINIMAL ELEGANTE CON DARK MODE -->
   <style>
     :root {
       --bg: #ffffff;
@@ -18,14 +18,37 @@
       --accent: #7a8c8d;
       --soft: #f7f7f7;
       --card: #fafafa;
+      --border: #e5e5e5;
+      --shadow: rgba(0,0,0,0.05);
+      --cta-bg: #7a8c8d;
+      --cta-text: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a1a;
+        --text: #e0e0e0;
+        --accent: #a8b9ba;
+        --soft: #2a2a2a;
+        --card: #252525;
+        --border: #404040;
+        --shadow: rgba(0,0,0,0.3);
+        --cta-bg: #6d8659;
+        --cta-text: #ffffff;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: "Inter", Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     /* HERO */
@@ -33,6 +56,7 @@
       text-align: center;
       padding: 5rem 1rem 3rem;
       background: var(--soft);
+      position: relative;
     }
 
     .hero img {
@@ -56,20 +80,92 @@
       margin-top: .5rem;
     }
 
-    /* NAV */
+    /* NAV - STICKY + RESPONSIVE */
     nav {
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
       padding: 1rem;
-      border-bottom: 1px solid #e5e5e5;
-      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
-      margin: 0 1rem;
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
       font-size: .95rem;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HAMBURGER MENU */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 2.5px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
     }
 
     /* CONTAINER */
@@ -81,13 +177,53 @@
 
     h2 {
       font-size: 1.8rem;
-      margin-bottom: .5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem 0;
       font-weight: 600;
     }
 
     p, li {
       font-size: 1rem;
-      color: #555;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    /* CTA BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: var(--cta-bg);
+      color: var(--cta-text);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px var(--shadow);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: var(--cta-text);
     }
 
     /* CARD SERVIZI */
@@ -102,24 +238,31 @@
       background: var(--card);
       padding: 1.8rem;
       border-radius: 12px;
-      border: 1px solid #eee;
+      border: 1px solid var(--border);
       text-align: center;
-      transition: 0.2s;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px var(--shadow);
     }
 
     .card img {
       width: 60px;
       height: 60px;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
       opacity: 0.9;
     }
 
-    /* IMMAGINI ELEGANTI */
+    .card p {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+
+    /* IMMAGINI ELEGANTI CON LAZY LOADING */
     .gallery {
       margin-top: 2rem;
       display: grid;
@@ -131,117 +274,329 @@
       width: 100%;
       border-radius: 12px;
       object-fit: cover;
+      aspect-ratio: 1;
+      transition: opacity 0.3s;
+    }
+
+    .gallery img[loading="lazy"] {
+      background: var(--soft);
     }
 
     /* CONTATTI */
     .contact-box {
-      background: var(--soft);
+      background: var(--card);
       padding: 2rem;
       border-radius: 12px;
       margin-top: 2rem;
-      border: 1px solid #eee;
+      border: 1px solid var(--border);
+    }
+
+    .contact-box p {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-box strong {
+      min-width: 100px;
+      color: var(--accent);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .contact-links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px var(--shadow);
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 4rem;
-      border-top: 1px solid #e5e5e5;
+      border-top: 1px solid var(--border);
       font-size: .9rem;
-      color: #777;
+      color: var(--text);
+      opacity: 0.7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        border-bottom: 1px solid var(--border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+      }
+
+      .nav-links.active {
+        max-height: 300px;
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        justify-content: center;
+      }
+    }
+
+    /* ACCESSIBILITY */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* FOCUS VISIBLE */
+    *:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* LOADING ANIMATION */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeIn 0.6s ease-out;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- SKIP LINK PER ACCESSIBILITÀ -->
+  <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
   <!-- HERO -->
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=400" alt="Mamma e bambino">
+  <section class="hero" aria-label="Sezione introduttiva">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=400" alt="Mamma e bambino che si abbracciano con amore" loading="lazy">
     <h1>La Gaia Custode</h1>
     <p>Operatrice Materno Infantile</p>
   </section>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#chi-sono">Chi sono</a>
-    <a href="#servizi">Servizi</a>
-    <a href="#contatti">Contatti</a>
+  <!-- NAV STICKY + RESPONSIVE -->
+  <nav aria-label="Navigazione principale" role="navigation">
+    <a href="#hero" class="nav-logo" aria-label="Torna alla home">🌿 La Gaia Custode</a>
+    <button class="menu-toggle" aria-label="Apri/chiudi menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu" class="nav-links">
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
   </nav>
 
-  <main class="container">
+  <main class="container" id="main-content">
 
     <!-- CHI SONO -->
-    <section id="chi-sono">
-      <h2>Chi sono</h2>
+    <section id="chi-sono" aria-labelledby="chi-sono-title">
+      <h2 id="chi-sono-title">Chi sono</h2>
       <p>
         Sono Gaia, Operatrice Materno Infantile.  
         Accompagno mamme, papà e bambini nei momenti più delicati della vita:
         gravidanza, nascita, allattamento e primi mesi insieme.
       </p>
+      <p>
+        Con dedizione e competenza, offro un supporto completo basato su evidenze scientifiche
+        e approcci olistici, per permettere a ogni famiglia di vivere questa stagione con serenità.
+      </p>
+      <a href="#servizi" class="btn">Scopri i servizi</a>
     </section>
 
     <!-- SERVIZI -->
-    <section id="servizi">
-      <h2>Servizi</h2>
+    <section id="servizi" aria-labelledby="servizi-title">
+      <h2 id="servizi-title">Servizi</h2>
 
-      <div class="cards">
+      <div class="cards" role="region" aria-label="Servizi offerti">
 
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="Icona: Custode della Nascita" loading="lazy">
           <h3>Custode della Nascita®</h3>
           <p>Supporto emotivo e pratico durante gravidanza, parto e post-parto.</p>
+          <a href="#contatti" class="btn">Prenota una consulenza</a>
         </div>
 
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="Icona: Allattamento" loading="lazy">
           <h3>Allattamento</h3>
           <p>Consulenze personalizzate per un allattamento sereno e consapevole.</p>
+          <a href="#contatti" class="btn">Prenota una consulenza</a>
         </div>
 
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="Icona: Babywearing" loading="lazy">
           <h3>Babywearing</h3>
-          <p>Supporto nella scelta e nell’utilizzo dei supporti più adatti.</p>
+          <p>Supporto nella scelta e nell'utilizzo dei supporti più adatti.</p>
+          <a href="#contatti" class="btn">Prenota una consulenza</a>
         </div>
 
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="Icona: Sonno 0-3 anni" loading="lazy">
           <h3>Sonno 0–3 anni</h3>
           <p>Accompagnamento dolce e rispettoso dei bisogni del bambino.</p>
+          <a href="#contatti" class="btn">Prenota una consulenza</a>
         </div>
 
       </div>
     </section>
 
     <!-- GALLERY -->
-    <section>
-      <h2>Immagini</h2>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="">
-        <img src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?q=80&w=800" alt="">
+    <section aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Immagini</h2>
+      <div class="gallery" role="region" aria-label="Galleria immagini">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="Mamma con bambino in momenti di tenerezza" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="Genitore e neonato in contatto pelle a pelle" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?q=80&w=800" alt="Famiglia felice con neonato" loading="lazy">
       </div>
     </section>
 
     <!-- CONTATTI -->
-    <section id="contatti">
-      <h2>Contatti</h2>
+    <section id="contatti" aria-labelledby="contatti-title">
+      <h2 id="contatti-title">Contatti</h2>
 
       <div class="contact-box">
-        <p><strong>Email:</strong> gaiav.moimas@gmail.com</p>
-        <p><strong>Telefono:</strong> +39 331 8004383</p>
-        <p><strong>Instagram:</strong> @gaiadoula_sonno_e_babywearing</p>
-        <p><strong>Facebook:</strong> Gaia Operatrice Materno Infantile</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:gaiav.moimas@gmail.com" aria-label="Scrivi un'email a Gaia">gaiav.moimas@gmail.com</a>
+        </p>
+        <p>
+          <strong>Telefono:</strong>
+          <a href="tel:+393318004383" aria-label="Chiama Gaia">+39 331 8004383</a>
+        </p>
+        <p><strong>Seguimi sui social:</strong></p>
+        <div class="contact-links">
+          <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram - apre in nuova finestra">📷</a>
+          <a href="https://www.facebook.com/gaia.operatrice" target="_blank" rel="noopener noreferrer" aria-label="Facebook - apre in nuova finestra">👍</a>
+          <a href="https://wa.me/+393318004383" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp - apre in nuova finestra">💬</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="mailto:gaiav.moimas@gmail.com?subject=Richiesta%20di%20consulenza" class="btn">
+          ✉️ Contattami per una consulenza
+        </a>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    © 2026 · La Gaia Custode
+  <footer role="contentinfo">
+    <p>© 2026 · La Gaia Custode · Operatrice Materno Infantile</p>
+    <p><small>Sito realizzato con cura per le famiglie</small></p>
   </footer>
+
+  <!-- JAVASCRIPT PER MENU RESPONSIVE -->
+  <script>
+    // Toggle menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+    });
+
+    // Chiudi menu al click su un link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
-
