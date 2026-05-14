@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagnamento alla nascita, allattamento, babywearing, sonno infantile e supporto genitoriale.">
+  <meta name="description" content="La Gaia Custode - Operatrice Materno Infantile. Accompagnamento alla nascita, allattamento, babywearing, sonno infantile e sostegno alle famiglie.">
   <meta name="theme-color" content="#6d7f5f">
 
   <title>La Gaia Custode | Operatrice Materno Infantile</title>
@@ -18,12 +18,21 @@
       --testo: #333;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Inter", Arial, sans-serif;
       background: var(--avorio);
       color: var(--testo);
       line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     /* HERO */
@@ -37,7 +46,7 @@
 
     .hero-logo {
       width: 160px;
-      margin-bottom: 1.5rem;
+      margin: 0 auto 1.5rem;
     }
 
     .hero h1 {
@@ -61,14 +70,17 @@
       text-align: center;
       padding: 1rem;
       background: var(--avorio);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
-      margin: 0 1rem;
+      margin: 0 .6rem;
       text-decoration: none;
       color: var(--salvia);
       font-weight: 600;
-      font-size: 1rem;
+      font-size: .95rem;
       border-radius: 20px;
       padding: .4rem .8rem;
       transition: 0.2s;
@@ -81,9 +93,13 @@
 
     /* CONTAINER */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 3rem auto;
-      padding: 0 1rem;
+      padding: 0 1rem 3rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
     }
 
     h2 {
@@ -93,21 +109,44 @@
       color: var(--salvia);
     }
 
-    /* CARD SERVIZI */
+    /* CHI SONO */
+    .chi-sono {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .chi-sono img {
+      border-radius: 30px;
+      object-fit: cover;
+      height: 100%;
+      max-height: 320px;
+    }
+
+    @media (max-width: 768px) {
+      .chi-sono {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SERVIZI */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .card {
       background: white;
-      padding: 2rem;
+      padding: 1.8rem;
       border-radius: 20px;
       border: 1px solid #eee;
-      text-align: center;
       transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
     }
 
     .card:hover {
@@ -115,29 +154,50 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .card img {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 1rem;
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .4rem;
     }
 
-    /* GALLERY */
+    .card-icon img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--salvia);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--testo);
+      font-size: .98rem;
+    }
+
+    /* GALLERY SONNO */
     .gallery {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .gallery img {
       width: 100%;
       border-radius: 20px;
       object-fit: cover;
+      height: 220px;
     }
 
     /* TESTIMONIANZE */
     .testimonials {
-      margin-top: 3rem;
       background: var(--sabbia);
       padding: 2rem;
       border-radius: 20px;
@@ -151,13 +211,22 @@
 
     .testimonial:last-child {
       border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
 
     .testimonial strong {
       color: var(--salvia);
     }
 
-    /* CTA BUTTONS */
+    /* CONTATTI */
+    .contact-box {
+      background: var(--sabbia);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid #eee;
+    }
+
     .cta-buttons {
       margin-top: 1.5rem;
       display: flex;
@@ -168,10 +237,11 @@
     .cta-buttons a {
       background: var(--salvia);
       color: white;
-      padding: .9rem 1.6rem;
+      padding: .8rem 1.4rem;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
+      font-size: .95rem;
       transition: 0.2s;
     }
 
@@ -179,19 +249,9 @@
       background: var(--terracotta);
     }
 
-    /* CONTATTI */
-    .contact-box {
-      background: var(--sabbia);
-      padding: 2rem;
-      border-radius: 20px;
-      margin-top: 2rem;
-      border: 1px solid #eee;
-    }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      margin-top: 4rem;
       font-size: .9rem;
       color: var(--grigio);
       background: var(--sabbia);
@@ -205,6 +265,7 @@
 
   <!-- HERO -->
   <section class="hero">
+    <!-- Assicurati che il file si chiami esattamente logo.png e sia nella stessa cartella di questo file -->
     <img src="logo.png" alt="Logo La Gaia Custode" class="hero-logo">
     <h1>La Gaia Custode</h1>
     <p>Accompagno famiglie e bambini con presenza, competenza e delicatezza, in ogni fase del loro viaggio.</p>
@@ -224,11 +285,27 @@
     <!-- CHI SONO -->
     <section id="chi-sono">
       <h2>Chi sono</h2>
-      <p>
-        Sono Gaia, Operatrice Materno Infantile.  
-        Accompagno mamme, papà e bambini nei momenti più delicati della vita:
-        gravidanza, nascita, allattamento, babywearing e primi mesi insieme.
-      </p>
+      <div class="chi-sono">
+        <div>
+          <p>
+            La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco.
+            Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero.
+            Da lì è nato il desiderio di formarmi per poter offrire ad altre famiglie il sostegno che avrei voluto ricevere.
+          </p>
+          <p>
+            Ho iniziato come Peer Supporter per l’allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere:
+            sono diventata Custode della Nascita®, Trainer Olistica Materno Infantile®, Custode del Portare Junior® e Operatrice di Massaggio Infantile.
+            Negli anni ho approfondito anche il babywearing, l’allattamento e il sonno infantile, con percorsi MaBS e Mamme Con‑Tatto®.
+          </p>
+          <p>
+            Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino:
+            niente giudizi, niente pressioni. Solo presenza, ascolto e strumenti pratici per affrontare insieme i momenti più delicati.
+          </p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=900" alt="Mamma con neonato">
+        </div>
+      </div>
     </section>
 
     <!-- SERVIZI -->
@@ -237,50 +314,97 @@
 
       <div class="cards">
 
+        <!-- ACCOMPAGNAMENTO NASCITA + POST PARTO -->
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="">
-          <h3>Custode della Nascita®</h3>
-          <p>Supporto emotivo, pratico e informativo durante gravidanza, parto e post‑parto.  
-          Uno spazio sicuro dove sentirti vista, ascoltata e accompagnata.</p>
+          <div class="card-icon" style="background: rgba(109,127,95,0.12);">
+            <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="Icona mamma e neonato">
+          </div>
+          <h3>Accompagnamento alla Nascita e nel Post Parto</h3>
+          <p>
+            Ti accompagno durante la gravidanza, il parto e le prime settimane dopo la nascita con una presenza calma e rispettosa.
+            Il mio ruolo è offrirti ascolto, informazioni chiare e un sostegno pratico che ti faccia sentire meno sola e più sicura, qualunque sia il tuo percorso.
+          </p>
+          <p>
+            Durante la gravidanza possiamo lavorare su dubbi, emozioni, preparazione al parto e organizzazione dei primi giorni.
+            Nel post parto ti affianco nella gestione quotidiana, nell’ascolto dei bisogni del tuo bambino e nel trovare un nuovo equilibrio come famiglia, senza giudizi e senza pressioni.
+          </p>
         </div>
 
+        <!-- ALLATTAMENTO -->
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="">
+          <div class="card-icon" style="background: rgba(217,164,143,0.15);">
+            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="Icona allattamento">
+          </div>
           <h3>Allattamento</h3>
-          <p>Sostegno personalizzato per affrontare difficoltà, dubbi e fatiche.  
-          Un approccio rispettoso, basato sull’ascolto e sulla relazione.</p>
+          <p>
+            Offro un sostegno pratico e rispettoso per affrontare difficoltà, dubbi o fatiche legate all’allattamento.
+            Lavoriamo insieme per trovare soluzioni semplici e adatte alla tua famiglia, senza pressioni e senza aspettative rigide.
+          </p>
+          <p>
+            Il mio approccio si basa sull’ascolto, sulla relazione e sulla valorizzazione delle tue competenze.
+          </p>
         </div>
 
+        <!-- BABYWEARING -->
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" alt="">
+          <div class="card-icon" style="background: rgba(109,127,95,0.12);">
+            <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png" alt="Icona babywearing">
+          </div>
           <h3>Babywearing</h3>
-          <p>Consulenze per scegliere il supporto più adatto e portare in modo sicuro e confortevole.  
-          Movimento, contatto e presenza.</p>
+          <p>
+            Ti aiuto a scegliere il supporto più adatto e a portare in modo sicuro e confortevole.
+            Il babywearing è contatto, movimento e presenza: un modo per sentirsi vicini anche nelle giornate più intense.
+          </p>
+          <p>
+            Durante la consulenza impariamo insieme legature semplici, posizioni sicure e piccoli accorgimenti che fanno la differenza.
+          </p>
         </div>
 
+        <!-- SONNO INFANTILE E FAMILIARE -->
         <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="">
-          <h3>Sonno 0–3 anni</h3>
-          <p>Accompagnamento dolce, senza metodi rigidi.  
-          Rispetto dei bisogni del bambino e sostegno ai genitori.</p>
+          <div class="card-icon" style="background: rgba(217,164,143,0.15);">
+            <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" alt="Icona sonno infantile">
+          </div>
+          <h3>Sonno Infantile e Familiare</h3>
+          <p>
+            Un accompagnamento dolce, senza metodi rigidi o training.
+            Rispetto dei bisogni del bambino, sostegno ai genitori e strumenti pratici per ritrovare equilibrio.
+          </p>
+          <p>
+            Lavoriamo insieme per comprendere i ritmi del tuo bambino, creare routine serene e trovare soluzioni che funzionino davvero per la vostra famiglia.
+          </p>
+        </div>
+
+        <!-- MASSAGGIO INFANTILE -->
+        <div class="card">
+          <div class="card-icon" style="background: rgba(109,127,95,0.12);">
+            <img src="https://cdn-icons-png.flaticon.com/512/4320/4320361.png" alt="Icona massaggio infantile">
+          </div>
+          <h3>Massaggio Infantile</h3>
+          <p>
+            Un momento di connessione profonda, che favorisce rilassamento, contatto e benessere.
+            Il massaggio infantile è un linguaggio fatto di presenza, ascolto e piccoli gesti che nutrono la relazione.
+          </p>
+          <p>
+            Durante gli incontri impari movimenti semplici e delicati, da portare con te nella quotidianità.
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- SEZIONE SONNO INFANTILE -->
+    <!-- SEZIONE SONNO (IMMAGINI DEDICATE) -->
     <section id="sonno">
-      <h2>Sonno infantile</h2>
+      <h2>Sonno infantile e familiare</h2>
       <p>
         Il sonno dei bambini è un viaggio unico, fatto di bisogni, ritmi e fasi di sviluppo.
-        Il mio approccio è dolce, rispettoso e basato sulla relazione: niente metodi rigidi,
-        niente training, niente pianti ignorati.  
+        Il mio approccio è dolce, rispettoso e basato sulla relazione: niente metodi rigidi, niente training, niente pianti ignorati.
         Solo ascolto, accoglienza e strumenti pratici per tutta la famiglia.
       </p>
 
       <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="Neonato che dorme">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800" alt="Genitore con bambino che dorme">
       </div>
     </section>
 
