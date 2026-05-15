@@ -82,7 +82,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* SFONDO CON FRASE + TESTO */
+    /* HERO */
     .hero-section {
       position: relative;
       margin-top: 2rem;
@@ -115,13 +115,6 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .hero-content .proverb {
-      text-align: right;
-      font-size: .9rem;
-      color: var(--grigio);
-      margin-right: 1rem;
-    }
-
     /* TESTO PRINCIPALE */
     .text-block {
       max-width: 900px;
@@ -139,7 +132,7 @@
       margin-bottom: 1rem;
     }
 
-    /* ANIMAZIONI */
+    /* ANIMAZIONI SLIDE */
     .slide-left {
       opacity: 0;
       transform: translateX(-40px);
@@ -160,7 +153,7 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* ABOUT ME SECTION */
+    /* ABOUT ME */
     .about-section {
       background: var(--sabbia);
       padding: 3rem 1.5rem;
@@ -233,7 +226,7 @@
 
     .support-button {
       display: inline-block;
-      background: var(--beige-chiaro);
+      background: var(--sabbia-saturo); /* STESSO COLORE DELL'ABOUT ME */
       padding: 0.8rem 1.6rem;
       border-radius: 30px;
       text-decoration: none;
@@ -243,7 +236,7 @@
     }
 
     .support-button:hover {
-      background: #e4d7cb;
+      background: #d2c2b3;
     }
 
     /* WHATSAPP BUTTON */
@@ -252,15 +245,21 @@
       bottom: 20px;
       right: 20px;
       background-color: #25D366;
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.25);
       z-index: 999;
       transition: 0.2s ease;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding-top: 6px;
     }
 
     .whatsapp-fixed:hover {
@@ -268,8 +267,21 @@
     }
 
     .whatsapp-fixed img {
-      width: 35px;
-      height: 35px;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 3px;
+    }
+
+    /* FADE-IN SU SCROLL */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
   </style>
@@ -289,7 +301,7 @@
     <img src="BannerGaia.png" alt="Banner La Gaia Custode">
   </section>
 
-  <!-- HEADER CON NOME + HAMBURGER -->
+  <!-- HEADER -->
   <div class="header-bar">
     <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
     <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
@@ -304,14 +316,13 @@
     <a href="#contatti">Contatti</a>
   </nav>
 
-  <!-- SFONDO + FRASE + TESTO -->
-  <section class="hero-section">
+  <!-- HERO -->
+  <section class="hero-section fade-in-section">
     <img src="sfondo.jpeg" alt="Sfondo frase">
 
     <div class="hero-content">
 
       <h1>Per crescere un bambino ci vuole un intero villaggio</h1>
-      <p class="proverb">Proverbio africano</p>
 
       <div class="text-block">
 
@@ -345,8 +356,8 @@
     </div>
   </section>
 
-  <!-- ABOUT ME SECTION -->
-  <section class="about-section">
+  <!-- ABOUT ME -->
+  <section class="about-section fade-in-section">
 
     <h3 class="about-title">ABOUT ME</h3>
 
@@ -363,7 +374,7 @@
   </section>
 
   <!-- SUPPORT SECTION -->
-  <section class="support-section">
+  <section class="support-section fade-in-section">
 
     <h3 class="support-title">COME POSSO SUPPORTARVI</h3>
 
@@ -386,7 +397,23 @@
   <!-- WHATSAPP BUTTON -->
   <a class="whatsapp-fixed" href="https://wa.me/393318004383" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    Sono qui per te
   </a>
+
+  <!-- SCRIPT FADE-IN -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in-section').forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
