@@ -27,8 +27,9 @@
     /* BANNER */
     .banner img {
       width: 100%;
-      height: 220px; /* RIDOTTO */
+      height: 220px;
       object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     /* HEADER CON NOME + HAMBURGER */
@@ -41,13 +42,18 @@
     }
 
     .logo-nome {
-      height: 180px; /* RADDOPPIATO */
+      height: 180px; /* molto più grande */
     }
 
     .hamburger {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .hamburger:hover {
+      transform: scale(1.1);
     }
 
     /* MENU MOBILE */
@@ -57,6 +63,7 @@
       background: var(--avorio);
       padding: 1rem;
       border-bottom: 1px solid #eee;
+      animation: fadeIn 0.3s ease;
     }
 
     nav a {
@@ -65,6 +72,11 @@
       font-weight: 600;
       padding: .6rem 0;
       font-size: 1.1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* SFONDO CON FRASE + TESTO */
@@ -97,6 +109,7 @@
       font-style: italic;
       color: var(--salvia);
       margin-bottom: .5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .hero-content .proverb {
@@ -111,3 +124,141 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 1rem;
+    }
+
+    h2 {
+      color: var(--salvia);
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* ANIMAZIONI */
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: slideLeft 1s ease forwards;
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      animation: slideRight 1s ease forwards;
+    }
+
+    @keyframes slideLeft {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideRight {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ABOUT ME SECTION */
+    .about-section {
+      background: var(--sabbia);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .about-title {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--salvia);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-subtitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--salvia);
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #333;
+    }
+
+    .about-button {
+      display: inline-block;
+      background: var(--sabbia-saturo);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .about-button:hover {
+      background: #d2c2b3;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mobileMenu");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+  </section>
+
+  <!-- HEADER CON NOME + HAMBURGER -->
+  <div class="header-bar">
+    <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
+  </div>
+
+  <!-- MENU MOBILE -->
+  <nav id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="chi-sono.html">Chi sono</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+
+  <!-- SFONDO + FRASE + TESTO -->
+  <section class="hero-section">
+    <img src="sfondo.jpeg" alt="Sfondo frase">
+
+    <div class="hero-content">
+
+      <h1>Per crescere un bambino ci vuole un intero villaggio</h1>
+      <p class="proverb">Proverbio africano</p>
+
+      <div class="text-block">
+
+        <section class="slide-left">
+          <h2><strong>Chi sono</strong></h2>
+          <p>
+            Sono Gaia, Operatrice Materno Infantile: accompagno la donna e la famiglia nei primi mille giorni di vita del bambino,
+            offrendo sostegno emotivo e pratico in un percorso di consapevolezza e benessere.
+          </p>
+        </section>
+
+        <section class="slide-right">
+          <h2><strong>Cosa faccio</strong></h2>
+          <p>
+            Promuovo il maternage consapevole e il rispetto della diade e triade familiare, utilizzando strumenti come massaggio,
+            babywearing, aromaterapia e altre tecniche che rispettano la fisiologia del bambino e della famiglia.
+            Mi prendo cura dei bisogni della famiglia nel post‑partum, creando un ambiente accogliente e sereno,
+            e fungendo da ponte con le figure sanitarie e professionisti del mondo perinatale.
+          </p>
+        </section>
+
+        <section class="slide-left">
+          <h2><strong>La mia missione</strong></h2>
