@@ -37,15 +37,6 @@
       }
     }
 
-    /* BANNER */
-    .banner img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-
     /* NAV */
     nav {
       background: var(--avorio);
@@ -72,6 +63,15 @@
       color: white;
     }
 
+    /* BANNER */
+    .banner img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+
     /* CONTAINER */
     .container {
       max-width: 1000px;
@@ -85,7 +85,7 @@
       margin-bottom: 1rem;
     }
 
-    /* SERVIZI */
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -180,28 +180,30 @@
 
 <body>
 
-  <!-- BANNER -->
-  <section class="banner fade-in">
-    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200" alt="Banner materno infantile">
-  </section>
-
   <!-- NAV -->
   <nav>
     <a href="index.html">Home</a>
     <a href="chi-sono.html">Chi sono</a>
     <a href="servizi.html">Servizi</a>
+    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
     <a href="#testimonianze">Testimonianze</a>
     <a href="#contatti">Contatti</a>
   </nav>
 
+  <!-- BANNER -->
+  <section class="banner fade-in">
+    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200" alt="Banner materno infantile">
+  </section>
+
   <main class="container fade-in">
 
-    <!-- SERVIZI IN HOMEPAGE -->
+    <!-- SERVIZI -->
     <section id="servizi">
       <h2>Servizi</h2>
 
       <div class="cards">
 
+        <!-- ACCOMPAGNAMENTO -->
         <div class="card">
           <div class="card-icon" style="background:#e8efe6;">
             <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png">
@@ -210,6 +212,7 @@
           <p>Presenza calma, ascolto e sostegno pratico durante gravidanza, parto e prime settimane.</p>
         </div>
 
+        <!-- ALLATTAMENTO -->
         <div class="card">
           <div class="card-icon" style="background:#f3e3dd;">
             <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png">
@@ -218,6 +221,7 @@
           <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche.</p>
         </div>
 
+        <!-- BABYWEARING -->
         <div class="card">
           <div class="card-icon" style="background:#e8efe6;">
             <img src="https://cdn-icons-png.flaticon.com/512/4206/4206277.png">
@@ -226,6 +230,7 @@
           <p>Scelta del supporto, legature sicure e consigli pratici per portare con serenità.</p>
         </div>
 
+        <!-- SONNO -->
         <div class="card">
           <div class="card-icon" style="background:#f3e3dd;">
             <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
@@ -234,12 +239,23 @@
           <p>Accompagnamento dolce, senza metodi rigidi. Routine serene e soluzioni reali.</p>
         </div>
 
+        <!-- MASSAGGIO -->
         <div class="card">
           <div class="card-icon" style="background:#e8efe6;">
             <img src="https://cdn-icons-png.flaticon.com/512/4320/4320361.png">
           </div>
           <h3>Massaggio Infantile</h3>
           <p>Connessione, contatto e benessere attraverso gesti semplici e delicati.</p>
+        </div>
+
+        <!-- UN ANNO CON LA DOULA -->
+        <div class="card">
+          <div class="card-icon" style="background:#f3e3dd;">
+            <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png">
+          </div>
+          <h3>Un Anno con la Doula</h3>
+          <p>Un percorso annuale di supporto continuo per accompagnarti mese dopo mese nel primo anno di vita del tuo bambino.</p>
+          <p><a href="un-anno-con-la-doula.html" style="color: var(--salvia); font-weight:600;">Scopri di più →</a></p>
         </div>
 
       </div>
