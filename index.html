@@ -290,21 +290,17 @@
       text-align: center;
     }
 
-    .dea-title-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-    }
-
     .dea-title {
       font-size: 0.9rem;
       letter-spacing: 2px;
       color: var(--salvia);
+      margin-bottom: 0.5rem;
     }
 
     .dea-logo {
-      height: 40px;
+      height: 60px;
+      margin: 0.5rem auto 1rem auto;
+      display: block;
       opacity: 0.9;
     }
 
@@ -449,7 +445,6 @@
 </head>
 
 <body>
-
   <!-- BANNER -->
   <section class="banner">
     <img src="BannerGaia.png" alt="Banner La Gaia Custode">
@@ -567,4 +562,90 @@
 
   </section>
 
-  <!-- LA DEA LATTEA A.P
+  <!-- LA DEA LATTEA A.P.S. -->
+  <section class="dea-section fade-in-section">
+
+    <h3 class="dea-title">LA DEA LATTEA A.P.S.</h3>
+
+    <img src="ldl.jpg" alt="La Dea Lattea Logo" class="dea-logo">
+
+    <h4 class="dea-subtitle">
+      <strong><em>La nostra missione è che tutte le donne e tutte le famiglie possano avere la possibilità di una scelta libera e consapevole.</em></strong>
+    </h4>
+
+    <p class="dea-text">
+      Come lo facciamo?<br>
+      Attraverso l’informazione e la formazione, ma anche attraverso servizi di supporto e sportelli gratuiti.
+    </p>
+
+    <!-- TENDINA FORMAZIONI -->
+    <details class="dropdown">
+      <summary>Le nostre formazioni</summary>
+      <ul>
+        <li>Peer Supporter per l’Allattamento Materno (40 o 20 ore)</li>
+        <li>MaMS – Doula Olistica</li>
+        <li>MaBS – Milk and Babywearing Supporter</li>
+      </ul>
+    </details>
+
+    <!-- TENDINA SERVIZI GRATUITI -->
+    <details class="dropdown">
+      <summary>I nostri servizi <em>gratuiti</em></summary>
+      <ul>
+        <li>S.O.S. Villaggio Aperto – incontri tematici</li>
+        <li>Sportello Aperto – spazio d’ascolto individuale su prenotazione</li>
+      </ul>
+    </details>
+
+    <p class="dea-text">
+      Dal 2025 La Dea Lattea è diventata <strong>A.P.S.</strong>, ed è aperta la <strong>campagna tesseramento</strong>.<br>
+      Per i tesserati ci saranno incontri, novità e scontistiche dedicate.
+    </p>
+
+    <a class="dea-button" href="https://www.instagram.com/ladealattea_/" target="_blank">
+      Seguici sui nostri social
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fade-in-section">
+
+    <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 La Gaia Custode – Tutti i diritti riservati
+    </div>
+
+  </footer>
+
+  <!-- WHATSAPP BUTTON -->
+  <a class="whatsapp-fixed" href="https://wa.me/393318004383" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    Sono qui per te
+  </a>
+
+  <!-- SCRIPT FADE-IN -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in-section').forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
