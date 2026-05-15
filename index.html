@@ -39,8 +39,8 @@
       background: var(--avorio);
     }
 
-    .header-bar img {
-      height: 60px;
+    .logo-nome {
+      height: 90px; /* ingrandito del 150% */
     }
 
     .hamburger {
@@ -66,47 +66,50 @@
       font-size: 1.1rem;
     }
 
-    /* SFONDO CON FRASE */
-    .hero-phrase {
+    /* SFONDO CON FRASE + TESTO */
+    .hero-section {
       position: relative;
       margin-top: 2rem;
     }
 
-    .hero-phrase img {
+    .hero-section img {
       width: 100%;
-      height: 380px;
-      object-fit: cover;
+      height: auto;
       opacity: 0.2;
     }
 
-    .hero-phrase .text {
+    .hero-content {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      width: 90%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .hero-phrase h1 {
+    .hero-content h1 {
+      text-align: center;
       font-size: 2.4rem;
       font-style: italic;
       color: var(--salvia);
-      margin: 0;
+      margin-bottom: .5rem;
     }
 
-    .hero-phrase p {
+    .hero-content .proverb {
       text-align: right;
-      margin-top: .5rem;
       font-size: .9rem;
       color: var(--grigio);
+      margin-right: 1rem;
     }
 
-    /* SEZIONI TESTO */
-    .container {
+    /* TESTO PRINCIPALE */
+    .text-block {
       max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
+      margin: 2rem auto;
+      padding: 1rem;
     }
 
     h2 {
@@ -123,18 +126,12 @@
     .slide-left {
       opacity: 0;
       transform: translateX(-40px);
+      animation: slideLeft 1s ease forwards;
     }
 
     .slide-right {
       opacity: 0;
       transform: translateX(40px);
-    }
-
-    .slide-left.animate {
-      animation: slideLeft 1s ease forwards;
-    }
-
-    .slide-right.animate {
       animation: slideRight 1s ease forwards;
     }
 
@@ -158,28 +155,6 @@
       const nav = document.getElementById("mobileMenu");
       nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
-
-    // Observer per animazioni di scroll
-    document.addEventListener("DOMContentLoaded", function() {
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-      };
-
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      // Osserva tutte le sezioni con classe slide-left e slide-right
-      document.querySelectorAll(".slide-left, .slide-right").forEach(section => {
-        observer.observe(section);
-      });
-    });
   </script>
 </head>
 
@@ -191,13 +166,10 @@
   </section>
 
   <!-- HEADER CON NOME + HAMBURGER -->
-<div class="header-bar">
-  <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
-  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
-</div>
-
-
-
+  <div class="header-bar">
+    <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
+  </div>
 
   <!-- MENU MOBILE -->
   <nav id="mobileMenu">
@@ -208,45 +180,46 @@
     <a href="#contatti">Contatti</a>
   </nav>
 
-  <!-- SFONDO CON FRASE -->
-  <section class="hero-phrase">
+  <!-- SFONDO + FRASE + TESTO -->
+  <section class="hero-section">
     <img src="sfondo.jpeg" alt="Sfondo frase">
-    <div class="text">
+
+    <div class="hero-content">
+
       <h1>Per crescere un bambino ci vuole un intero villaggio</h1>
-      <p>Proverbio africano</p>
+      <p class="proverb">Proverbio africano</p>
+
+      <div class="text-block">
+
+        <section class="slide-left">
+          <h2><strong>Chi sono</strong></h2>
+          <p>
+            Sono Gaia, Operatrice Materno Infantile: accompagno la donna e la famiglia nei primi mille giorni di vita del bambino,
+            offrendo sostegno emotivo e pratico in un percorso di consapevolezza e benessere.
+          </p>
+        </section>
+
+        <section class="slide-right">
+          <h2><strong>Cosa faccio</strong></h2>
+          <p>
+            Promuovo il maternage consapevole e il rispetto della diade e triade familiare, utilizzando strumenti come massaggio,
+            babywearing, aromaterapia e altre tecniche che rispettano la fisiologia del bambino e della famiglia.
+            Mi prendo cura dei bisogni della famiglia nel post‑partum, creando un ambiente accogliente e sereno,
+            e fungendo da ponte con le figure sanitarie e professionisti del mondo perinatale.
+          </p>
+        </section>
+
+        <section class="slide-left">
+          <h2><strong>La mia missione</strong></h2>
+          <p>
+            Offro ascolto empatico e presenza, per aiutare ogni genitore a vivere la nascita come un’esperienza di crescita
+            e amore condiviso.
+          </p>
+        </section>
+
+      </div>
     </div>
   </section>
-
-  <!-- TESTO PRINCIPALE -->
-  <main class="container">
-
-    <section class="slide-left">
-      <h2><strong>Chi sono</strong></h2>
-      <p>
-        Sono Gaia, Operatrice Materno Infantile: accompagno la donna e la famiglia nei primi mille giorni di vita del bambino,
-        offrendo sostegno emotivo e pratico in un percorso di consapevolezza e benessere.
-      </p>
-    </section>
-
-    <section class="slide-right">
-      <h2><strong>Cosa faccio</strong></h2>
-      <p>
-        Promuovo il maternage consapevole e il rispetto della diade e triade familiare, utilizzando strumenti come massaggio,
-        babywearing, aromaterapia e altre tecniche che rispettano la fisiologia del bambino e della famiglia.
-        Mi prendo cura dei bisogni della famiglia nel post‑partum, creando un ambiente accogliente e sereno,
-        e fungendo da ponte con le figure sanitarie e professionisti del mondo perinatale.
-      </p>
-    </section>
-
-    <section class="slide-left">
-      <h2><strong>La mia missione</strong></h2>
-      <p>
-        Offro ascolto empatico e presenza, per aiutare ogni genitore a vivere la nascita come un'esperienza di crescita
-        e amore condiviso.
-      </p>
-    </section>
-
-  </main>
 
 </body>
 </html>
