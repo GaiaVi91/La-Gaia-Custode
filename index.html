@@ -9,6 +9,7 @@
     :root {
       --salvia: #6d7f5f;
       --sabbia: #f3eee7;
+      --sabbia-saturo: #e0d4c8;
       --terracotta: #d9a48f;
       --avorio: #faf8f4;
       --testo: #333;
@@ -148,6 +149,49 @@
         transform: translateX(0);
       }
     }
+
+    /* ABOUT ME SECTION */
+    .about-section {
+      background: var(--sabbia);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .about-title {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--salvia);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-subtitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--salvia);
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #333;
+    }
+
+    .about-button {
+      display: inline-block;
+      background: var(--sabbia-saturo);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .about-button:hover {
+      background: #d2c2b3;
+    }
   </style>
 
   <script>
@@ -219,6 +263,23 @@
 
       </div>
     </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="about-section">
+
+    <h3 class="about-title">ABOUT ME</h3>
+
+    <h4 class="about-subtitle"><strong><em>un parto difficile, una terapia intensiva neonatale...</em></strong></h4>
+
+    <p class="about-text">
+      ... è così che è iniziata la mia storia come Madre prima e come Operatrice poi.
+      Studio tra cambio pannolini, allattamento, un'altra gravidanza e un altro parto,
+      stavolta in casa e rispettato, stavolta già un po' Doula di me stessa.
+    </p>
+
+    <a class="about-button" href="chi-sono.html">Scopri chi sono</a>
+
   </section>
 
 </body>
