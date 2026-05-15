@@ -34,7 +34,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* HEADER CON NOME + HAMBURGER */
+    /* HEADER */
     .header-bar {
       display: flex;
       align-items: center;
@@ -226,7 +226,7 @@
 
     .support-button {
       display: inline-block;
-      background: var(--sabbia-saturo); /* STESSO COLORE DELL'ABOUT ME */
+      background: var(--sabbia-saturo);
       padding: 0.8rem 1.6rem;
       border-radius: 30px;
       text-decoration: none;
@@ -239,37 +239,77 @@
       background: #d2c2b3;
     }
 
-    /* WHATSAPP BUTTON */
+    /* UN ANNO CON LA DOULA */
+    .year-section {
+      background: var(--sabbia);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .year-title {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--salvia);
+      margin-bottom: 0.5rem;
+    }
+
+    .year-subtitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--salvia);
+      margin-bottom: 1rem;
+    }
+
+    .year-text {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .year-button {
+      display: inline-block;
+      background: var(--beige-chiaro);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .year-button:hover {
+      background: #e4d7cb;
+    }
+
+    /* WHATSAPP BUTTON RETTANGOLARE */
     .whatsapp-fixed {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #25D366;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
+      padding: 12px 18px;
+      border-radius: 40px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.25);
       z-index: 999;
       transition: 0.2s ease;
-      color: white;
-      font-size: 0.7rem;
-      font-weight: 600;
       text-decoration: none;
-      padding-top: 6px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
     }
 
     .whatsapp-fixed:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .whatsapp-fixed img {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 3px;
+      width: 28px;
+      height: 28px;
     }
 
     /* FADE-IN SU SCROLL */
@@ -391,6 +431,25 @@
     </p>
 
     <a class="support-button" href="servizi.html">Scopri i miei servizi</a>
+
+  </section>
+
+  <!-- UN ANNO CON LA DOULA -->
+  <section class="year-section fade-in-section">
+
+    <h3 class="year-title">UN ANNO CON LA DOULA</h3>
+
+    <h4 class="year-subtitle"><strong><em>Il mio progetto più grande per accompagnarvi passo passo nel primo anno di vita della vostra nuova famiglia.</em></strong></h4>
+
+    <p class="year-text">
+      Una newsletter mensile per comprendere cosa sta succedendo al vostro bambino.<br>
+      Una consulenza a scelta tra i miei servizi.<br>
+      Una reperibilità telefonica per rassicurarvi e accompagnarvi nelle piccole difficoltà quotidiane.<br>
+      Uno sconto dedicato su altri percorsi o consulenze.<br>
+      Il supporto continuativo che ogni famiglia merita nel periodo più bello e delicato.
+    </p>
+
+    <a class="year-button" href="un-anno-con-la-doula.html">Scopri di più</a>
 
   </section>
 
