@@ -283,6 +283,120 @@
       background: #e4d7cb;
     }
 
+    /* LA DEA LATTEA */
+    .dea-section {
+      background: var(--beige-scuro);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .dea-title-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dea-title {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--salvia);
+    }
+
+    .dea-logo {
+      height: 40px;
+      opacity: 0.9;
+    }
+
+    .dea-subtitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--salvia);
+      margin: 1rem auto;
+      max-width: 700px;
+    }
+
+    .dea-text {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .dropdown {
+      max-width: 700px;
+      margin: 1rem auto;
+      text-align: left;
+    }
+
+    .dropdown summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--salvia);
+      padding: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .dropdown ul {
+      margin: 0.5rem 0 1rem 1.2rem;
+      padding: 0;
+    }
+
+    .dropdown li {
+      margin-bottom: 0.4rem;
+    }
+
+    .dea-button {
+      display: inline-block;
+      background: var(--sabbia-saturo);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .dea-button:hover {
+      background: #d2c2b3;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--sabbia);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--salvia);
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    footer .footer-logo {
+      height: 60px;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    footer .footer-links a {
+      color: var(--salvia);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: 0.2s;
+    }
+
+    footer .footer-links a:hover {
+      opacity: 0.7;
+    }
+
+    footer .footer-copy {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--grigio);
+    }
+
     /* WHATSAPP BUTTON RETTANGOLARE */
     .whatsapp-fixed {
       position: fixed;
@@ -453,26 +567,4 @@
 
   </section>
 
-  <!-- WHATSAPP BUTTON -->
-  <a class="whatsapp-fixed" href="https://wa.me/393318004383" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    Sono qui per te
-  </a>
-
-  <!-- SCRIPT FADE-IN -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.fade-in-section').forEach((section) => {
-      observer.observe(section);
-    });
-  </script>
-
-</body>
-</html>
+  <!-- LA DEA LATTEA A.P
