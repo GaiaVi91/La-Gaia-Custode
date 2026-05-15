@@ -44,7 +44,7 @@
     }
 
     .logo-nome {
-      height: 320px; /* ANCORA PIÙ GRANDE */
+      height: 320px;
     }
 
     .hamburger {
@@ -63,10 +63,10 @@
       display: none;
       flex-direction: column;
       background: var(--avorio);
-      padding: 1.5rem 2rem; /* più spazio */
+      padding: 1.5rem 2rem;
       border-bottom: 1px solid #eee;
       animation: fadeIn 0.3s ease;
-      text-align: center; /* CENTRATO */
+      text-align: center;
     }
 
     nav a {
@@ -74,7 +74,7 @@
       color: var(--salvia);
       font-weight: 600;
       padding: 0.8rem 0;
-      font-size: 1.3rem; /* più grande e leggibile */
+      font-size: 1.3rem;
     }
 
     @keyframes fadeIn {
@@ -245,6 +245,33 @@
     .support-button:hover {
       background: #e4d7cb;
     }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      z-index: 999;
+      transition: 0.2s ease;
+    }
+
+    .whatsapp-fixed:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-fixed img {
+      width: 35px;
+      height: 35px;
+    }
+
   </style>
 
   <script>
@@ -355,6 +382,11 @@
     <a class="support-button" href="servizi.html">Scopri i miei servizi</a>
 
   </section>
+
+  <!-- WHATSAPP BUTTON -->
+  <a class="whatsapp-fixed" href="https://wa.me/393318004383" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
 </body>
 </html>
