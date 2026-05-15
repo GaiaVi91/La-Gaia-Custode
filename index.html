@@ -14,6 +14,8 @@
       --avorio: #faf8f4;
       --testo: #333;
       --grigio: #777;
+      --beige-scuro: #e8dfd6;
+      --beige-chiaro: #f1e8df;
     }
 
     body {
@@ -42,7 +44,7 @@
     }
 
     .logo-nome {
-      height: 180px; /* molto più grande */
+      height: 320px; /* ANCORA PIÙ GRANDE */
     }
 
     .hamburger {
@@ -61,17 +63,18 @@
       display: none;
       flex-direction: column;
       background: var(--avorio);
-      padding: 1rem;
+      padding: 1.5rem 2rem; /* più spazio */
       border-bottom: 1px solid #eee;
       animation: fadeIn 0.3s ease;
+      text-align: center; /* CENTRATO */
     }
 
     nav a {
       text-decoration: none;
       color: var(--salvia);
       font-weight: 600;
-      padding: .6rem 0;
-      font-size: 1.1rem;
+      padding: 0.8rem 0;
+      font-size: 1.3rem; /* più grande e leggibile */
     }
 
     @keyframes fadeIn {
@@ -199,6 +202,49 @@
     .about-button:hover {
       background: #d2c2b3;
     }
+
+    /* SUPPORT SECTION */
+    .support-section {
+      background: var(--beige-scuro);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .support-title {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--salvia);
+      margin-bottom: 0.5rem;
+    }
+
+    .support-subtitle {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--salvia);
+      margin-bottom: 1rem;
+    }
+
+    .support-text {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #333;
+    }
+
+    .support-button {
+      display: inline-block;
+      background: var(--beige-chiaro);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .support-button:hover {
+      background: #e4d7cb;
+    }
   </style>
 
   <script>
@@ -281,11 +327,32 @@
 
     <p class="about-text">
       ... è così che è iniziata la mia storia come Madre prima e come Operatrice poi.
-      Studio tra cambio pannolini, allattamento, un'altra gravidanza e un altro parto,
-      stavolta in casa e rispettato, stavolta già un po' Doula di me stessa.
+      Studio tra un cambio pannolino, una poppata, un’altra gravidanza e un altro parto:
+      questa volta in casa, rispettato, e questa volta già un po’ Doula di me stessa.
     </p>
 
     <a class="about-button" href="chi-sono.html">Scopri chi sono</a>
+
+  </section>
+
+  <!-- SUPPORT SECTION -->
+  <section class="support-section">
+
+    <h3 class="support-title">COME POSSO SUPPORTARVI</h3>
+
+    <h4 class="support-subtitle"><strong><em>dalla consulenza al preparare il pranzo...</em></strong></h4>
+
+    <p class="support-text">
+      Un’operatrice materno-infantile può sostenere la famiglia sia da un punto di vista pratico che emotivo.
+      La mia formazione mi permette di lavorare sulla fisiologia del bambino nei suoi primi 1000 giorni di vita,
+      dalla gravidanza ai tre anni circa, ma le mie specializzazioni si concentrano soprattutto nel periodo del Post Parto,
+      dove mi occupo principalmente di Babywearing, Allattamento e Sonno Infantile.<br><br>
+
+      Il mio obiettivo resta quello di sostenere e affiancare la famiglia nei più disparati (e a volte disperati) bisogni:
+      così, tra una legatura in fascia e un diario del sonno, posso tranquillamente svuotare una lavatrice o preparare un pasto!
+    </p>
+
+    <a class="support-button" href="servizi.html">Scopri i miei servizi</a>
 
   </section>
 
