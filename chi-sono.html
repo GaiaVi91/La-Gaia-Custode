@@ -82,31 +82,46 @@ h1, h2 {
   margin: 2rem auto;
   opacity: 0;
   transform: translateY(25px);
-  animation: bannerFade 1.4s ease-out forwards;
+  filter: blur(8px);
+  animation: bannerFade 1.6s ease-out forwards;
 }
 
 @keyframes bannerFade {
   0% {
     opacity: 0;
     transform: translateY(25px);
+    filter: blur(8px);
   }
-  60% {
-    opacity: 0.6;
-    transform: translateY(10px);
+  50% {
+    opacity: 0.5;
+    transform: translateY(12px);
+    filter: blur(4px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
-
 
 /* TITOLO PAGINA */
 .page-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleFade 1.2s ease-out forwards;
+  animation-delay: 1.2s; /* entra dopo il banner */
 }
+
+@keyframes titleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* BLOCCHI CHI SONO */
 .chi-block {
@@ -164,6 +179,18 @@ h1, h2 {
 
 .attestati-slider img:hover {
   transform: scale(1.05);
+}
+
+  /* GALLERIA: FADE-IN ORIZZONTALE */
+.attestati-slider img {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.attestati-slider img.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* FRECCE */
@@ -229,6 +256,46 @@ footer .footer-copy {
   margin-top: 1rem;
   font-size: 0.8rem;
   color: var(--grigio);
+}
+
+  /* FOOTER MORBIDO DAL BASSO */
+footer {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: footerFade 1.4s ease-out forwards;
+  animation-delay: 2.2s; /* entra dopo tutto il resto */
+}
+
+@keyframes footerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  /* FOTO A RESPIRO */
+.chi-block {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fotoFade 1.2s ease-out forwards;
+}
+
+.chi-block:nth-of-type(1) { animation-delay: 0.4s; }
+.chi-block:nth-of-type(2) { animation-delay: 0.7s; }
+.chi-block:nth-of-type(3) { animation-delay: 1.0s; }
+.chi-block:nth-of-type(4) { animation-delay: 1.3s; }
+.chi-block:nth-of-type(5) { animation-delay: 1.6s; }
+
+@keyframes fotoFade {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 </style>
@@ -348,6 +415,21 @@ function scrollRight() {
   </div>
 
 </footer>
+<script>
+const imgs = document.querySelectorAll('.attestati-slider img');
+
+function checkVisibility() {
+  imgs.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.left < window.innerWidth - 50) {
+      img.classList.add('visible');
+    }
+  });
+}
+
+document.getElementById('slider').addEventListener('scroll', checkVisibility);
+window.addEventListener('load', checkVisibility);
+</script>
 
 </body>
 </html>
