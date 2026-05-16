@@ -1,161 +1,102 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chi sono – La Gaia Custode</title>
+<!-- BANNER SOTTILE -->
+<div class="chi-banner">
+  <img src="banner.png" alt="Banner La Gaia Custode">
+</div>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: #faf8f4;
-      color: #333;
-      line-height: 1.7;
-    }
+<!-- SEZIONE 1 -->
+<section class="chi-section">
+  <div class="chi-text">
+    <h2>Benvenuti</h2>
+    <p>Mi chiamo Gaia e vi voglio raccontare come sono diventata un'Operatrice Materno Infantile.</p>
+  </div>
+  <img src="chisono1.jpg" class="chi-img" alt="Gaia">
+</section>
 
-    nav {
-      background: #faf8f4;
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+<!-- SEZIONE 2 -->
+<section class="chi-section reverse">
+  <div class="chi-text">
+    <h2>Come tutto è iniziato</h2>
+    <p>La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco. Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero. Da lì è nato il desiderio di formarmi per poter offrire ad altre famiglie il sostegno che avrei voluto ricevere.</p>
+  </div>
+  <img src="chisono2.jpg" class="chi-img" alt="Gaia doula">
+</section>
 
-    nav a {
-      margin: 0 .7rem;
-      text-decoration: none;
-      color: #6d7f5f;
-      font-weight: 600;
-      padding: .4rem .8rem;
-      border-radius: 20px;
-      transition: .2s;
-    }
+<!-- SEZIONE 3 -->
+<section class="chi-section">
+  <div class="chi-text">
+    <h2>Il mio percorso</h2>
+    <p>Ho iniziato come Peer Supporter per l'allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere: sono diventata Custode della Nascita®, Trainer Olistica Materno Infantile®, Custode del Portare Junior® e Operatrice di Massaggio Infantile. Negli anni ho approfondito anche il babywearing, l'allattamento e il sonno infantile, con percorsi MaBS e Mamme Con‑Tatto®.</p>
+  </div>
+  <img src="chisono1.jpg" class="chi-img" alt="Percorso formativo">
+</section>
 
-    nav a:hover {
-      background: #d9a48f;
-      color: white;
-    }
+<!-- SEZIONE 4 -->
+<section class="chi-section reverse">
+  <div class="chi-text">
+    <h2>Il mio approccio</h2>
+    <p>Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino: niente giudizi, niente pressioni. Solo presenza, ascolto e strumenti pratici per affrontare insieme i momenti più delicati.</p>
+  </div>
+  <img src="chisono2.jpg" class="chi-img" alt="Approccio">
+</section>
 
-    .banner img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
+<!-- SEZIONE 5 -->
+<section class="chi-section">
+  <div class="chi-text">
+    <h2>La Dea Lattea</h2>
+    <p>Da qualche anno collaboro con La Dea Lattea, una realtà nata dalla mente di Donne e Uomini che credono che la divulgazione sia importante e ha scelto di accompagnare le donne e le famiglie nei momenti più delicati della loro vita e di formare figure che facciano lo stesso. Nel 2025 La Dea Lattea è finalmente diventata una A.P.S. di cui sono onorata di essere la presidente.</p>
+  </div>
+  <img src="chisono1.jpg" class="chi-img" alt="La Dea Lattea">
+</section>
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
+<!-- GALLERIA -->
+<h2 class="gallery-title">Galleria</h2>
 
-    h1 {
-      color: #6d7f5f;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
+<div class="chi-gallery">
+  <img src="mabs.jpg" alt="">
+  <img src="tomi.jpg" alt="">
+  <img src="peerldl.jpg" alt="">
+  <img src="allattamentoiss.jpg" alt="">
+  <img src="1000gg.jpg" alt="">
+  <img src="custode.jpg" alt="">
+  <img src="peer19.jpg" alt="">
+  <img src="cpj.jpg" alt="">
+  <img src="mipa.jpg" alt="">
+  <img src="npl.jpg" alt="">
+</div>
 
-    p {
-      margin-bottom: 1.2rem;
-    }
+<!-- FOOTER IDENTICO ALL'INDEX -->
+<footer class="fade-in-section">
 
-    .profile-section {
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-      margin-bottom: 2rem;
-    }
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
-    .profile-image {
-      flex-shrink: 0;
-      width: 220px;
-    }
+  <a href="mailto:gaiav.moimas@gmail.com"
+     style="
+       display:inline-flex;
+       align-items:center;
+       justify-content:center;
+       gap:6px;
+       margin-top:1rem;
+       padding:7px 16px;
+       background:#6d7f5f;
+       color:white;
+       border-radius:22px;
+       font-size:0.85rem;
+       text-decoration:none;
+     ">
+     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+          alt="Email"
+          style="width:16px; height:16px; filter:invert(1);">
+     Scrivimi
+  </a>
 
-    .profile-image img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 6px 20px rgba(109, 127, 95, 0.2);
-    }
+  <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
 
-    .profile-text {
-      flex: 1;
-    }
+  <div class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem;">
+    © 2026 La Gaia Custode
+  </div>
 
-    @media (max-width: 768px) {
-      .profile-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .profile-image {
-        width: 200px;
-      }
-
-      .profile-image img {
-        height: 200px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="chi-sono.html">Chi sono</a>
-    <a href="servizi.html">Servizi</a>
-  </nav>
-
-  <section class="banner">
-    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200" alt="Banner materno infantile">
-  </section>
-
-  <main class="container">
-    <h1>Chi sono</h1>
-
-    <div class="profile-section">
-      <div class="profile-image">
-        <img src="chi-sono.jpg" alt="Gaia - Operatrice Materno Infantile">
-      </div>
-
-      <div class="profile-text">
-        <p>
-         Benvenuti, mi chiamo Gaia e vi voglio raccontare come sono diventata un'Operatrice Materno Infantile.
-         </p>
-
-         <p>
-          La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco.
-          Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero.
-          Da lì è nato il desiderio di formarmi per poter offrire ad altre famiglie il sostegno che avrei voluto ricevere.
-        </p>
-
-        <p>
-          Ho iniziato come Peer Supporter per l'allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere:
-          sono diventata Custode della Nascita®, Trainer Olistica Materno Infantile®, Custode del Portare Junior® e Operatrice di Massaggio Infantile.
-          Negli anni ho approfondito anche il babywearing, l'allattamento e il sonno infantile, con percorsi MaBS e Mamme Con‑Tatto®.
-        </p>
-
-        <p>
-          Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino:
-          niente giudizi, niente pressioni. Solo presenza, ascolto e strumenti pratici per affrontare insieme i momenti più delicati.
-        </p>
-      </div>
-    </div>
-
-     <p>
-       Da qualche anno collaboro con La Dea Lattea, una realtà nata dalla mente di Donne e Uomini che credono che la divulgazione sia
-       importante e ha scelto di accompagnare le donne e le famiglie nei momenti più delicati della loro vita e di formare figure che facciano
-       lo stesso. 
-       Nel 2025 La Dea Lattea è finalmente diventata una A.P.S. di cui mi onoro di essere la presidente.
-     </p>
-  </main>
-
-</body>
-</html>
+</footer>
