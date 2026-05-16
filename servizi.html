@@ -1,278 +1,502 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servizi – La Gaia Custode</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servizi – La Gaia Custode</title>
 
-    <style>
-        /* PALETTE */
-        :root {
-            --sabbia: #f3eee7;
-            --salvia: #7a8f7a;
-            --testo: #4a4a4a;
-            --bianco: #ffffff;
-        }
+<link rel="stylesheet" href="style.css">
 
-        body {
-            background-color: var(--sabbia);
-            color: var(--testo);
-            font-family: "Montserrat", sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+/* STILI SPECIFICI DELLA PAGINA SERVIZI */
 
-        /* BANNER COME PAGINA CHI SONO */
-        .banner {
-            background: url('img/banner.jpg') center/cover no-repeat;
-            padding: 120px 20px;
-            text-align: center;
-            color: var(--bianco);
-        }
-
-        .banner h1 {
-            font-family: "Playfair Display", serif;
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        /* SOTTOTITOLO */
-        .sottotitolo {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--salvia);
-            margin-top: 10px;
-            margin-bottom: 50px;
-        }
-
-        /* SEZIONI SERVIZI */
-        .servizio {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin: 60px auto;
-            max-width: 1100px;
-            padding: 20px;
-            background: var(--bianco);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform .3s ease, box-shadow .3s ease;
-        }
-
-        .servizio:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        }
-
-        .servizio img {
-            width: 320px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-
-        .servizio h2 {
-            font-family: "Playfair Display", serif;
-            color: var(--salvia);
-            margin-top: 0;
-        }
-
-        .servizio a {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--salvia);
-            font-weight: bold;
-            text-decoration: none;
-            border-bottom: 1px solid var(--salvia);
-            transition: color .3s ease;
-        }
-
-        .servizio a:hover {
-            color: #5f735f;
-        }
-
-        /* TESTO FINALE */
-        .nota-finale {
-            max-width: 900px;
-            margin: 80px auto 40px;
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--testo);
-        }
-
-        /* FORM CONTATTO */
-      .contatto {
-    max-width: 420px;
-    margin: 80px auto 100px;
-    background: var(--bianco);
-    padding: 35px 40px 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.06);
-    position: relative;
-    animation: fadeIn .6s ease;
+/* Sottotitolo */
+.sottotitolo {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--salvia);
+  margin-top: -10px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.4s;
 }
 
-/* Icona in alto */
+/* Blocchi servizi */
+.servizio {
+  max-width: 1100px;
+  margin: 60px auto;
+  background: var(--bianco);
+  border-radius: 14px;
+  padding: 25px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeIn 1s ease forwards;
+}
+
+.servizio:nth-of-type(1) { animation-delay: 0.4s; }
+.servizio:nth-of-type(2) { animation-delay: 0.6s; }
+.servizio:nth-of-type(3) { animation-delay: 0.8s; }
+.servizio:nth-of-type(4) { animation-delay: 1.0s; }
+.servizio:nth-of-type(5) { animation-delay: 1.2s; }
+.servizio:nth-of-type(6) { animation-delay: 1.4s; }
+.servizio:nth-of-type(7) { animation-delay: 1.6s; }
+
+.servizio img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.servizio h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  color: var(--salvia);
+  margin-top: 0;
+}
+
+.servizio a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--salvia);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--salvia);
+  transition: 0.2s;
+}
+
+.servizio a:hover {
+  opacity: 0.7;
+}
+
+/* Nota finale */
+.nota-finale {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #444;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.8s;
+}
+
+/* Modulo contatto stile finestra */
+.contatto {
+  max-width: 420px;
+  margin: 80px auto 100px;
+  background: var(--bianco);
+  padding: 35px 40px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2s;
+}
+
 .contatto::before {
-    content: "💌";
-    font-size: 2.2rem;
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bianco);
-    padding: 8px 14px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  content: "💌";
+  font-size: 2.2rem;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bianco);
+  padding: 8px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .contatto label {
-    font-weight: bold;
-    color: var(--salvia);
+  font-weight: bold;
+  color: var(--salvia);
 }
 
-.contatto input, .contatto textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+.contatto input,
+.contatto textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .contatto button {
-    background: var(--salvia);
-    color: var(--bianco);
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 100%;
-    transition: background .3s ease;
+  background: var(--salvia);
+  color: var(--bianco);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .contatto button:hover {
-    background: #5f735f;
+  background: #5a6d52;
+}
+    /* ANIMAZIONE 3: Fade-in all’ingresso */
+.servizio img {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeImg 0.9s ease forwards;
 }
 
+@keyframes fadeImg {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        /* FOOTER */
-        footer {
-            background: var(--salvia);
-            color: var(--bianco);
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-    </style>
+/* Ritardo progressivo per ogni immagine */
+.servizio:nth-of-type(1) img { animation-delay: 0.3s; }
+.servizio:nth-of-type(2) img { animation-delay: 0.45s; }
+.servizio:nth-of-type(3) img { animation-delay: 0.6s; }
+.servizio:nth-of-type(4) img { animation-delay: 0.75s; }
+.servizio:nth-of-type(5) img { animation-delay: 0.9s; }
+.servizio:nth-of-type(6) img { animation-delay: 1.05s; }
+.servizio:nth-of-type(7) img { animation-delay: 1.2s; }
+
+/* ANIMAZIONE 1: Sollevamento al passaggio del mouse */
+.servizio img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.servizio img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+    /* FADE-IN TESTI SERVIZI */
+.servizio div {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeText 0.9s ease forwards;
+}
+
+@keyframes fadeText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ritardi progressivi per i testi */
+.servizio:nth-of-type(1) div { animation-delay: 0.45s; }
+.servizio:nth-of-type(2) div { animation-delay: 0.65s; }
+.servizio:nth-of-type(3) div { animation-delay: 0.85s; }
+.servizio:nth-of-type(4) div { animation-delay: 1.05s; }
+.servizio:nth-of-type(5) div { animation-delay: 1.25s; }
+.servizio:nth-of-type(6) div { animation-delay: 1.45s; }
+.servizio:nth-of-type(7) div { animation-delay: 1.65s; }
+
+    /* FADE-IN TITOLI H2 */
+.servizio h2 {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeTitle 0.9s ease forwards;
+}
+
+@keyframes fadeTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ritardi progressivi per i titoli */
+.servizio:nth-of-type(1) h2 { animation-delay: 0.40s; }
+.servizio:nth-of-type(2) h2 { animation-delay: 0.60s; }
+.servizio:nth-of-type(3) h2 { animation-delay: 0.80s; }
+.servizio:nth-of-type(4) h2 { animation-delay: 1.00s; }
+.servizio:nth-of-type(5) h2 { animation-delay: 1.20s; }
+.servizio:nth-of-type(6) h2 { animation-delay: 1.40s; }
+.servizio:nth-of-type(7) h2 { animation-delay: 1.60s; }
+
+    /* SLIDE MORBIDO PER I BLOCCHI SERVIZIO */
+.servizio {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slideServizio 1s ease forwards;
+}
+
+@keyframes slideServizio {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ritardi progressivi per i blocchi */
+.servizio:nth-of-type(1) { animation-delay: 0.30s; }
+.servizio:nth-of-type(2) { animation-delay: 0.50s; }
+.servizio:nth-of-type(3) { animation-delay: 0.70s; }
+.servizio:nth-of-type(4) { animation-delay: 0.90s; }
+.servizio:nth-of-type(5) { animation-delay: 1.10s; }
+.servizio:nth-of-type(6) { animation-delay: 1.30s; }
+.servizio:nth-of-type(7) { animation-delay: 1.50s; }
+
+    /* FADE-IN SPECIALE PER LA NOTA FINALE */
+.nota-finale {
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(6px);
+  animation: fadeNota 1.4s ease-out forwards;
+  animation-delay: 2.2s; /* entra dopo tutto */
+}
+
+@keyframes fadeNota {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(10px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+    /* FADE-IN MODULO CONTATTI */
+.contatto {
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(4px);
+  animation: fadeContatto 1.3s ease-out forwards;
+  animation-delay: 2.6s; /* entra dopo la nota finale */
+}
+
+@keyframes fadeContatto {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(10px);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+    /* FADE-IN VELLUTATO FOOTER */
+footer {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(6px);
+  animation: fadeFooter 1.4s ease-out forwards;
+  animation-delay: 3.1s; /* entra per ultimo */
+}
+
+@keyframes fadeFooter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(12px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+    /* FADE-IN VELLUTATO FOOTER */
+footer {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(6px);
+  animation: fadeFooter 1.4s ease-out forwards;
+  animation-delay: 3.1s; /* entra per ultimo */
+}
+
+@keyframes fadeFooter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(12px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <!-- BANNER COME CHI SONO -->
-    <div class="banner">
-        <h1>Servizi</h1>
-    </div>
+<!-- MENU IDENTICO A “CHI SONO” -->
+<header class="header-bar fade-in-section">
+  <img src="nome.png" alt="La Gaia Custode" class="logo">
 
-    <p class="sottotitolo">Custodire, accogliere, accompagnare: un sostegno per ogni fase del vostro percorso.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-sono.html">Chi sono</a>
+    <a href="servizi.html" class="active">Servizi</a>
+    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
 
-    <!-- SERVIZIO 1 -->
-    <div class="servizio">
-        <img src="unannocon.jpg" alt="Un anno con la doula">
-        <div>
-            <h2>Un Anno con la Doula</h2>
-            <p>Servizio completo per il primo anno di vita con email mensili, consulenze e reperibilità telefonica. “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.</p>
-            <a href="un-anno-con-la-doula.html">Visualizza il servizio completo</a>
-        </div>
-    </div>
+<!-- BANNER IDENTICO A “CHI SONO” -->
+<section class="hero-small fade-in-section">
+  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+</section>
 
-    <!-- SERVIZIO 2 -->
-    <div class="servizio">
-        <img src="postparto.jpg" alt="Accompagnamento alla nascita">
-        <div>
-            <h2>Accompagnamento alla Nascita e nel Post Parto</h2>
-            <p>Incontri singoli o percorsi completi a sostegno pratico, emotivo e di presenza e ascolto durante la gravidanza, il parto e le prime settimane.</p>
-        </div>
-    </div>
+<!-- TITOLO -->
+<h1 class="page-title fade-in-section">Servizi</h1>
 
-    <!-- SERVIZIO 3 -->
-    <div class="servizio">
-        <img src="allattamento.jpg" alt="Allattamento">
-        <div>
-            <h2>Allattamento</h2>
-            <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche in ambito fisiologico.</p>
-        </div>
-    </div>
+<p class="sottotitolo">Custodire, accogliere, accompagnare: un sostegno per ogni fase del vostro percorso.</p>
 
-    <!-- SERVIZIO 4 -->
-    <div class="servizio">
-        <img src="babywearing.jpg" alt="Babywearing">
-        <div>
-            <h2>Babywearing</h2>
-            <p>Scelta del supporto, legature sicure e consigli pratici per portare con serenità.</p>
-        </div>
-    </div>
+<!-- SERVIZI -->
+<div class="servizio">
+  <img src="unannocon.jpg">
+  <div>
+    <h2>Un Anno con la Doula</h2>
+    <p>Servizio completo per il primo anno di vita con email mensili, consulenze e reperibilità telefonica. “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.</p>
+    <a href="un-anno-con-la-doula.html">Visualizza il servizio completo</a>
+  </div>
+</div>
 
-    <!-- SERVIZIO 5 -->
-    <div class="servizio">
-        <img src="sleep.jpg" alt="Sonno infantile">
-        <div>
-            <h2>Sonno Infantile e Familiare</h2>
-            <p>Accompagnamento dolce, senza metodi rigidi. Routine serene e soluzioni reali.</p>
-        </div>
-    </div>
+<div class="servizio">
+  <img src="postparto.jpg">
+  <div>
+    <h2>Accompagnamento alla Nascita e nel Post Parto</h2>
+    <p>Incontri singoli o percorsi completi a sostegno pratico, emotivo e di presenza e ascolto durante la gravidanza, il parto e le prime settimane.</p>
+  </div>
+</div>
 
-    <!-- SERVIZIO 6 -->
-    <div class="servizio">
-        <img src="massaggioinfantile.jpg" alt="Massaggio infantile">
-        <div>
-            <h2>Massaggio Infantile</h2>
-            <p>Connessione, contatto e benessere attraverso gesti semplici e delicati.</p>
-        </div>
-    </div>
+<div class="servizio">
+  <img src="allattamento.jpg">
+  <div>
+    <h2>Allattamento</h2>
+    <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche in ambito fisiologico.</p>
+  </div>
+</div>
 
-    <!-- SERVIZIO 7 -->
-    <div class="servizio">
-        <img src="crescita.jpg" alt="Accompagnamento ai 1000 giorni">
-        <div>
-            <h2>Accompagnamento ai 1000 Giorni</h2>
-            <p>Affiancamento alla crescita del bambino, alla scoperta delle fasi, del gioco, dello svezzamento e molto altro.</p>
-        </div>
-    </div>
+<div class="servizio">
+  <img src="babywearing.jpg">
+  <div>
+    <h2>Babywearing</h2>
+    <p>Scelta del supporto, legature sicure e consigli pratici per portare con serenità.</p>
+  </div>
+</div>
 
-    <!-- NOTA FINALE -->
-    <p class="nota-finale">
-        Quelli che trovi qui sono i percorsi principali, ma il mio lavoro va oltre una semplice lista di servizi: nasce dall’incontro, dall’ascolto e dalle necessità di ogni famiglia. Scrivimi per ogni tuo bisogno.
-    </p>
+<div class="servizio">
+  <img src="sleep.jpg">
+  <div>
+    <h2>Sonno Infantile e Familiare</h2>
+    <p>Accompagnamento dolce, senza metodi rigidi. Routine serene e soluzioni reali.</p>
+  </div>
+</div>
 
-    <!-- FORM CONTATTO -->
-    <div class="contatto">
-        <form action="https://formsubmit.co/gaiav.moimas@gmail.com" method="POST">
-            <label>Email</label>
-            <input type="email" name="email" required>
+<div class="servizio">
+  <img src="massaggioinfantile.jpg">
+  <div>
+    <h2>Massaggio Infantile</h2>
+    <p>Connessione, contatto e benessere attraverso gesti semplici e delicati.</p>
+  </div>
+</div>
 
-            <label>Messaggio</label>
-            <textarea name="message" rows="6" required></textarea>
+<div class="servizio">
+  <img src="crescita.jpg">
+  <div>
+    <h2>Accompagnamento ai 1000 Giorni</h2>
+    <p>Affiancamento alla crescita del bambino, alla scoperta delle fasi, del gioco, dello svezzamento e molto altro.</p>
+  </div>
+</div>
 
-            <button type="submit">Invia</button>
-        </form>
-    </div>
+<!-- NOTA FINALE -->
+<p class="nota-finale">
+  Quelli che trovi qui sono i percorsi principali, ma il mio lavoro va oltre una semplice lista di servizi: nasce dall’incontro, dall’ascolto e dalle necessità di ogni famiglia. Scrivimi per ogni tuo bisogno.
+</p>
 
-    <!-- FOOTER -->
-    <footer>
-        © 2026 La Gaia Custode – Tutti i diritti riservati
-    </footer>
+<!-- MODULO CONTATTO -->
+<div class="contatto" id="contatti">
+  <form action="https://formsubmit.co/gaiav.moimas@gmail.com" method="POST">
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Messaggio</label>
+    <textarea name="message" rows="6" required></textarea>
+
+    <button type="submit">Invia</button>
+  </form>
+</div>
+
+<!-- FOOTER IDENTICO A “CHI SONO” -->
+<footer class="fade-in-section">
+
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+  <a href="mailto:gaiav.moimas@gmail.com"
+     style="
+       display:inline-flex;
+       align-items:center;
+       justify-content:center;
+       gap:6px;
+       margin-top:1rem;
+       padding:7px 16px;
+       background:#6d7f5f;
+       color:white;
+       border-radius:22px;
+       font-size:0.85rem;
+       text-decoration:none;
+     ">
+     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+          alt="Email"
+          style="width:16px; height:16px; filter:invert(1);">
+     Scrivimi
+  </a>
+
+  <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem;">
+    © 2026 La Gaia Custode
+  </div>
+
+</footer>
 
 </body>
 </html>
