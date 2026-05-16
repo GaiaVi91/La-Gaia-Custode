@@ -30,7 +30,7 @@ h1, h2 {
   color: var(--salvia);
 }
 
-/* ANIMAZIONE FADE-IN */
+/* FADE-IN BASE */
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
@@ -38,10 +38,7 @@ h1, h2 {
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* HEADER */
@@ -67,9 +64,7 @@ h1, h2 {
   transition: 0.2s;
 }
 
-.header-bar nav a:hover {
-  opacity: 0.7;
-}
+.header-bar nav a:hover { opacity: 0.7; }
 
 /* BANNER SOTTILE */
 .hero-small img {
@@ -87,21 +82,9 @@ h1, h2 {
 }
 
 @keyframes bannerFade {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-    filter: blur(8px);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(12px);
-    filter: blur(4px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+  0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
+  50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
 /* TITOLO PAGINA */
@@ -112,16 +95,12 @@ h1, h2 {
   opacity: 0;
   transform: translateY(20px);
   animation: titleFade 1.2s ease-out forwards;
-  animation-delay: 1.2s; /* entra dopo il banner */
+  animation-delay: 1.2s;
 }
 
 @keyframes titleFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 
 /* BLOCCHI CHI SONO */
 .chi-block {
@@ -129,6 +108,20 @@ h1, h2 {
   margin: 0 auto 3rem auto;
   text-align: center;
   padding: 0 1rem;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fotoFade 1.2s ease-out forwards;
+}
+
+.chi-block:nth-of-type(1) { animation-delay: 0.4s; }
+.chi-block:nth-of-type(2) { animation-delay: 0.7s; }
+.chi-block:nth-of-type(3) { animation-delay: 1.0s; }
+.chi-block:nth-of-type(4) { animation-delay: 1.3s; }
+.chi-block:nth-of-type(5) { animation-delay: 1.6s; }
+
+@keyframes fotoFade {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* IMMAGINI CHI SONO */
@@ -139,24 +132,36 @@ h1, h2 {
   border-radius: 12px;
   display: block;
   margin: 0 auto 1rem auto;
-  box-shadow: 0 4px 12px rgba(109,127,95,0.35); /* ombra salvia */
+  box-shadow: 0 4px 12px rgba(109,127,95,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chi-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
 /* OVALE */
-.oval {
-  border-radius: 50%;
-}
+.oval { border-radius: 50%; }
 
-/* GALLERIA SCORREVOLE CON FRECCE */
+/* GALLERIA */
 .gallery-title {
   text-align: center;
   margin-top: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.8s;
 }
 
 .attestati-wrapper {
   position: relative;
   max-width: 900px;
   margin: 2rem auto 4rem auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2s;
 }
 
 .attestati-slider {
@@ -173,16 +178,6 @@ h1, h2 {
   border-radius: 12px;
   margin-right: 1rem;
   box-shadow: 0 4px 12px rgba(109,127,95,0.35);
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
-.attestati-slider img:hover {
-  transform: scale(1.05);
-}
-
-  /* GALLERIA: FADE-IN ORIZZONTALE */
-.attestati-slider img {
   opacity: 0;
   transform: translateX(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -209,19 +204,12 @@ h1, h2 {
   transition: 0.2s;
 }
 
-.arrow:hover {
-  opacity: 1;
-}
+.arrow:hover { opacity: 1; }
 
-.arrow-left {
-  left: -10px;
-}
+.arrow-left { left: -10px; }
+.arrow-right { right: -10px; }
 
-.arrow-right {
-  right: -10px;
-}
-
-/* FOOTER */
+/* FOOTER VELLUTATO */
 footer {
   background: var(--sabbia);
   padding: 2.5rem 1.5rem;
@@ -230,7 +218,18 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
   border-top: 1px solid rgba(0,0,0,0.05);
-  display: block !important;
+
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(6px);
+  animation: fadeFooter 1.4s ease-out forwards;
+  animation-delay: 2.6s;
+}
+
+@keyframes fadeFooter {
+  0% { opacity: 0; transform: translateY(30px); filter: blur(6px); }
+  60% { opacity: 0.7; transform: translateY(12px); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
 footer .footer-logo {
@@ -248,9 +247,7 @@ footer .footer-links a {
   transition: 0.2s;
 }
 
-footer .footer-links a:hover {
-  opacity: 0.7;
-}
+footer .footer-links a:hover { opacity: 0.7; }
 
 footer .footer-copy {
   margin-top: 1rem;
@@ -258,58 +255,17 @@ footer .footer-copy {
   color: var(--grigio);
 }
 
-  /* FOOTER MORBIDO DAL BASSO */
-footer {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: footerFade 1.4s ease-out forwards;
-  animation-delay: 2.2s; /* entra dopo tutto il resto */
-}
-
-@keyframes footerFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-  /* FOTO A RESPIRO */
-.chi-block {
-  opacity: 0;
-  transform: translateY(25px);
-  animation: fotoFade 1.2s ease-out forwards;
-}
-
-.chi-block:nth-of-type(1) { animation-delay: 0.4s; }
-.chi-block:nth-of-type(2) { animation-delay: 0.7s; }
-.chi-block:nth-of-type(3) { animation-delay: 1.0s; }
-.chi-block:nth-of-type(4) { animation-delay: 1.3s; }
-.chi-block:nth-of-type(5) { animation-delay: 1.6s; }
-
-@keyframes fotoFade {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- MENU IN ALTO -->
+<!-- MENU -->
 <header class="header-bar fade-in-section">
   <img src="nome.png" alt="La Gaia Custode" class="logo">
-
   <nav>
     <a href="index.html">Home</a>
-    <a href="chi-sono.html">Chi sono</a>
+    <a href="chi-sono.html" class="active">Chi sono</a>
     <a href="servizi.html">Servizi</a>
     <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
     <a href="#contatti">Contatti</a>
@@ -324,50 +280,36 @@ footer {
 <!-- TITOLO -->
 <h1 class="page-title fade-in-section">Chi sono</h1>
 
-<!-- FOTO 1: chisono.jpg (ovale) -->
+<!-- BLOCCHI -->
 <section class="chi-block fade-in-section">
   <img src="chisono.jpg" class="chi-img oval" alt="">
   <p>Mi chiamo Gaia e vi voglio raccontare come sono diventata un'Operatrice Materno Infantile.</p>
 </section>
 
-<!-- FOTO 2: chisono1.jpg -->
 <section class="chi-block fade-in-section">
   <img src="chisono1.jpg" class="chi-img" alt="">
-  <p>La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco. 
-    Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero. 
-    Da lì è nato il desiderio di formarmi per poter offrire ad altre famiglie il sostegno che avrei voluto ricevere.</p>
+  <p>La mia strada come doula è iniziata nel 2018...</p>
 </section>
 
-<!-- FOTO 3: chisono2.jpg (ovale) -->
 <section class="chi-block fade-in-section">
   <img src="chisono2.jpg" class="chi-img oval" alt="">
-  <p>Ho iniziato come Peer Supporter per l'allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere: 
-    sono diventata Custode della Nascita®, Trainer Olistica Materno Infantile®, Custode del Portare Junior® e 
-    Operatrice di Massaggio Infantile. 
-    Negli anni ho approfondito anche il babywearing, l'allattamento e il sonno infantile, con percorsi MaBS e Mamme Con‑Tatto®.</p>
+  <p>Ho iniziato come Peer Supporter...</p>
 </section>
 
-<!-- FOTO 4: chisono4.jpg -->
 <section class="chi-block fade-in-section">
   <img src="chisono4.jpg" class="chi-img" alt="">
-  <p>Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino: niente giudizi, niente pressioni. 
-    Solo presenza, ascolto e strumenti pratici per affrontare insieme i momenti più delicati.</p>
+  <p>Oggi accompagno le famiglie...</p>
 </section>
 
-  <!-- FOTO 5: chisono3.jpg (ovale) -->
 <section class="chi-block fade-in-section">
   <img src="chisono2.jpg" class="chi-img oval" alt="">
-  <p>Da qualche anno collaboro con La Dea Lattea, una realtà nata dalla mente di Donne e Uomini che credono 
-    che la divulgazione sia importante e ha scelto di accompagnare le donne e le famiglie nei momenti più delicati della loro vita 
-    e di formare figure che facciano lo stesso. 
-    Nel 2025 La Dea Lattea è finalmente diventata una A.P.S. di cui sono onorata di essere la presidente.</p>
+  <p>Da qualche anno collaboro con La Dea Lattea...</p>
 </section>
-  
-<!-- GALLERIA SCORREVOLE -->
+
+<!-- GALLERIA -->
 <h2 class="gallery-title fade-in-section">I Miei Attestati</h2>
 
 <div class="attestati-wrapper fade-in-section">
-
   <button class="arrow arrow-left" onclick="scrollLeft()">‹</button>
   <button class="arrow arrow-right" onclick="scrollRight()">›</button>
 
@@ -392,27 +334,26 @@ function scrollLeft() {
 function scrollRight() {
   document.getElementById('slider').scrollBy({ left: 300, behavior: 'smooth' });
 }
+
+const imgs = document.querySelectorAll('.attestati-slider img');
+function checkVisibility() {
+  imgs.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.left < window.innerWidth - 50) {
+      img.classList.add('visible');
+    }
+  });
+}
+document.getElementById('slider').addEventListener('scroll', checkVisibility);
+window.addEventListener('load', checkVisibility);
 </script>
 
 <!-- FOOTER -->
 <footer class="fade-in-section">
-
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
   <a href="mailto:gaiav.moimas@gmail.com"
-     style="
-       display:inline-flex;
-       align-items:center;
-       justify-content:center;
-       gap:6px;
-       margin-top:1rem;
-       padding:7px 16px;
-       background:#6d7f5f;
-       color:white;
-       border-radius:22px;
-       font-size:0.85rem;
-       text-decoration:none;
-     ">
+     style="display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:1rem; padding:7px 16px; background:#6d7f5f; color:white; border-radius:22px; font-size:0.85rem; text-decoration:none;">
      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
           alt="Email"
           style="width:16px; height:16px; filter:invert(1);">
@@ -428,23 +369,7 @@ function scrollRight() {
   <div class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem;">
     © 2026 La Gaia Custode
   </div>
-
 </footer>
-<script>
-const imgs = document.querySelectorAll('.attestati-slider img');
-
-function checkVisibility() {
-  imgs.forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.left < window.innerWidth - 50) {
-      img.classList.add('visible');
-    }
-  });
-}
-
-document.getElementById('slider').addEventListener('scroll', checkVisibility);
-window.addEventListener('load', checkVisibility);
-</script>
 
 </body>
 </html>
