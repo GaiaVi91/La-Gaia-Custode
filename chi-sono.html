@@ -113,19 +113,23 @@ h1, h2 {
   border-radius: 50%;
 }
 
-/* GALLERIA SCORREVOLE */
+/* GALLERIA SCORREVOLE CON FRECCE */
 .gallery-title {
   text-align: center;
   margin-top: 3rem;
 }
 
-.attestati-slider {
+.attestati-wrapper {
+  position: relative;
   max-width: 900px;
   margin: 2rem auto 4rem auto;
+}
+
+.attestati-slider {
   overflow-x: auto;
   white-space: nowrap;
-  padding-bottom: 1rem;
   scroll-behavior: smooth;
+  padding-bottom: 1rem;
 }
 
 .attestati-slider img {
@@ -141,6 +145,34 @@ h1, h2 {
 
 .attestati-slider img:hover {
   transform: scale(1.05);
+}
+
+/* FRECCE */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--salvia);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow-left {
+  left: -10px;
+}
+
+.arrow-right {
+  right: -10px;
 }
 
 /* FOOTER */
@@ -215,42 +247,51 @@ footer .footer-copy {
 <!-- FOTO 2: chisono1.jpg -->
 <section class="chi-block fade-in-section">
   <img src="chisono1.jpg" class="chi-img" alt="">
-  <p>La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco. Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero.</p>
+  <p>La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco.</p>
 </section>
 
 <!-- FOTO 3: chisono2.jpg (ovale) -->
 <section class="chi-block fade-in-section">
   <img src="chisono2.jpg" class="chi-img oval" alt="">
-  <p>Ho iniziato come Peer Supporter per l'allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere in diverse formazioni.</p>
+  <p>Ho iniziato come Peer Supporter per l'allattamento e ho continuato a crescere in diverse formazioni.</p>
 </section>
 
-<!-- FOTO 4: chisono2.jpg -->
+<!-- FOTO 4: chisono4.jpg -->
 <section class="chi-block fade-in-section">
-  <img src="chisono2.jpg" class="chi-img" alt="">
-  <p>Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino: niente giudizi, niente pressioni.</p>
-</section>
-
-<!-- FOTO 5: chisono4.jpg (ovale) -->
-<section class="chi-block fade-in-section">
-  <img src="chisono4.jpg" class="chi-img oval" alt="">
+  <img src="chisono4.jpg" class="chi-img" alt="">
   <p>Collaboro con La Dea Lattea, diventata A.P.S. nel 2025, di cui sono onorata di essere presidente.</p>
 </section>
 
 <!-- GALLERIA SCORREVOLE -->
 <h2 class="gallery-title fade-in-section">I Miei Attestati</h2>
 
-<div class="attestati-slider fade-in-section">
-  <img src="mabs.jpg" alt="">
-  <img src="tomi.jpg" alt="">
-  <img src="peerldl.jpg" alt="">
-  <img src="allattamentoiss.jpg" alt="">
-  <img src="1000gg.jpg" alt="">
-  <img src="custode.jpg" alt="">
-  <img src="peer19.jpg" alt="">
-  <img src="cpj.jpg" alt="">
-  <img src="mipa.jpg" alt="">
-  <img src="npl.jpg" alt="">
+<div class="attestati-wrapper fade-in-section">
+
+  <button class="arrow arrow-left" onclick="scrollLeft()">‹</button>
+  <button class="arrow arrow-right" onclick="scrollRight()">›</button>
+
+  <div class="attestati-slider" id="slider">
+    <img src="mabs.jpg" alt="">
+    <img src="tomi.jpg" alt="">
+    <img src="peerldl.jpg" alt="">
+    <img src="allattamentoiss.jpg" alt="">
+    <img src="1000gg.jpg" alt="">
+    <img src="custode.jpg" alt="">
+    <img src="peer19.jpg" alt="">
+    <img src="cpj.jpg" alt="">
+    <img src="mipa.jpg" alt="">
+    <img src="npl.jpg" alt="">
+  </div>
 </div>
+
+<script>
+function scrollLeft() {
+  document.getElementById('slider').scrollBy({ left: -300, behavior: 'smooth' });
+}
+function scrollRight() {
+  document.getElementById('slider').scrollBy({ left: 300, behavior: 'smooth' });
+}
+</script>
 
 <!-- FOOTER -->
 <footer class="fade-in-section">
