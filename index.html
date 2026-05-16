@@ -359,39 +359,47 @@
     }
 
     /* FOOTER */
-    footer {
-      background: var(--sabbia);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      color: var(--salvia);
-      font-size: 0.9rem;
-      margin-top: 3rem;
-      border-top: 1px solid rgba(0,0,0,0.05);
-    }
+  /* FOOTER */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
 
-    footer .footer-logo {
-      height: 60px;
-      opacity: 0.9;
-      margin-bottom: 1rem;
-    }
+  /* BLOCCA QUALSIASI FLEX EREDITATO */
+  display: block !important;
+}
 
-    footer .footer-links a {
-      color: var(--salvia);
-      text-decoration: none;
-      font-weight: 600;
-      margin: 0 10px;
-      transition: 0.2s;
-    }
+footer .footer-logo {
+  height: 60px;
+  opacity: 0.9;
 
-    footer .footer-links a:hover {
-      opacity: 0.7;
-    }
+  /* CENTRATURA PERFETTA */
+  display: block;
+  margin: 0 auto 1rem auto;
+}
 
-    footer .footer-copy {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--grigio);
-    }
+footer .footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+
+footer .footer-links a:hover {
+  opacity: 0.7;
+}
+
+footer .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--grigio);
+}
+
 
     /* WHATSAPP BUTTON RETTANGOLARE */
     .whatsapp-fixed {
@@ -621,7 +629,7 @@
        align-items:center;
        justify-content:center;
        gap:6px;
-       margin-top:0.8rem;
+       margin-top:1rem;
        padding:7px 16px;
        background:#6d7f5f;
        color:white;
@@ -648,6 +656,7 @@
   </div>
 
 </footer>
+
 
 
 
