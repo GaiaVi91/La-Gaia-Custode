@@ -1,163 +1,253 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servizi – La Gaia Custode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi – La Gaia Custode</title>
+    <link rel="stylesheet" href="style.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* PALETTE */
+        :root {
+            --sabbia: #f3eee7;
+            --salvia: #7a8f7a;
+            --testo: #4a4a4a;
+            --bianco: #ffffff;
+        }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: #faf8f4;
-      color: #333;
-      line-height: 1.7;
-    }
+        body {
+            background-color: var(--sabbia);
+            color: var(--testo);
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    nav {
-      background: #faf8f4;
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        /* BANNER COME PAGINA CHI SONO */
+        .banner {
+            background: url('img/banner.jpg') center/cover no-repeat;
+            padding: 120px 20px;
+            text-align: center;
+            color: var(--bianco);
+        }
 
-    nav a {
-      margin: 0 .7rem;
-      text-decoration: none;
-      color: #6d7f5f;
-      font-weight: 600;
-      padding: .4rem .8rem;
-      border-radius: 20px;
-      transition: .2s;
-    }
+        .banner h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 3rem;
+            margin: 0;
+        }
 
-    nav a:hover {
-      background: #d9a48f;
-      color: white;
-    }
+        /* SOTTOTITOLO */
+        .sottotitolo {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--salvia);
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
 
-    .banner img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
+        /* SEZIONI SERVIZI */
+        .servizio {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 60px auto;
+            max-width: 1100px;
+            padding: 20px;
+            background: var(--bianco);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
+        .servizio:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
 
-    h1 {
-      color: #6d7f5f;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
+        .servizio img {
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+        .servizio h2 {
+            font-family: "Playfair Display", serif;
+            color: var(--salvia);
+            margin-top: 0;
+        }
 
-    .card {
-      background: white;
-      padding: 1.8rem;
-      border-radius: 20px;
-      border: 1px solid #eee;
-      transition: .3s ease;
-    }
+        .servizio a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--salvia);
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid var(--salvia);
+            transition: color .3s ease;
+        }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
+        .servizio a:hover {
+            color: #5f735f;
+        }
 
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: .6rem;
-      font-size: 28px;
-    }
+        /* TESTO FINALE */
+        .nota-finale {
+            max-width: 900px;
+            margin: 80px auto 40px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--testo);
+        }
 
-    h3 {
-      color: #6d7f5f;
-      margin-bottom: .4rem;
-    }
-  </style>
+        /* FORM CONTATTO */
+        .contatto {
+            max-width: 700px;
+            margin: 40px auto 80px;
+            background: var(--bianco);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .contatto label {
+            font-weight: bold;
+            color: var(--salvia);
+        }
+
+        .contatto input, .contatto textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .contatto button {
+            background: var(--salvia);
+            color: var(--bianco);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background .3s ease;
+        }
+
+        .contatto button:hover {
+            background: #5f735f;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--salvia);
+            color: var(--bianco);
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="chi-sono.html">Chi sono</a>
-    <a href="servizi.html">Servizi</a>
-  </nav>
-
-  <section class="banner">
-    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200" alt="Banner materno infantile">
-  </section>
-
-  <main class="container">
-    <h1>Servizi</h1>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-icon" style="background:#e8efe6; color:#6d7f5f;">
-          <i class="fas fa-pregnant"></i>
-        </div>
-        <h3>Accompagnamento alla Nascita e nel Post Parto</h3>
-        <p>Presenza calma, ascolto e sostegno pratico durante gravidanza, parto e prime settimane.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon" style="background:#f3e3dd; color:#d9a48f;">
-          <i class="fas fa-baby"></i>
-        </div>
-        <h3>Allattamento</h3>
-        <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon" style="background:#e8efe6; color:#6d7f5f;">
-          <i class="fas fa-child"></i>
-        </div>
-        <h3>Babywearing</h3>
-        <p>Scelta del supporto, legature sicure e consigli pratici per portare con serenità.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon" style="background:#f3e3dd; color:#d9a48f;">
-          <i class="fas fa-bed"></i>
-        </div>
-        <h3>Sonno Infantile e Familiare</h3>
-        <p>Accompagnamento dolce, senza metodi rigidi. Routine serene e soluzioni reali.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon" style="background:#e8efe6; color:#6d7f5f;">
-          <i class="fas fa-hand-holding-heart"></i>
-        </div>
-        <h3>Massaggio Infantile</h3>
-        <p>Connessione, contatto e benessere attraverso gesti semplici e delicati.</p>
-      </div>
-
+    <!-- BANNER COME CHI SONO -->
+    <div class="banner">
+        <h1>Servizi</h1>
     </div>
-  </main>
+
+    <p class="sottotitolo">Custodire, accogliere, accompagnare: un sostegno per ogni fase del vostro percorso.</p>
+
+    <!-- SERVIZIO 1 -->
+    <div class="servizio">
+        <img src="img/unannocon.jpg" alt="Un anno con la doula">
+        <div>
+            <h2>Un Anno con la Doula</h2>
+            <p>Servizio completo per il primo anno di vita con email mensili, consulenze e reperibilità telefonica. “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.</p>
+            <a href="un-anno-con-la-doula.html">Visualizza il servizio completo</a>
+        </div>
+    </div>
+
+    <!-- SERVIZIO 2 -->
+    <div class="servizio">
+        <img src="img/postparto.jpg" alt="Accompagnamento alla nascita">
+        <div>
+            <h2>Accompagnamento alla Nascita e nel Post Parto</h2>
+            <p>Incontri singoli o percorsi completi a sostegno pratico, emotivo e di presenza e ascolto durante la gravidanza, il parto e le prime settimane.</p>
+        </div>
+    </div>
+
+    <!-- SERVIZIO 3 -->
+    <div class="servizio">
+        <img src="img/allattamento.jpg" alt="Allattamento">
+        <div>
+            <h2>Allattamento</h2>
+            <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche in ambito fisiologico.</p>
+        </div>
+    </div>
+
+    <!-- SERVIZIO 4 -->
+    <div class="servizio">
+        <img src="img/babywearing.jpg" alt="Babywearing">
+        <div>
+            <h2>Babywearing</h2>
+            <p>Scelta del supporto, legature sicure e consigli pratici per portare con serenità.</p>
+        </div>
+    </div>
+
+    <!-- SERVIZIO 5 -->
+    <div class="servizio">
+        <img src="img/sleep.jpg" alt="Sonno infantile">
+        <div>
+            <h2>Sonno Infantile e Familiare</h2>
+            <p>Accompagnamento dolce, senza metodi rigidi. Routine serene e soluzioni reali.</p>
+        </div>
+    </div>
+
+    <!-- SERVIZIO 6 -->
+    <div class="servizio">
+        <img src="img/massaggioinfantile.jpg" alt="Massaggio infantile">
+        <div>
+            <h2>Massaggio Infantile</h2>
+            <p>Connessione, contatto e benessere attraverso gesti semplici e delicati.</p>
+        </div>
+    </div>
+
+    <!-- SERVIZIO 7 -->
+    <div class="servizio">
+        <img src="img/crescita.jpg" alt="Accompagnamento ai 1000 giorni">
+        <div>
+            <h2>Accompagnamento ai 1000 Giorni</h2>
+            <p>Affiancamento alla crescita del bambino, alla scoperta delle fasi, del gioco, dello svezzamento e molto altro.</p>
+        </div>
+    </div>
+
+    <!-- NOTA FINALE -->
+    <p class="nota-finale">
+        Quelli che trovi qui sono i percorsi principali, ma il mio lavoro va oltre una semplice lista di servizi: nasce dall’incontro, dall’ascolto e dalle necessità di ogni famiglia. Scrivimi per ogni tuo bisogno.
+    </p>
+
+    <!-- FORM CONTATTO -->
+    <div class="contatto">
+        <form action="https://formsubmit.co/gaiav.moimas@gmail.com" method="POST">
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Messaggio</label>
+            <textarea name="message" rows="6" required></textarea>
+
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 La Gaia Custode – Tutti i diritti riservati
+    </footer>
 
 </body>
 </html>
