@@ -103,44 +103,69 @@
         }
 
         /* FORM CONTATTO */
-        .contatto {
-            max-width: 700px;
-            margin: 40px auto 80px;
-            background: var(--bianco);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
+      .contatto {
+    max-width: 420px;
+    margin: 80px auto 100px;
+    background: var(--bianco);
+    padding: 35px 40px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+    animation: fadeIn .6s ease;
+}
 
-        .contatto label {
-            font-weight: bold;
-            color: var(--salvia);
-        }
+/* Icona in alto */
+.contatto::before {
+    content: "💌";
+    font-size: 2.2rem;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bianco);
+    padding: 8px 14px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.05);
+}
 
-        .contatto input, .contatto textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .contatto button {
-            background: var(--salvia);
-            color: var(--bianco);
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background .3s ease;
-        }
+.contatto label {
+    font-weight: bold;
+    color: var(--salvia);
+}
 
-        .contatto button:hover {
-            background: #5f735f;
-        }
+.contatto input, .contatto textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contatto button {
+    background: var(--salvia);
+    color: var(--bianco);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background .3s ease;
+}
+
+.contatto button:hover {
+    background: #5f735f;
+}
+
 
         /* FOOTER */
         footer {
@@ -164,7 +189,7 @@
 
     <!-- SERVIZIO 1 -->
     <div class="servizio">
-        <img src="img/unannocon.jpg" alt="Un anno con la doula">
+        <img src="unannocon.jpg" alt="Un anno con la doula">
         <div>
             <h2>Un Anno con la Doula</h2>
             <p>Servizio completo per il primo anno di vita con email mensili, consulenze e reperibilità telefonica. “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.</p>
@@ -174,7 +199,7 @@
 
     <!-- SERVIZIO 2 -->
     <div class="servizio">
-        <img src="img/postparto.jpg" alt="Accompagnamento alla nascita">
+        <img src="postparto.jpg" alt="Accompagnamento alla nascita">
         <div>
             <h2>Accompagnamento alla Nascita e nel Post Parto</h2>
             <p>Incontri singoli o percorsi completi a sostegno pratico, emotivo e di presenza e ascolto durante la gravidanza, il parto e le prime settimane.</p>
@@ -183,7 +208,7 @@
 
     <!-- SERVIZIO 3 -->
     <div class="servizio">
-        <img src="img/allattamento.jpg" alt="Allattamento">
+        <img src="allattamento.jpg" alt="Allattamento">
         <div>
             <h2>Allattamento</h2>
             <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche in ambito fisiologico.</p>
@@ -192,7 +217,7 @@
 
     <!-- SERVIZIO 4 -->
     <div class="servizio">
-        <img src="img/babywearing.jpg" alt="Babywearing">
+        <img src="babywearing.jpg" alt="Babywearing">
         <div>
             <h2>Babywearing</h2>
             <p>Scelta del supporto, legature sicure e consigli pratici per portare con serenità.</p>
@@ -201,7 +226,7 @@
 
     <!-- SERVIZIO 5 -->
     <div class="servizio">
-        <img src="img/sleep.jpg" alt="Sonno infantile">
+        <img src="sleep.jpg" alt="Sonno infantile">
         <div>
             <h2>Sonno Infantile e Familiare</h2>
             <p>Accompagnamento dolce, senza metodi rigidi. Routine serene e soluzioni reali.</p>
@@ -210,7 +235,7 @@
 
     <!-- SERVIZIO 6 -->
     <div class="servizio">
-        <img src="img/massaggioinfantile.jpg" alt="Massaggio infantile">
+        <img src="massaggioinfantile.jpg" alt="Massaggio infantile">
         <div>
             <h2>Massaggio Infantile</h2>
             <p>Connessione, contatto e benessere attraverso gesti semplici e delicati.</p>
@@ -219,7 +244,7 @@
 
     <!-- SERVIZIO 7 -->
     <div class="servizio">
-        <img src="img/crescita.jpg" alt="Accompagnamento ai 1000 giorni">
+        <img src="crescita.jpg" alt="Accompagnamento ai 1000 giorni">
         <div>
             <h2>Accompagnamento ai 1000 Giorni</h2>
             <p>Affiancamento alla crescita del bambino, alla scoperta delle fasi, del gioco, dello svezzamento e molto altro.</p>
