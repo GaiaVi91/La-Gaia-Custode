@@ -1,57 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi sono – La Gaia Custode</title>
+
+<style>
+
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-weight: 600;
+  color: var(--salvia);
+}
+
+/* ANIMAZIONE FADE-IN */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BANNER SOTTILE */
+.hero-small img {
+  width: 100%;
+  max-width: 900px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 2rem auto;
+}
+
+/* TITOLO PAGINA */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* BLOCCHI CHI SONO */
+.chi-block {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.chi-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* GALLERIA */
+.gallery-title {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.chi-gallery {
+  max-width: 900px;
+  margin: 1.5rem auto 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.chi-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  display: block !important;
+}
+
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+footer .footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+
+footer .footer-links a:hover {
+  opacity: 0.7;
+}
+
+footer .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--grigio);
+}
+
+</style>
+</head>
+
+<body>
+
 <!-- BANNER SOTTILE -->
-<div class="chi-banner">
+<section class="hero-small fade-in-section">
   <img src="banner.png" alt="Banner La Gaia Custode">
-</div>
-
-<!-- SEZIONE 1 -->
-<section class="chi-section">
-  <div class="chi-text">
-    <h2>Benvenuti</h2>
-    <p>Mi chiamo Gaia e vi voglio raccontare come sono diventata un'Operatrice Materno Infantile.</p>
-  </div>
-  <img src="chisono1.jpg" class="chi-img" alt="Gaia">
 </section>
 
-<!-- SEZIONE 2 -->
-<section class="chi-section reverse">
-  <div class="chi-text">
-    <h2>Come tutto è iniziato</h2>
-    <p>La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco. Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero. Da lì è nato il desiderio di formarmi per poter offrire ad altre famiglie il sostegno che avrei voluto ricevere.</p>
-  </div>
-  <img src="chisono2.jpg" class="chi-img" alt="Gaia doula">
+<!-- TITOLO PAGINA -->
+<h1 class="page-title fade-in-section">Chi sono</h1>
+
+<!-- BLOCCO 1 -->
+<section class="chi-block fade-in-section">
+  <img src="chisono1.jpg" class="chi-img" alt="">
+  <p>Mi chiamo Gaia e vi voglio raccontare come sono diventata un'Operatrice Materno Infantile.</p>
 </section>
 
-<!-- SEZIONE 3 -->
-<section class="chi-section">
-  <div class="chi-text">
-    <h2>Il mio percorso</h2>
-    <p>Ho iniziato come Peer Supporter per l'allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere: sono diventata Custode della Nascita®, Trainer Olistica Materno Infantile®, Custode del Portare Junior® e Operatrice di Massaggio Infantile. Negli anni ho approfondito anche il babywearing, l'allattamento e il sonno infantile, con percorsi MaBS e Mamme Con‑Tatto®.</p>
-  </div>
-  <img src="chisono1.jpg" class="chi-img" alt="Percorso formativo">
+<!-- BLOCCO 2 -->
+<section class="chi-block fade-in-section">
+  <img src="chisono2.jpg" class="chi-img" alt="">
+  <p>La mia strada come doula è iniziata nel 2018, dopo la nascita del mio primo figlio, Francesco. Quel periodo non è stato semplice e mi ha fatto capire quanto sia importante avere accanto qualcuno che ascolta davvero. Da lì è nato il desiderio di formarmi per poter offrire ad altre famiglie il sostegno che avrei voluto ricevere.</p>
 </section>
 
-<!-- SEZIONE 4 -->
-<section class="chi-section reverse">
-  <div class="chi-text">
-    <h2>Il mio approccio</h2>
-    <p>Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino: niente giudizi, niente pressioni. Solo presenza, ascolto e strumenti pratici per affrontare insieme i momenti più delicati.</p>
-  </div>
-  <img src="chisono2.jpg" class="chi-img" alt="Approccio">
+<!-- BLOCCO 3 -->
+<section class="chi-block fade-in-section">
+  <img src="chisono1.jpg" class="chi-img" alt="">
+  <p>Ho iniziato come Peer Supporter per l'allattamento con Custodi del Femminino® e, passo dopo passo, ho continuato a crescere: sono diventata Custode della Nascita®, Trainer Olistica Materno Infantile®, Custode del Portare Junior® e Operatrice di Massaggio Infantile. Negli anni ho approfondito anche il babywearing, l'allattamento e il sonno infantile, con percorsi MaBS e Mamme Con‑Tatto®.</p>
 </section>
 
-<!-- SEZIONE 5 -->
-<section class="chi-section">
-  <div class="chi-text">
-    <h2>La Dea Lattea</h2>
-    <p>Da qualche anno collaboro con La Dea Lattea, una realtà nata dalla mente di Donne e Uomini che credono che la divulgazione sia importante e ha scelto di accompagnare le donne e le famiglie nei momenti più delicati della loro vita e di formare figure che facciano lo stesso. Nel 2025 La Dea Lattea è finalmente diventata una A.P.S. di cui sono onorata di essere la presidente.</p>
-  </div>
-  <img src="chisono1.jpg" class="chi-img" alt="La Dea Lattea">
+<!-- BLOCCO 4 -->
+<section class="chi-block fade-in-section">
+  <img src="chisono2.jpg" class="chi-img" alt="">
+  <p>Oggi accompagno le famiglie con un approccio semplice, rispettoso e vicino: niente giudizi, niente pressioni. Solo presenza, ascolto e strumenti pratici per affrontare insieme i momenti più delicati.</p>
+</section>
+
+<!-- BLOCCO 5 -->
+<section class="chi-block fade-in-section">
+  <img src="chisono1.jpg" class="chi-img" alt="">
+  <p>Da qualche anno collaboro con La Dea Lattea, una realtà nata dalla mente di Donne e Uomini che credono che la divulgazione sia importante e ha scelto di accompagnare le donne e le famiglie nei momenti più delicati della loro vita e di formare figure che facciano lo stesso. Nel 2025 La Dea Lattea è finalmente diventata una A.P.S. di cui sono onorata di essere la presidente.</p>
 </section>
 
 <!-- GALLERIA -->
-<h2 class="gallery-title">Galleria</h2>
-
-<div class="chi-gallery">
+<h2 class="gallery-title fade-in-section">Galleria</h2>
+<div class="chi-gallery fade-in-section">
   <img src="mabs.jpg" alt="">
   <img src="tomi.jpg" alt="">
   <img src="peerldl.jpg" alt="">
@@ -64,7 +193,7 @@
   <img src="npl.jpg" alt="">
 </div>
 
-<!-- FOOTER IDENTICO ALL'INDEX -->
+<!-- FOOTER -->
 <footer class="fade-in-section">
 
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
@@ -100,3 +229,6 @@
   </div>
 
 </footer>
+
+</body>
+</html>
