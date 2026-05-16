@@ -5,12 +5,104 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servizi – La Gaia Custode</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
-/* STILI SPECIFICI DELLA PAGINA SERVIZI */
 
-/* Sottotitolo */
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-weight: 600;
+  color: var(--salvia);
+}
+
+/* FADE-IN BASE */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HEADER (identico a Chi sono) */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar .logo {
+  height: 55px;
+  display: block;
+}
+
+.header-bar nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--salvia);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.header-bar nav a:hover { opacity: 0.7; }
+
+/* BANNER (identico a Chi sono) */
+.hero-small img {
+  width: 100%;
+  max-width: 900px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 2rem auto;
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(8px);
+  animation: bannerFade 1.6s ease-out forwards;
+}
+
+@keyframes bannerFade {
+  0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
+  50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* TITOLO */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleFade 1.2s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes titleFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SOTTOTITOLO */
 .sottotitolo {
   text-align: center;
   font-size: 1.2rem;
@@ -23,7 +115,7 @@
   animation-delay: 1.4s;
 }
 
-/* Blocchi servizi */
+/* BLOCCHI SERVIZI */
 .servizio {
   max-width: 1100px;
   margin: 60px auto;
@@ -36,47 +128,90 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.10);
   opacity: 0;
   transform: translateY(25px);
-  animation: fadeIn 1s ease forwards;
+  animation: slideServizio 1s ease forwards;
 }
 
-.servizio:nth-of-type(1) { animation-delay: 0.4s; }
-.servizio:nth-of-type(2) { animation-delay: 0.6s; }
-.servizio:nth-of-type(3) { animation-delay: 0.8s; }
-.servizio:nth-of-type(4) { animation-delay: 1.0s; }
-.servizio:nth-of-type(5) { animation-delay: 1.2s; }
-.servizio:nth-of-type(6) { animation-delay: 1.4s; }
-.servizio:nth-of-type(7) { animation-delay: 1.6s; }
+@keyframes slideServizio {
+  to { opacity: 1; transform: translateY(0); }
+}
 
+.servizio:nth-of-type(1) { animation-delay: 0.30s; }
+.servizio:nth-of-type(2) { animation-delay: 0.50s; }
+.servizio:nth-of-type(3) { animation-delay: 0.70s; }
+.servizio:nth-of-type(4) { animation-delay: 0.90s; }
+.servizio:nth-of-type(5) { animation-delay: 1.10s; }
+.servizio:nth-of-type(6) { animation-delay: 1.30s; }
+.servizio:nth-of-type(7) { animation-delay: 1.50s; }
+
+/* IMMAGINI SERVIZI */
 .servizio img {
   width: 320px;
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeImg 0.9s ease forwards;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+@keyframes fadeImg {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.servizio:nth-of-type(1) img { animation-delay: 0.3s; }
+.servizio:nth-of-type(2) img { animation-delay: 0.45s; }
+.servizio:nth-of-type(3) img { animation-delay: 0.6s; }
+.servizio:nth-of-type(4) img { animation-delay: 0.75s; }
+.servizio:nth-of-type(5) img { animation-delay: 0.9s; }
+.servizio:nth-of-type(6) img { animation-delay: 1.05s; }
+.servizio:nth-of-type(7) img { animation-delay: 1.2s; }
+
+.servizio img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+/* TESTI SERVIZI */
+.servizio div {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeText 0.9s ease forwards;
+}
+
+@keyframes fadeText {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.servizio:nth-of-type(1) div { animation-delay: 0.45s; }
+.servizio:nth-of-type(2) div { animation-delay: 0.65s; }
+.servizio:nth-of-type(3) div { animation-delay: 0.85s; }
+.servizio:nth-of-type(4) div { animation-delay: 1.05s; }
+.servizio:nth-of-type(5) div { animation-delay: 1.25s; }
+.servizio:nth-of-type(6) div { animation-delay: 1.45s; }
+.servizio:nth-of-type(7) div { animation-delay: 1.65s; }
+
+/* TITOLI H2 */
 .servizio h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.6rem;
-  color: var(--salvia);
-  margin-top: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeTitle 0.9s ease forwards;
 }
 
-.servizio a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--salvia);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid var(--salvia);
-  transition: 0.2s;
+@keyframes fadeTitle {
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.servizio a:hover {
-  opacity: 0.7;
-}
+.servizio:nth-of-type(1) h2 { animation-delay: 0.40s; }
+.servizio:nth-of-type(2) h2 { animation-delay: 0.60s; }
+.servizio:nth-of-type(3) h2 { animation-delay: 0.80s; }
+.servizio:nth-of-type(4) h2 { animation-delay: 1.00s; }
+.servizio:nth-of-type(5) h2 { animation-delay: 1.20s; }
+.servizio:nth-of-type(6) h2 { animation-delay: 1.40s; }
+.servizio:nth-of-type(7) h2 { animation-delay: 1.60s; }
 
-/* Nota finale */
+/* NOTA FINALE */
 .nota-finale {
   max-width: 800px;
   margin: 60px auto;
@@ -84,12 +219,19 @@
   font-size: 1.1rem;
   color: #444;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 1.8s;
+  transform: translateY(25px);
+  filter: blur(6px);
+  animation: fadeNota 1.4s ease-out forwards;
+  animation-delay: 2.2s;
 }
 
-/* Modulo contatto stile finestra */
+@keyframes fadeNota {
+  0% { opacity: 0; transform: translateY(25px); filter: blur(6px); }
+  60% { opacity: 0.7; transform: translateY(10px); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* MODULO CONTATTI */
 .contatto {
   max-width: 420px;
   margin: 80px auto 100px;
@@ -99,8 +241,17 @@
   box-shadow: 0 10px 28px rgba(0,0,0,0.12);
   border: 1px solid rgba(0,0,0,0.06);
   position: relative;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 2s;
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(4px);
+  animation: fadeContatto 1.3s ease-out forwards;
+  animation-delay: 2.6s;
+}
+
+@keyframes fadeContatto {
+  0% { opacity: 0; transform: translateY(25px); filter: blur(4px); }
+  60% { opacity: 0.7; transform: translateY(10px); filter: blur(1px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
 .contatto::before {
@@ -117,255 +268,59 @@
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-.contatto label {
-  font-weight: bold;
+/* FOOTER (identico a Chi sono) */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
   color: var(--salvia);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(6px);
+  animation: fadeFooter 1.4s ease-out forwards;
+  animation-delay: 3.1s;
 }
 
-.contatto input,
-.contatto textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+@keyframes fadeFooter {
+  0% { opacity: 0; transform: translateY(30px); filter: blur(6px); }
+  60% { opacity: 0.7; transform: translateY(12px); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
-.contatto button {
-  background: var(--salvia);
-  color: var(--bianco);
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  width: 100%;
-  cursor: pointer;
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+footer .footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
   transition: 0.2s;
 }
 
-.contatto button:hover {
-  background: #5a6d52;
-}
-    /* ANIMAZIONE 3: Fade-in all’ingresso */
-.servizio img {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeImg 0.9s ease forwards;
-}
+footer .footer-links a:hover { opacity: 0.7; }
 
-@keyframes fadeImg {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ritardo progressivo per ogni immagine */
-.servizio:nth-of-type(1) img { animation-delay: 0.3s; }
-.servizio:nth-of-type(2) img { animation-delay: 0.45s; }
-.servizio:nth-of-type(3) img { animation-delay: 0.6s; }
-.servizio:nth-of-type(4) img { animation-delay: 0.75s; }
-.servizio:nth-of-type(5) img { animation-delay: 0.9s; }
-.servizio:nth-of-type(6) img { animation-delay: 1.05s; }
-.servizio:nth-of-type(7) img { animation-delay: 1.2s; }
-
-/* ANIMAZIONE 1: Sollevamento al passaggio del mouse */
-.servizio img {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.servizio img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-}
-
-    /* FADE-IN TESTI SERVIZI */
-.servizio div {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: fadeText 0.9s ease forwards;
-}
-
-@keyframes fadeText {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ritardi progressivi per i testi */
-.servizio:nth-of-type(1) div { animation-delay: 0.45s; }
-.servizio:nth-of-type(2) div { animation-delay: 0.65s; }
-.servizio:nth-of-type(3) div { animation-delay: 0.85s; }
-.servizio:nth-of-type(4) div { animation-delay: 1.05s; }
-.servizio:nth-of-type(5) div { animation-delay: 1.25s; }
-.servizio:nth-of-type(6) div { animation-delay: 1.45s; }
-.servizio:nth-of-type(7) div { animation-delay: 1.65s; }
-
-    /* FADE-IN TITOLI H2 */
-.servizio h2 {
-  opacity: 0;
-  transform: translateY(8px);
-  animation: fadeTitle 0.9s ease forwards;
-}
-
-@keyframes fadeTitle {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ritardi progressivi per i titoli */
-.servizio:nth-of-type(1) h2 { animation-delay: 0.40s; }
-.servizio:nth-of-type(2) h2 { animation-delay: 0.60s; }
-.servizio:nth-of-type(3) h2 { animation-delay: 0.80s; }
-.servizio:nth-of-type(4) h2 { animation-delay: 1.00s; }
-.servizio:nth-of-type(5) h2 { animation-delay: 1.20s; }
-.servizio:nth-of-type(6) h2 { animation-delay: 1.40s; }
-.servizio:nth-of-type(7) h2 { animation-delay: 1.60s; }
-
-    /* SLIDE MORBIDO PER I BLOCCHI SERVIZIO */
-.servizio {
-  opacity: 0;
-  transform: translateY(25px);
-  animation: slideServizio 1s ease forwards;
-}
-
-@keyframes slideServizio {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ritardi progressivi per i blocchi */
-.servizio:nth-of-type(1) { animation-delay: 0.30s; }
-.servizio:nth-of-type(2) { animation-delay: 0.50s; }
-.servizio:nth-of-type(3) { animation-delay: 0.70s; }
-.servizio:nth-of-type(4) { animation-delay: 0.90s; }
-.servizio:nth-of-type(5) { animation-delay: 1.10s; }
-.servizio:nth-of-type(6) { animation-delay: 1.30s; }
-.servizio:nth-of-type(7) { animation-delay: 1.50s; }
-
-    /* FADE-IN SPECIALE PER LA NOTA FINALE */
-.nota-finale {
-  opacity: 0;
-  transform: translateY(25px);
-  filter: blur(6px);
-  animation: fadeNota 1.4s ease-out forwards;
-  animation-delay: 2.2s; /* entra dopo tutto */
-}
-
-@keyframes fadeNota {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 0.7;
-    transform: translateY(10px);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-    /* FADE-IN MODULO CONTATTI */
-.contatto {
-  opacity: 0;
-  transform: translateY(25px);
-  filter: blur(4px);
-  animation: fadeContatto 1.3s ease-out forwards;
-  animation-delay: 2.6s; /* entra dopo la nota finale */
-}
-
-@keyframes fadeContatto {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-    filter: blur(4px);
-  }
-  60% {
-    opacity: 0.7;
-    transform: translateY(10px);
-    filter: blur(1px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-    /* FADE-IN VELLUTATO FOOTER */
-footer {
-  opacity: 0;
-  transform: translateY(30px);
-  filter: blur(6px);
-  animation: fadeFooter 1.4s ease-out forwards;
-  animation-delay: 3.1s; /* entra per ultimo */
-}
-
-@keyframes fadeFooter {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 0.7;
-    transform: translateY(12px);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-    /* FADE-IN VELLUTATO FOOTER */
-footer {
-  opacity: 0;
-  transform: translateY(30px);
-  filter: blur(6px);
-  animation: fadeFooter 1.4s ease-out forwards;
-  animation-delay: 3.1s; /* entra per ultimo */
-}
-
-@keyframes fadeFooter {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 0.7;
-    transform: translateY(12px);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+footer .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--grigio);
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- MENU IDENTICO A “CHI SONO” -->
 <header class="header-bar fade-in-section">
   <img src="nome.png" alt="La Gaia Custode" class="logo">
-
   <nav>
     <a href="index.html">Home</a>
     <a href="chi-sono.html">Chi sono</a>
@@ -375,12 +330,10 @@ footer {
   </nav>
 </header>
 
-<!-- BANNER IDENTICO A “CHI SONO” -->
 <section class="hero-small fade-in-section">
   <img src="BannerGaia.png" alt="Banner La Gaia Custode">
 </section>
 
-<!-- TITOLO -->
 <h1 class="page-title fade-in-section">Servizi</h1>
 
 <p class="sottotitolo">Custodire, accogliere, accompagnare: un sostegno per ogni fase del vostro percorso.</p>
@@ -390,7 +343,7 @@ footer {
   <img src="unannocon.jpg">
   <div>
     <h2>Un Anno con la Doula</h2>
-    <p>Servizio completo per il primo anno di vita con email mensili, consulenze e reperibilità telefonica. “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.</p>
+    <p>Servizio completo per il primo anno di vita con email mensili, consulenze e reperibilità telefonica.</p>
     <a href="un-anno-con-la-doula.html">Visualizza il servizio completo</a>
   </div>
 </div>
@@ -399,7 +352,7 @@ footer {
   <img src="postparto.jpg">
   <div>
     <h2>Accompagnamento alla Nascita e nel Post Parto</h2>
-    <p>Incontri singoli o percorsi completi a sostegno pratico, emotivo e di presenza e ascolto durante la gravidanza, il parto e le prime settimane.</p>
+    <p>Incontri singoli o percorsi completi a sostegno pratico, emotivo e di presenza e ascolto.</p>
   </div>
 </div>
 
@@ -407,7 +360,7 @@ footer {
   <img src="allattamento.jpg">
   <div>
     <h2>Allattamento</h2>
-    <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche in ambito fisiologico.</p>
+    <p>Supporto rispettoso e personalizzato per affrontare difficoltà, dubbi e fatiche.</p>
   </div>
 </div>
 
@@ -443,12 +396,10 @@ footer {
   </div>
 </div>
 
-<!-- NOTA FINALE -->
 <p class="nota-finale">
-  Quelli che trovi qui sono i percorsi principali, ma il mio lavoro va oltre una semplice lista di servizi: nasce dall’incontro, dall’ascolto e dalle necessità di ogni famiglia. Scrivimi per ogni tuo bisogno.
+  Quelli che trovi qui sono i percorsi principali, ma il mio lavoro nasce dall’incontro, dall’ascolto e dalle necessità di ogni famiglia.
 </p>
 
-<!-- MODULO CONTATTO -->
 <div class="contatto" id="contatti">
   <form action="https://formsubmit.co/gaiav.moimas@gmail.com" method="POST">
     <label>Email</label>
@@ -461,25 +412,11 @@ footer {
   </form>
 </div>
 
-<!-- FOOTER IDENTICO A “CHI SONO” -->
 <footer class="fade-in-section">
-
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
   <a href="mailto:gaiav.moimas@gmail.com"
-     style="
-       display:inline-flex;
-       align-items:center;
-       justify-content:center;
-       gap:6px;
-       margin-top:1rem;
-       padding:7px 16px;
-       background:#6d7f5f;
-       color:white;
-       border-radius:22px;
-       font-size:0.85rem;
-       text-decoration:none;
-     ">
+     style="display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:1rem; padding:7px 16px; background:#6d7f5f; color:white; border-radius:22px; font-size:0.85rem; text-decoration:none;">
      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
           alt="Email"
           style="width:16px; height:16px; filter:invert(1);">
@@ -495,7 +432,6 @@ footer {
   <div class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem;">
     © 2026 La Gaia Custode
   </div>
-
 </footer>
 
 </body>
