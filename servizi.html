@@ -363,6 +363,134 @@ footer .footer-copy {
   color: var(--grigio);
 }
 
+/* ---------------------------------------- */
+/*          RESPONSIVE SERVIZI              */
+/* ---------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Fix globale */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Header uniforme */
+  .logo {
+    height: 110px;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+  }
+
+  /* Banner */
+  .hero-small img {
+    height: 120px;
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+  }
+
+  /* Titolo */
+  .page-title {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+  }
+
+  .sottotitolo {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Blocchi servizio → diventano verticali */
+  .servizio {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 15px;
+    margin: 30px 15px;
+  }
+
+  .servizio img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .servizio div {
+    padding: 0 0.5rem;
+  }
+
+  .servizio h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .servizio p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .servizio a {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: var(--salvia);
+    font-weight: 600;
+  }
+
+  /* Disattiva animazioni pesanti */
+  .servizio,
+  .servizio img,
+  .servizio div,
+  .servizio h2,
+  .nota-finale,
+  .contatto {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Nota finale */
+  .nota-finale {
+    margin: 40px 20px;
+    font-size: 1rem;
+  }
+
+  /* Modulo contatto */
+  .contatto {
+    margin: 80px 20px;
+    padding: 25px;
+  }
+
+  .contatto::before {
+    top: -35px;
+    font-size: 1.8rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo {
+    width: 140px;
+    height: auto;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
 
 </style>
 </head>
