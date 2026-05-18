@@ -6,66 +6,232 @@
 <title>Cookie Policy – La Gaia Custode</title>
 
 <style>
-  body {
-    font-family: "Inter", sans-serif;
-    background: #faf8f4;
-    color: #333;
-    line-height: 1.7;
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.7;
+}
+
+/* HEADER */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar img {
+  height: 70px;
+}
+
+/* CONTENUTO */
+.cookie-wrapper {
+  max-width: 900px;
+  margin: 2.5rem auto 3rem auto;
+  padding: 0 1.5rem 2rem;
+  background: #faf8f4;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.cookie-wrapper h1 {
+  color: var(--salvia);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cookie-wrapper h2 {
+  color: var(--salvia);
+  margin-top: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+}
+
+.cookie-wrapper p,
+.cookie-wrapper ul {
+  font-size: 0.98rem;
+  color: #444;
+}
+
+.cookie-wrapper ul {
+  padding-left: 1.2rem;
+}
+
+.cookie-wrapper a {
+  color: var(--salvia);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+footer .footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+
+footer .footer-links a:hover { opacity: 0.7; }
+
+footer .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--grigio);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
-  h1 {
-    color: #6d7f5f;
-    text-align: center;
-    margin-bottom: 2rem;
+
+  .header-bar {
+    padding: 0.8rem 1rem;
   }
-  a {
-    color: #6d7f5f;
-    font-weight: 600;
-    text-decoration: none;
+
+  .header-bar img {
+    height: 60px;
   }
+
+  .cookie-wrapper {
+    margin: 1.8rem 1rem 2.5rem;
+    padding: 1.5rem 1.2rem 2rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+
+  .cookie-wrapper h1 {
+    font-size: 1.6rem;
+  }
+
+  .cookie-wrapper h2 {
+    font-size: 1.05rem;
+  }
+
+  .cookie-wrapper p,
+  .cookie-wrapper ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo {
+    width: 140px;
+    height: auto;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<h1>Cookie Policy</h1>
+<header class="header-bar">
+  <img src="nome.png" alt="La Gaia Custode">
+</header>
 
-<h2>1. Cosa sono i cookie</h2>
-<p>
-I cookie sono piccoli file di testo che il sito salva nel browser per migliorare l’esperienza di navigazione.
-</p>
+<main class="cookie-wrapper">
+  <h1>Cookie Policy</h1>
 
-<h2>2. Tipologie di cookie utilizzati</h2>
-<p>
-Questo sito utilizza esclusivamente <strong>cookie tecnici</strong>, necessari a:
-</p>
-<ul>
-  <li>Garantire il corretto funzionamento delle pagine</li>
-  <li>Mantenere le preferenze dell’utente</li>
-</ul>
+  <h2>1. Cosa sono i cookie</h2>
+  <p>
+    I cookie sono piccoli file di testo che il sito salva nel browser per migliorare l’esperienza di navigazione.
+  </p>
 
-<p>
-<strong>Non utilizzo cookie di profilazione.</strong><br>
-<strong>Non utilizzo cookie di terze parti.</strong><br>
-<strong>Non utilizzo strumenti di tracciamento.</strong>
-</p>
+  <h2>2. Tipologie di cookie utilizzati</h2>
+  <p>
+    Questo sito utilizza esclusivamente <strong>cookie tecnici</strong>, necessari a:
+  </p>
+  <ul>
+    <li>Garantire il corretto funzionamento delle pagine</li>
+    <li>Mantenere le preferenze dell’utente</li>
+  </ul>
 
-<h2>3. Come gestire i cookie</h2>
-<p>
-Puoi disattivare i cookie direttamente dalle impostazioni del browser.  
-La disattivazione potrebbe limitare alcune funzionalità del sito.
-</p>
+  <p>
+    <strong>Non utilizzo cookie di profilazione.</strong><br>
+    <strong>Non utilizzo cookie di terze parti.</strong><br>
+    <strong>Non utilizzo strumenti di tracciamento.</strong>
+  </p>
 
-<h2>4. Aggiornamenti</h2>
-<p>
-Questa Cookie Policy può essere aggiornata. Ultimo aggiornamento: 2026.
-</p>
+  <h2>3. Come gestire i cookie</h2>
+  <p>
+    Puoi disattivare i cookie direttamente dalle impostazioni del browser.  
+    La disattivazione potrebbe limitare alcune funzionalità del sito.
+  </p>
 
-<p style="margin-top:2rem;">
-<a href="index.html">← Torna alla Home</a>
-</p>
+  <h2>4. Aggiornamenti</h2>
+  <p>
+    Questa Cookie Policy può essere aggiornata. Ultimo aggiornamento: <strong>2026</strong>.
+  </p>
+
+  <p style="margin-top:2rem;">
+    <a href="index.html">← Torna alla Home</a>
+  </p>
+</main>
+
+<footer>
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+  <a href="mailto:gaiav.moimas@gmail.com"
+     style="display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:1rem; padding:7px 16px; background:#6d7f5f; color:white; border-radius:22px; font-size:0.85rem; text-decoration:none;">
+     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+          alt="Email"
+          style="width:16px; height:16px; filter:invert(1);">
+     Scrivimi
+  </a>
+
+  <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy">
+    © 2026 La Gaia Custode
+  </div>
+</footer>
 
 </body>
 </html>
