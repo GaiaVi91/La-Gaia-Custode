@@ -6,63 +6,230 @@
 <title>Note Legali – La Gaia Custode</title>
 
 <style>
-  body {
-    font-family: "Inter", sans-serif;
-    background: #faf8f4;
-    color: #333;
-    line-height: 1.7;
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.7;
+}
+
+/* HEADER */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar img {
+  height: 70px;
+}
+
+/* CONTENUTO */
+.legal-wrapper {
+  max-width: 900px;
+  margin: 2.5rem auto 3rem auto;
+  padding: 0 1.5rem 2rem;
+  background: #faf8f4;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.legal-wrapper h1 {
+  color: var(--salvia);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.legal-wrapper h2 {
+  color: var(--salvia);
+  margin-top: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+}
+
+.legal-wrapper p,
+.legal-wrapper ul {
+  font-size: 0.98rem;
+  color: #444;
+}
+
+.legal-wrapper ul {
+  padding-left: 1.2rem;
+}
+
+.legal-wrapper a {
+  color: var(--salvia);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+footer .footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+
+footer .footer-links a:hover { opacity: 0.7; }
+
+footer .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--grigio);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
-  h1 {
-    color: #6d7f5f;
-    text-align: center;
-    margin-bottom: 2rem;
+
+  .header-bar {
+    padding: 0.8rem 1rem;
   }
-  a {
-    color: #6d7f5f;
-    font-weight: 600;
-    text-decoration: none;
+
+  .header-bar img {
+    height: 60px;
   }
+
+  .legal-wrapper {
+    margin: 1.8rem 1rem 2.5rem;
+    padding: 1.5rem 1.2rem 2rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+
+  .legal-wrapper h1 {
+    font-size: 1.6rem;
+  }
+
+  .legal-wrapper h2 {
+    font-size: 1.05rem;
+  }
+
+  .legal-wrapper p,
+  .legal-wrapper ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo {
+    width: 140px;
+    height: auto;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<h1>Note Legali</h1>
+<header class="header-bar">
+  <img src="nome.png" alt="La Gaia Custode">
+</header>
 
-<h2>1. Contenuti del sito</h2>
-<p>
-I contenuti presenti sul sito hanno finalità informativa e divulgativa.  
-Non sostituiscono in alcun modo pareri medici, sanitari o professionali.
-</p>
+<main class="legal-wrapper">
+  <h1>Note Legali</h1>
 
-<h2>2. Limitazione di responsabilità</h2>
-<p>
-La titolare non è responsabile per:
-</p>
-<ul>
-  <li>uso improprio delle informazioni presenti sul sito</li>
-  <li>eventuali errori o imprecisioni</li>
-  <li>contenuti di siti esterni collegati tramite link</li>
-</ul>
+  <h2>1. Contenuti del sito</h2>
+  <p>
+    I contenuti presenti sul sito hanno finalità informativa e divulgativa.
+    Non sostituiscono in alcun modo pareri medici, sanitari o professionali.
+  </p>
 
-<h2>3. Proprietà intellettuale</h2>
-<p>
-Testi, immagini, loghi e contenuti sono di proprietà di <strong>La Gaia Custode</strong>.  
-È vietata la riproduzione senza autorizzazione.
-</p>
+  <h2>2. Limitazione di responsabilità</h2>
+  <p>
+    La titolare non è responsabile per:
+  </p>
+  <ul>
+    <li>uso improprio delle informazioni presenti sul sito</li>
+    <li>eventuali errori o imprecisioni</li>
+    <li>contenuti di siti esterni collegati tramite link</li>
+  </ul>
 
-<h2>4. Contatti</h2>
-<p>
-Per informazioni o chiarimenti:<br>
-<strong>info@lagaiacustode.it</strong>
-</p>
+  <h2>3. Proprietà intellettuale</h2>
+  <p>
+    Testi, immagini, loghi e contenuti sono di proprietà di
+    <strong>La Gaia Custode</strong>.  
+    È vietata la riproduzione senza autorizzazione.
+  </p>
 
-<p style="margin-top:2rem;">
-<a href="index.html">← Torna alla Home</a>
-</p>
+  <h2>4. Contatti</h2>
+  <p>
+    Per informazioni o chiarimenti:<br>
+    <strong>info@lagaiacustode.it</strong>
+  </p>
+
+  <p style="margin-top:2rem;">
+    <a href="index.html">← Torna alla Home</a>
+  </p>
+</main>
+
+<footer>
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+  <a href="mailto:gaiav.moimas@gmail.com"
+     style="display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:1rem; padding:7px 16px; background:#6d7f5f; color:white; border-radius:22px; font-size:0.85rem; text-decoration:none;">
+     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+          alt="Email"
+          style="width:16px; height:16px; filter:invert(1);">
+     Scrivimi
+  </a>
+
+  <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy">
+    © 2026 La Gaia Custode
+  </div>
+</footer>
 
 </body>
 </html>
