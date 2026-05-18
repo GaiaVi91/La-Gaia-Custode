@@ -1,632 +1,412 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Gaia Custode – Operatrice Materno Infantile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Gaia Custode – Operatrice Materno Infantile</title>
 
-  <style>
-    :root {
-      --salvia: #6d7f5f;
-      --sabbia: #f3eee7;
-      --sabbia-saturo: #e0d4c8;
-      --terracotta: #d9a48f;
-      --avorio: #faf8f4;
-      --testo: #333;
-      --grigio: #777;
-      --beige-scuro: #e8dfd6;
-      --beige-chiaro: #f1e8df;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--avorio);
-      color: var(--testo);
-      line-height: 1.7;
-    }
+/* ------------------------------ */
+/*          PALETTE              */
+/* ------------------------------ */
 
-    /* BANNER */
-    .banner img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    /* HEADER */
-    .header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 1.5rem;
-      background: var(--avorio);
-    }
-
-    .logo-nome {
-      height: 320px;
-    }
-
-    .hamburger {
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .hamburger:hover {
-      transform: scale(1.1);
-    }
-
-    /* MENU MOBILE */
-    nav {
-      display: none;
-      flex-direction: column;
-      background: var(--avorio);
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid #eee;
-      animation: fadeIn 0.3s ease;
-      text-align: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--salvia);
-      font-weight: 600;
-      padding: 0.8rem 0;
-      font-size: 1.3rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* HERO */
-    .hero-section {
-      position: relative;
-      margin-top: 2rem;
-    }
-
-    .hero-section img {
-      width: 100%;
-      height: auto;
-      opacity: 0.2;
-    }
-
-    .hero-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-content h1 {
-      text-align: center;
-      font-size: 2.4rem;
-      font-style: italic;
-      color: var(--salvia);
-      margin-bottom: .5rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    /* TESTO PRINCIPALE */
-    .text-block {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    h2 {
-      color: var(--salvia);
-      font-size: 1.8rem;
-      margin-bottom: .5rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    /* ANIMAZIONI SLIDE */
-    .slide-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      animation: slideLeft 1s ease forwards;
-    }
-
-    .slide-right {
-      opacity: 0;
-      transform: translateX(40px);
-      animation: slideRight 1s ease forwards;
-    }
-
-    @keyframes slideLeft {
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes slideRight {
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    /* ABOUT ME */
-    .about-section {
-      background: var(--sabbia);
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .about-title {
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: var(--salvia);
-      margin-bottom: 0.5rem;
-    }
-
-    .about-subtitle {
-      font-size: 1.2rem;
-      font-weight: bold;
-      font-style: italic;
-      color: var(--salvia);
-      margin-bottom: 1rem;
-    }
-
-    .about-text {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      color: #333;
-    }
-
-    .about-button {
-      display: inline-block;
-      background: var(--sabbia-saturo);
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .about-button:hover {
-      background: #d2c2b3;
-    }
-
-    /* SUPPORT SECTION */
-    .support-section {
-      background: var(--beige-scuro);
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .support-title {
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: var(--salvia);
-      margin-bottom: 0.5rem;
-    }
-
-    .support-subtitle {
-      font-size: 1.2rem;
-      font-weight: bold;
-      font-style: italic;
-      color: var(--salvia);
-      margin-bottom: 1rem;
-    }
-
-    .support-text {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      color: #333;
-    }
-
-    .support-button {
-      display: inline-block;
-      background: var(--sabbia-saturo);
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .support-button:hover {
-      background: #d2c2b3;
-    }
-
-    /* UN ANNO CON LA DOULA */
-    .year-section {
-      background: var(--sabbia);
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .year-title {
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: var(--salvia);
-      margin-bottom: 0.5rem;
-    }
-
-    .year-subtitle {
-      font-size: 1.2rem;
-      font-weight: bold;
-      font-style: italic;
-      color: var(--salvia);
-      margin-bottom: 1rem;
-    }
-
-    .year-text {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      color: #333;
-      line-height: 1.7;
-    }
-
-    .year-button {
-      display: inline-block;
-      background: var(--beige-chiaro);
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .year-button:hover {
-      background: #e4d7cb;
-    }
-
-    /* LA DEA LATTEA */
-    .dea-section {
-      background: var(--beige-scuro);
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .dea-title {
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: var(--salvia);
-      margin-bottom: 0.5rem;
-    }
-
-    .dea-logo {
-      height: 60px;
-      margin: 0.5rem auto 1rem auto;
-      display: block;
-      opacity: 0.9;
-    }
-
-    .dea-subtitle {
-      font-size: 1.2rem;
-      font-weight: bold;
-      font-style: italic;
-      color: var(--salvia);
-      margin: 1rem auto;
-      max-width: 700px;
-    }
-
-    .dea-text {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      color: #333;
-      line-height: 1.7;
-    }
-
-    .dropdown {
-      max-width: 700px;
-      margin: 1rem auto;
-      text-align: left;
-    }
-
-    .dropdown summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--salvia);
-      padding: 0.5rem 0;
-      font-size: 1rem;
-    }
-
-    .dropdown ul {
-      margin: 0.5rem 0 1rem 1.2rem;
-      padding: 0;
-    }
-
-    .dropdown li {
-      margin-bottom: 0.4rem;
-    }
-
-    .dea-button {
-      display: inline-block;
-      background: var(--sabbia-saturo);
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .dea-button:hover {
-      background: #d2c2b3;
-    }
-
-    /* FOOTER */
-  /* FOOTER */
-footer {
-  background: var(--sabbia);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  color: var(--salvia);
-  font-size: 0.9rem;
-  margin-top: 3rem;
-  border-top: 1px solid rgba(0,0,0,0.05);
-
-  /* BLOCCA QUALSIASI FLEX EREDITATO */
-  display: block !important;
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f3eee7;
+  --sabbia-saturo: #e0d4c8;
+  --terracotta: #d9a48f;
+  --avorio: #faf8f4;
+  --testo: #333;
+  --grigio: #777;
+  --beige-scuro: #e8dfd6;
+  --beige-chiaro: #f1e8df;
 }
 
-footer .footer-logo {
-  height: 90px;
-  opacity: 0.9;
-  margin: 0 auto 1rem auto;
+/* ------------------------------ */
+/*          BASE                  */
+/* ------------------------------ */
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--avorio);
+  color: var(--testo);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
   display: block;
 }
 
+/* ------------------------------ */
+/*          BANNER                */
+/* ------------------------------ */
 
-  /* CENTRATURA PERFETTA */
-  display: block;
-  margin: 0 auto 1rem auto;
+.banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-footer .footer-links a {
-  color: var(--salvia);
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 10px;
+/* ------------------------------ */
+/*          HEADER                */
+/* ------------------------------ */
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--avorio);
+}
+
+.logo-nome {
+  height: 160px; /* LOGO MEDIO */
+}
+
+.hamburger {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
   transition: 0.2s;
 }
 
-footer .footer-links a:hover {
-  opacity: 0.7;
+.hamburger:hover {
+  transform: scale(1.1);
 }
 
-footer .footer-copy {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: var(--grigio);
+/* ------------------------------ */
+/*        MENU MOBILE             */
+/* ------------------------------ */
+
+nav {
+  display: none;
+  flex-direction: column;
+  background: var(--avorio);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+  animation: fadeIn 0.3s ease;
+  text-align: center;
 }
 
+nav a {
+  text-decoration: none;
+  color: var(--salvia);
+  font-weight: 600;
+  padding: 0.8rem 0;
+  font-size: 1.3rem;
+}
 
-    /* WHATSAPP BUTTON RETTANGOLARE */
-    .whatsapp-fixed {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      padding: 12px 18px;
-      border-radius: 40px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-      z-index: 999;
-      transition: 0.2s ease;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .whatsapp-fixed:hover {
-      transform: scale(1.05);
-    }
+/* ------------------------------ */
+/*            HERO                */
+/* ------------------------------ */
 
-    .whatsapp-fixed img {
-      width: 28px;
-      height: 28px;
-    }
+.hero-section {
+  position: relative;
+  margin-top: 2rem;
+}
 
-    /* FADE-IN SU SCROLL */
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
+.hero-section img {
+  width: 100%;
+  height: auto;
+  opacity: 0.2;
+}
 
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  </style>
+.hero-content h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-style: italic;
+  color: var(--salvia);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("mobileMenu");
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
+/* ------------------------------ */
+/*        TESTO PRINCIPALE        */
+/* ------------------------------ */
+
+.text-block {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h2 {
+  color: var(--salvia);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------ */
+/*        ANIMAZIONI SLIDE        */
+/* ------------------------------ */
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideLeft 1s ease forwards;
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ------------------------------ */
+/*          ABOUT ME              */
+/* ------------------------------ */
+
+.about-section {
+  background: var(--sabbia);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--salvia);
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--salvia);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: #333;
+}
+
+.about-button {
+  display: inline-block;
+  background: var(--sabbia-saturo);
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.about-button:hover {
+  background: #d2c2b3;
+}
+
+/* ------------------------------ */
+/*       SUPPORT SECTION          */
+/* ------------------------------ */
+
+.support-section {
+  background: var(--beige-scuro);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.support-title {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--salvia);
+  margin-bottom: 0.5rem;
+}
+
+.support-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--salvia);
+  margin-bottom: 1rem;
+}
+
+.support-text {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: #333;
+}
 </head>
 
 <body>
-  <!-- BANNER -->
-  <section class="banner">
-    <img src="BannerGaia.png" alt="Banner La Gaia Custode">
-  </section>
 
-  <!-- HEADER -->
-  <div class="header-bar">
-    <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
-  </div>
+<!-- BANNER -->
+<section class="banner">
+  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+</section>
 
-  <!-- MENU MOBILE -->
-  <nav id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="chi-sono.html">Chi sono</a>
-    <a href="servizi.html">Servizi</a>
-    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
+<!-- HEADER -->
+<div class="header-bar">
+  <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
+</div>
 
-  <!-- HERO -->
-  <section class="hero-section fade-in-section">
-    <img src="sfondo.jpeg" alt="Sfondo frase">
+<!-- MENU MOBILE -->
+<nav id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="chi-sono.html">Chi sono</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+  <a href="#contatti">Contatti</a>
+</nav>
 
-    <div class="hero-content">
+<!-- HERO -->
+<section class="hero-section fade-in-section">
+  <img src="sfondo.jpeg" alt="Sfondo frase">
 
-      <h1>Per crescere un bambino ci vuole un intero villaggio</h1>
+  <div class="hero-content">
+    <h1>Per crescere un bambino ci vuole un intero villaggio</h1>
 
-      <div class="text-block">
+    <div class="text-block">
 
-        <section class="slide-left">
-          <h2><strong>Chi sono</strong></h2>
-          <p>
-            Sono Gaia, Operatrice Materno Infantile: accompagno la donna e la famiglia nei primi mille giorni di vita del bambino,
-            offrendo sostegno emotivo e pratico in un percorso di consapevolezza e benessere.
-          </p>
-        </section>
+      <section class="slide-left">
+        <h2><strong>Chi sono</strong></h2>
+        <p>
+          Sono Gaia, Operatrice Materno Infantile: accompagno la donna e la famiglia nei primi mille giorni di vita del bambino, offrendo sostegno emotivo e pratico in un percorso di consapevolezza e benessere.
+        </p>
+      </section>
 
-        <section class="slide-right">
-          <h2><strong>Cosa faccio</strong></h2>
-          <p>
-            Promuovo il maternage consapevole e il rispetto della diade e triade familiare, utilizzando strumenti come massaggio,
-            babywearing, aromaterapia e altre tecniche che rispettano la fisiologia del bambino e della famiglia.
-            Mi prendo cura dei bisogni della famiglia nel post‑partum, creando un ambiente accogliente e sereno,
-            e fungendo da ponte con le figure sanitarie e professionisti del mondo perinatale.
-          </p>
-        </section>
+      <section class="slide-right">
+        <h2><strong>Cosa faccio</strong></h2>
+        <p>
+          Promuovo il maternage consapevole e il rispetto della diade e triade familiare, utilizzando strumenti come massaggio, babywearing, aromaterapia e altre tecniche che rispettano la fisiologia del bambino e della famiglia.
+          Mi prendo cura dei bisogni della famiglia nel post-partum, creando un ambiente accogliente e sereno, e fungendo da ponte con le figure sanitarie e professionisti del mondo perinatale.
+        </p>
+      </section>
 
-        <section class="slide-left">
-          <h2><strong>La mia missione</strong></h2>
-          <p>
-            Offro ascolto empatico e presenza, per aiutare ogni genitore a vivere la nascita come un’esperienza di crescita
-            e amore condiviso.
-          </p>
-        </section>
+      <section class="slide-left">
+        <h2><strong>La mia missione</strong></h2>
+        <p>
+          Offro ascolto empatico e presenza, per aiutare ogni genitore a vivere la nascita come un'esperienza di crescita e amore condiviso.
+        </p>
+      </section>
 
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT ME -->
-  <section class="about-section fade-in-section">
+<!-- ABOUT ME -->
+<section class="about-section fade-in-section">
+  <h3 class="about-title">ABOUT ME</h3>
+  <h4 class="about-subtitle"><strong><em>un parto difficile, una terapia intensiva neonatale...</em></strong></h4>
+  <p class="about-text">
+    È così che è iniziata la mia storia come Madre prima e come Operatrice poi. Studio tra un cambio pannolino, una poppata, un'altra gravidanza e un altro parto: questa volta in casa, rispettato, e questa volta già un po' Doula di me stessa.
+  </p>
+  <a class="about-button" href="chi-sono.html">Scopri chi sono</a>
+</section>
 
-    <h3 class="about-title">ABOUT ME</h3>
+<!-- SUPPORT SECTION -->
+<section class="support-section fade-in-section">
+  <h3 class="support-title">COME POSSO SUPPORTARVI</h3>
+  <h4 class="support-subtitle"><strong><em>dalla consulenza al preparare il pranzo...</em></strong></h4>
+  <p class="support-text">
+    Un'operatrice materno-infantile può sostenere la famiglia sia da un punto di vista pratico che emotivo.
+    La mia formazione mi permette di lavorare sulla fisiologia del bambino nei suoi primi 1000 giorni di vita, dalla gravidanza ai tre anni circa, ma le mie specializzazioni si concentrano soprattutto nel periodo del Post Parto.
+    Il mio obiettivo resta quello di sostenere e affiancare la famiglia nei più disparati bisogni: così, tra una legatura in fascia e un diario del sonno, posso tranquillamente svuotare una lavatrice o preparare un pasto!
+  </p>
+  <a class="support-button" href="servizi.html">Scopri i miei servizi</a>
+</section>
+<!-- UN ANNO CON LA DOULA -->
+<section class="year-section fade-in-section">
+  <h3 class="year-title">UN ANNO CON LA DOULA</h3>
+  <h4 class="year-subtitle"><strong><em>Il mio progetto più grande per accompagnarvi passo passo nel primo anno di vita della vostra nuova famiglia.</em></strong></h4>
 
-    <h4 class="about-subtitle"><strong><em>un parto difficile, una terapia intensiva neonatale...</em></strong></h4>
+  <p class="year-text">
+    Una newsletter mensile per comprendere cosa sta succedendo al vostro bambino.<br>
+    Una consulenza a scelta tra i miei servizi.<br>
+    Una reperibilità telefonica per rassicurarvi e accompagnarvi nelle piccole difficoltà quotidiane.<br>
+    Uno sconto dedicato su altri percorsi o consulenze.<br>
+    Il supporto continuativo che ogni famiglia merita nel periodo più bello e delicato.
+  </p>
 
-    <p class="about-text">
-      ... è così che è iniziata la mia storia come Madre prima e come Operatrice poi.
-      Studio tra un cambio pannolino, una poppata, un’altra gravidanza e un altro parto:
-      questa volta in casa, rispettato, e questa volta già un po’ Doula di me stessa.
-    </p>
+  <a class="year-button" href="un-anno-con-la-doula.html">Scopri di più</a>
+</section>
 
-    <a class="about-button" href="chi-sono.html">Scopri chi sono</a>
+<!-- LA DEA LATTEA -->
+<section class="dea-section fade-in-section">
+  <h3 class="dea-title">LA DEA LATTEA A.P.S.</h3>
 
-  </section>
+  <img src="ldl.jpg" alt="La Dea Lattea Logo" class="dea-logo">
 
-  <!-- SUPPORT SECTION -->
-  <section class="support-section fade-in-section">
+  <h4 class="dea-subtitle">
+    <strong><em>La nostra missione è che tutte le donne e tutte le famiglie possano avere la possibilità di una scelta libera e consapevole.</em></strong>
+  </h4>
 
-    <h3 class="support-title">COME POSSO SUPPORTARVI</h3>
+  <p class="dea-text">
+    Come lo facciamo?<br>
+    Attraverso l'informazione e la formazione, ma anche attraverso servizi di supporto e sportelli gratuiti.
+  </p>
 
-    <h4 class="support-subtitle"><strong><em>dalla consulenza al preparare il pranzo...</em></strong></h4>
+  <!-- TENDINA FORMAZIONI -->
+  <details class="dropdown">
+    <summary>Le nostre formazioni</summary>
+    <ul>
+      <li>Peer Supporter per l'Allattamento Materno (40 o 20 ore)</li>
+      <li>MaMS - Doula Olistica</li>
+      <li>MaBS - Milk and Babywearing Supporter</li>
+    </ul>
+  </details>
 
-    <p class="support-text">
-      Un’operatrice materno-infantile può sostenere la famiglia sia da un punto di vista pratico che emotivo.
-      La mia formazione mi permette di lavorare sulla fisiologia del bambino nei suoi primi 1000 giorni di vita,
-      dalla gravidanza ai tre anni circa, ma le mie specializzazioni si concentrano soprattutto nel periodo del Post Parto,
-      dove mi occupo principalmente di Babywearing, Allattamento e Sonno Infantile.<br><br>
+  <!-- TENDINA SERVIZI GRATUITI -->
+  <details class="dropdown">
+    <summary>I nostri servizi <em>gratuiti</em></summary>
+    <ul>
+      <li>S.O.S. Villaggio Aperto - incontri tematici</li>
+      <li>Sportello Aperto - spazio d'ascolto individuale su prenotazione</li>
+    </ul>
+  </details>
 
-      Il mio obiettivo resta quello di sostenere e affiancare la famiglia nei più disparati (e a volte disperati) bisogni:
-      così, tra una legatura in fascia e un diario del sonno, posso tranquillamente svuotare una lavatrice o preparare un pasto!
-    </p>
+  <p class="dea-text">
+    Dal 2025 La Dea Lattea è diventata <strong>A.P.S.</strong>, ed è aperta la <strong>campagna tesseramento</strong>.<br>
+    Per i tesserati ci saranno incontri, novità e scontistiche dedicate.
+  </p>
 
-    <a class="support-button" href="servizi.html">Scopri i miei servizi</a>
+  <a class="dea-button" href="https://www.instagram.com/ladealattea" target="_blank">
+    Seguici sui nostri social
+  </a>
+</section>
 
-  </section>
-
-  <!-- UN ANNO CON LA DOULA -->
-  <section class="year-section fade-in-section">
-
-    <h3 class="year-title">UN ANNO CON LA DOULA</h3>
-
-    <h4 class="year-subtitle"><strong><em>Il mio progetto più grande per accompagnarvi passo passo nel primo anno di vita della vostra nuova famiglia.</em></strong></h4>
-
-    <p class="year-text">
-      Una newsletter mensile per comprendere cosa sta succedendo al vostro bambino.<br>
-      Una consulenza a scelta tra i miei servizi.<br>
-      Una reperibilità telefonica per rassicurarvi e accompagnarvi nelle piccole difficoltà quotidiane.<br>
-      Uno sconto dedicato su altri percorsi o consulenze.<br>
-      Il supporto continuativo che ogni famiglia merita nel periodo più bello e delicato.
-    </p>
-
-    <a class="year-button" href="un-anno-con-la-doula.html">Scopri di più</a>
-
-  </section>
-
-  <!-- LA DEA LATTEA A.P.S. -->
-  <section class="dea-section fade-in-section">
-
-    <h3 class="dea-title">LA DEA LATTEA A.P.S.</h3>
-
-    <img src="ldl.jpg" alt="La Dea Lattea Logo" class="dea-logo">
-
-    <h4 class="dea-subtitle">
-      <strong><em>La nostra missione è che tutte le donne e tutte le famiglie possano avere la possibilità di una scelta libera e consapevole.</em></strong>
-    </h4>
-
-    <p class="dea-text">
-      Come lo facciamo?<br>
-      Attraverso l’informazione e la formazione, ma anche attraverso servizi di supporto e sportelli gratuiti.
-    </p>
-
-    <!-- TENDINA FORMAZIONI -->
-    <details class="dropdown">
-      <summary>Le nostre formazioni</summary>
-      <ul>
-        <li>Peer Supporter per l’Allattamento Materno (40 o 20 ore)</li>
-        <li>MaMS – Doula Olistica</li>
-        <li>MaBS – Milk and Babywearing Supporter</li>
-      </ul>
-    </details>
-
-    <!-- TENDINA SERVIZI GRATUITI -->
-    <details class="dropdown">
-      <summary>I nostri servizi <em>gratuiti</em></summary>
-      <ul>
-        <li>S.O.S. Villaggio Aperto – incontri tematici</li>
-        <li>Sportello Aperto – spazio d’ascolto individuale su prenotazione</li>
-      </ul>
-    </details>
-
-    <p class="dea-text">
-      Dal 2025 La Dea Lattea è diventata <strong>A.P.S.</strong>, ed è aperta la <strong>campagna tesseramento</strong>.<br>
-      Per i tesserati ci saranno incontri, novità e scontistiche dedicate.
-    </p>
-
-    <a class="dea-button" href="https://www.instagram.com/ladealattea_/" target="_blank">
-      Seguici sui nostri social
-    </a>
-
-  </section>
-
-  <!-- FOOTER -->
-
+<!-- FOOTER -->
 <footer class="fade-in-section">
 
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
-  <!-- BOTTONE EMAIL CON ICONA, CENTRATO -->
+  <!-- BOTTONE EMAIL -->
   <a href="mailto:gaiav.moimas@gmail.com"
      style="
        display:inline-flex;
@@ -642,48 +422,44 @@ footer .footer-copy {
        text-decoration:none;
        transition:0.2s;
      ">
-     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
-          alt="Email"
-          style="width:16px; height:16px; filter:invert(1);">
-     Scrivimi
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+         alt="Email"
+         style="width:16px; height:16px; filter:invert(1);">
+    Scrivimi
   </a>
 
-  <!-- LINK LEGALI SOTTO -->
+  <!-- LINK LEGALI -->
   <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
-    <a href="privacy.html">Privacy</a> •
-    <a href="cookie.html">Cookie</a> •
+    <a href="privacy.html">Privacy</a> ·
+    <a href="cookie.html">Cookie</a> ·
     <a href="note-legali.html">Note Legali</a>
   </div>
 
   <div class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem;">
     © 2026 La Gaia Custode
   </div>
-
 </footer>
 
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp-fixed" href="https://wa.me/393318004383" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  Sono qui per te
+</a>
 
+<!-- SCRIPT FADE-IN -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
 
-
-  <!-- WHATSAPP BUTTON -->
-  <a class="whatsapp-fixed" href="https://wa.me/393318004383" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    Sono qui per te
-  </a>
-
-  <!-- SCRIPT FADE-IN -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.fade-in-section').forEach((section) => {
-      observer.observe(section);
-    });
-  </script>
+document.querySelectorAll('.fade-in-section').forEach((section) => {
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
