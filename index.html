@@ -575,6 +575,24 @@ footer {
     margin-top: 1.5rem;
   }
 }
+/* Fix globale per rimuovere lo spazio bianco a destra */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+/* Evita che immagini o sezioni superino la larghezza */
+img, section, div {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.whatsapp-fixed {
+  right: 10px;
+}
+@media (max-width: 768px) {
+  .hero-section {
+    overflow: hidden;
+  }
+}
 
 </style>
 
