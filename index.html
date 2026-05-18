@@ -64,7 +64,7 @@ img {
 }
 
 .logo-nome {
-  height: 160px; /* LOGO MEDIO */
+  height: 160px;
 }
 
 .hamburger {
@@ -261,6 +261,16 @@ p {
   margin: 0 auto 2rem auto;
   color: #333;
 }
+
+</style>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("mobileMenu");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
 </head>
 
 <body>
@@ -372,7 +382,6 @@ p {
     Attraverso l'informazione e la formazione, ma anche attraverso servizi di supporto e sportelli gratuiti.
   </p>
 
-  <!-- TENDINA FORMAZIONI -->
   <details class="dropdown">
     <summary>Le nostre formazioni</summary>
     <ul>
@@ -382,7 +391,6 @@ p {
     </ul>
   </details>
 
-  <!-- TENDINA SERVIZI GRATUITI -->
   <details class="dropdown">
     <summary>I nostri servizi <em>gratuiti</em></summary>
     <ul>
@@ -406,7 +414,6 @@ p {
 
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
-  <!-- BOTTONE EMAIL -->
   <a href="mailto:gaiav.moimas@gmail.com"
      style="
        display:inline-flex;
@@ -428,7 +435,6 @@ p {
     Scrivimi
   </a>
 
-  <!-- LINK LEGALI -->
   <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
     <a href="privacy.html">Privacy</a> ·
     <a href="cookie.html">Cookie</a> ·
