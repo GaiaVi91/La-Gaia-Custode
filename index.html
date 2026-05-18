@@ -540,6 +540,41 @@ footer {
     height: 18px;
   }
 }
+/* ------------------------------ */
+/*   FIX MOBILE: NO OVERLAP       */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+
+  /* HERO: togli overlay assoluto */
+  .hero-content {
+    position: static;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-section img {
+    opacity: 0.15;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* Disattiva animazioni su mobile */
+  .slide-left,
+  .slide-right {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Testi più compatti */
+  .text-block {
+    margin-top: 1rem;
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+  }
+}
 
 </style>
 
