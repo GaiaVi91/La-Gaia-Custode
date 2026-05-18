@@ -253,24 +253,128 @@ footer .footer-copy {
   font-size: 0.75rem;
   color: var(--grigio);
 }
+/* ---------------------------------------- */
+/*          RESPONSIVE CHI SONO             */
+/* ---------------------------------------- */
 
+@media (max-width: 768px) {
+
+  /* Fix globale */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Header */
+  .logo-nome {
+    height: 110px;
+  }
+
+  .hamburger {
+    width: 32px;
+    height: 32px;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+  }
+
+  /* Banner */
+  .hero-small img {
+    height: 120px;
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+  }
+
+  /* Titolo */
+  .page-title {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+  }
+
+  /* Blocchi Chi sono */
+  .chi-block {
+    margin-bottom: 2.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .chi-img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Disattiva animazioni pesanti su mobile */
+  .chi-block,
+  .page-title,
+  .gallery-title,
+  .attestati-wrapper {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Galleria attestati */
+  .attestati-wrapper {
+    padding: 0 1rem;
+    overflow: hidden;
+  }
+
+  .attestati-slider img {
+    width: 140px;
+    height: 140px;
+    margin-right: 0.7rem;
+  }
+
+  .arrow {
+    display: none; /* Le frecce su mobile non servono */
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo {
+    width: 140px;
+    height: auto;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
-<header class="header-bar fade-in-section">
-  <img src="nome.png" alt="La Gaia Custode" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="chi-sono.html" class="active">Chi sono</a>
-    <a href="servizi.html">Servizi</a>
-    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
-</header>
+<!-- HEADER UNIFORME -->
+<div class="header-bar">
+  <img class="logo-nome" src="nome.png" alt="La Gaia Custode">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="hamburger" onclick="toggleMenu()" alt="Menu">
+</div>
+
+<nav id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="chi-sono.html" class="active">Chi sono</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+  <a href="#contatti">Contatti</a>
+</nav>
 
 <!-- BANNER -->
 <section class="hero-small fade-in-section">
@@ -284,31 +388,31 @@ footer .footer-copy {
 <section class="chi-block fade-in-section">
   <img src="chisono.jpg" class="chi-img oval" alt="">
   <p>Mi chiamo Gaia e vi voglio raccontare come sono diventata un' Operatrice Materno Infantile.
-  Di come sono arrivata oggi ad accompagnare famiglie dalla gravidanza ai primi anni di vita con uno sguardo che unisce ascolto, presenza e cura.
-<p>Perché ogni nascita merita di essere custodita. </p>
-  <p>  E ogni famiglia merita di sentirsi accompagnata.</p>
+  Di come sono arrivata oggi ad accompagnare famiglie dalla gravidanza ai primi anni di vita con uno sguardo che unisce ascolto, presenza e cura.</p>
+  <p>Perché ogni nascita merita di essere custodita.</p>
+  <p>E ogni famiglia merita di sentirsi accompagnata.</p>
 </section>
 
 <section class="chi-block fade-in-section">
   <img src="chisono1.jpg" class="chi-img" alt="">
   <p>La Doula che è in me nasce nel febbraio del 2018, nella sala parto di un ospedale di provincia.
-È lì che, insieme alla nascita del mio primo figlio, Francesco, nasce anche qualcosa di nuovo dentro di me. 
-    Le difficoltà incontrate durante la gravidanza, il parto e il post parto mi fanno comprendere quanto sia prezioso sentirsi ascoltate, accolte e sostenute. 
-    E quanto, a volte, quel sostegno possa mancare.
-Da quel momento ho scelto di formarmi per offrire alle altre famiglie quel supporto che io stessa avrei desiderato ricevere.</p>
+  È lì che, insieme alla nascita del mio primo figlio, Francesco, nasce anche qualcosa di nuovo dentro di me.
+  Le difficoltà incontrate durante la gravidanza, il parto e il post parto mi fanno comprendere quanto sia prezioso sentirsi ascoltate, accolte e sostenute.
+  E quanto, a volte, quel sostegno possa mancare.
+  Da quel momento ho scelto di formarmi per offrire alle altre famiglie quel supporto che io stessa avrei desiderato ricevere.</p>
 </section>
 
 <section class="chi-block fade-in-section">
   <img src="chisono2.jpg" class="chi-img oval" alt="">
   <p>Nel 2019 divento Peer Supporter per l’Allattamento Materno con l’associazione Custodi del Femminino®, iniziando il mio percorso di accompagnamento nel mondo materno infantile.
-Poco dopo intraprendo il cammino come Custode della Nascita®, percorso che si intreccia profondamente con la mia vita personale: 
-    mi attesto nell’estate del 2020, pochi giorni dopo la nascita della mia secondogenita, Alba Elena, arrivata in una luminosa domenica di sole, nel salotto di casa nostra.</p>
+  Poco dopo intraprendo il cammino come Custode della Nascita®, percorso che si intreccia profondamente con la mia vita personale:
+  mi attesto nell’estate del 2020, pochi giorni dopo la nascita della mia secondogenita, Alba Elena, arrivata in una luminosa domenica di sole, nel salotto di casa nostra.</p>
 </section>
 
 <section class="chi-block fade-in-section">
   <img src="chisono4.jpg" class="chi-img" alt="">
   <p>Negli anni continuo a formarmi e ad ampliare le mie competenze diventando Trainer Olistica Materno Infantile®, Custode del Portare Junior®, Operatrice di Massaggio Infantile Sweet Touch, approfondendo il sostegno all’allattamento, al babywearing, al sonno infantile e alla relazione tra genitori e bambini.
-Il mio percorso prosegue poi con la formazione come Consulente MaBS – Milk and Babywearing Supporter con La Dea Lattea, con il secondo livello come Peer Supporter in Allattamento Materno, e come Consulente del Sonno Infantile e Familiare con metodologia Mamme Con-Tatto®.</p>
+  Il mio percorso prosegue poi con la formazione come Consulente MaBS – Milk and Babywearing Supporter con La Dea Lattea, con il secondo livello come Peer Supporter in Allattamento Materno, e come Consulente del Sonno Infantile e Familiare con metodologia Mamme Con-Tatto®.</p>
 </section>
 
 <section class="chi-block fade-in-section">
@@ -337,28 +441,7 @@ Il mio percorso prosegue poi con la formazione come Consulente MaBS – Milk and
   </div>
 </div>
 
-<script>
-function scrollLeft() {
-  document.getElementById('slider').scrollBy({ left: -300, behavior: 'smooth' });
-}
-function scrollRight() {
-  document.getElementById('slider').scrollBy({ left: 300, behavior: 'smooth' });
-}
-
-const imgs = document.querySelectorAll('.attestati-slider img');
-function checkVisibility() {
-  imgs.forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.left < window.innerWidth - 50) {
-      img.classList.add('visible');
-    }
-  });
-}
-document.getElementById('slider').addEventListener('scroll', checkVisibility);
-window.addEventListener('load', checkVisibility);
-</script>
-
-<!-- FOOTER -->
+<!-- FOOTER UNIFORME -->
 <footer class="fade-in-section">
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
@@ -382,4 +465,5 @@ window.addEventListener('load', checkVisibility);
 </footer>
 
 </body>
+
 </html>
