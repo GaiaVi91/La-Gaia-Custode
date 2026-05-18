@@ -6,70 +6,280 @@
 <title>Privacy Policy – La Gaia Custode</title>
 
 <style>
-  body {
-    font-family: "Inter", sans-serif;
-    background: #faf8f4;
-    color: #333;
-    line-height: 1.7;
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.7;
+}
+
+/* HEADER MINIMO (coerente) */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar img {
+  height: 70px;
+}
+
+/* CONTENUTO PRIVACY */
+.privacy-wrapper {
+  max-width: 900px;
+  margin: 2.5rem auto 3rem auto;
+  padding: 0 1.5rem 2rem;
+  background: #faf8f4;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.privacy-wrapper h1 {
+  color: var(--salvia);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.privacy-wrapper h2 {
+  color: var(--salvia);
+  margin-top: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+}
+
+.privacy-wrapper p,
+.privacy-wrapper ul {
+  font-size: 0.98rem;
+  color: #444;
+}
+
+.privacy-wrapper ul {
+  padding-left: 1.2rem;
+}
+
+.privacy-wrapper a {
+  color: var(--salvia);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* FOOTER VELLUTATO */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+footer .footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+
+footer .footer-links a:hover { opacity: 0.7; }
+
+footer .footer-copy {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--grigio);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
-  h1 {
-    color: #6d7f5f;
-    text-align: center;
-    margin-bottom: 2rem;
+
+  .header-bar {
+    padding: 0.8rem 1rem;
   }
-  a {
-    color: #6d7f5f;
-    font-weight: 600;
-    text-decoration: none;
+
+  .header-bar img {
+    height: 60px;
   }
+
+  .privacy-wrapper {
+    margin: 1.8rem 1rem 2.5rem;
+    padding: 1.5rem 1.2rem 2rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+
+  .privacy-wrapper h1 {
+    font-size: 1.6rem;
+  }
+
+  .privacy-wrapper h2 {
+    font-size: 1.05rem;
+  }
+
+  .privacy-wrapper p,
+  .privacy-wrapper ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo {
+    width: 140px;
+    height: auto;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<h1>Privacy Policy</h1>
+<header class="header-bar">
+  <img src="nome.png" alt="La Gaia Custode">
+</header>
 
-<p>
-La presente informativa descrive le modalità di trattamento dei dati personali degli utenti che visitano il sito <strong>La Gaia Custode</strong>.
-</p>
+<main class="privacy-wrapper">
+  <h1>Privacy Policy</h1>
 
-<h2>1. Titolare del trattamento</h2>
-<p>
-<strong>Gaia – La Gaia Custode</strong><br>
-Email: info@lagaiacustode.it<br>
-Sede: Farra d’Isonzo (GO), Italia
-</p>
+  <p>
+    La presente informativa descrive le modalità di trattamento dei dati personali degli utenti che visitano il sito
+    <strong>La Gaia Custode</strong>.
+  </p>
 
-<h2>2. Tipologie di dati raccolti</h2>
-<p>
-Il sito raccoglie esclusivamente:
-</p>
-<ul>
-  <li>Dati inviati volontariamente tramite email o WhatsApp</li>
-  <li>Dati inviati tramite eventuali form di contatto</li>
-  <li>Cookie tecnici necessari al funzionamento del sito</li>
-</ul>
+  <h2>1. Titolare del trattamento</h2>
+  <p>
+    <strong>Gaia – La Gaia Custode</strong><br>
+    Email: info@lagaiacustode.it<br>
+    Sede: Farra d’Isonzo (GO), Italia
+  </p>
 
-<h2>3. Finalità del trattamento</h2>
-<p>I dati vengono utilizzati per:</p>
-<ul>
-  <li>Rispondere a richieste di informazioni</li>
-  <li>Fornire servizi o consulenze richieste</li>
-  <li>Gestire eventuali prenotazioni</li>
-  <li>Adempiere a obblighi di legge</li>
-</ul>
+  <h2>2. Tipologie di dati raccolti</h2>
+  <p>Il sito raccoglie esclusivamente:</p>
+  <ul>
+    <li>Dati inviati volontariamente tramite email o WhatsApp</li>
+    <li>Dati inviati tramite eventuali form di contatto</li>
+    <li>Cookie tecnici necessari al funzionamento del sito</li>
+  </ul>
+  <p>Non vengono raccolti dati sensibili né effettuate profilazioni.</p>
 
-<h2>4. Base giuridica</h2>
-<p>
-Il trattamento si basa su: consenso, misure precontrattuali, obblighi legali.
-</p>
+  <h2>3. Finalità del trattamento</h2>
+  <p>I dati vengono utilizzati per:</p>
+  <ul>
+    <li>Rispondere a richieste di informazioni</li>
+    <li>Fornire servizi o consulenze richieste</li>
+    <li>Gestire eventuali prenotazioni</li>
+    <li>Adempiere a obblighi di legge</li>
+  </ul>
 
-<h2>5. Modalità del trattamento</h2>
-<p>
-I dati vengono trattati in modo lecito, corretto e trasparente, con misure di sicurezza adeguate.
-</p>
+  <h2>4. Base giuridica</h2>
+  <p>
+    Il trattamento si basa su: consenso dell’utente, misure precontrattuali, obblighi legali.
+  </p>
 
-<h2>6. Conservazione
+  <h2>5. Modalità del trattamento</h2>
+  <p>
+    I dati vengono trattati in modo lecito, corretto e trasparente, con misure di sicurezza adeguate per proteggerli da accessi non autorizzati o usi impropri.
+  </p>
+
+  <h2>6. Conservazione dei dati</h2>
+  <p>
+    I dati vengono conservati per il tempo necessario a rispondere alle richieste ricevute, fornire il servizio richiesto e adempiere agli obblighi di legge. Non vengono conservati oltre il necessario.
+  </p>
+
+  <h2>7. Destinatari dei dati</h2>
+  <p>
+    I dati non vengono ceduti a terzi. Possono essere comunicati solo a fornitori di servizi strettamente necessari (es. hosting) o ad autorità competenti, se richiesto dalla legge.
+  </p>
+
+  <h2>8. Trasferimento dei dati fuori dall’UE</h2>
+  <p>
+    Non è previsto alcun trasferimento di dati verso Paesi extra‑UE.
+  </p>
+
+  <h2>9. Cookie</h2>
+  <p>
+    Il sito utilizza esclusivamente cookie tecnici necessari al funzionamento. Non vengono utilizzati cookie di profilazione o tracciamento.
+  </p>
+  <p>
+    Per maggiori informazioni consulta la pagina dedicata alla Cookie Policy.
+  </p>
+
+  <h2>10. Diritti dell’utente</h2>
+  <p>
+    L’utente può in qualsiasi momento:
+  </p>
+  <ul>
+    <li>chiedere l’accesso ai propri dati</li>
+    <li>chiederne la rettifica o cancellazione</li>
+    <li>opporsi al trattamento</li>
+    <li>richiedere la limitazione</li>
+    <li>revocare il consenso</li>
+  </ul>
+  <p>
+    Per esercitare i propri diritti è possibile scrivere a: <a href="mailto:info@lagaiacustode.it">info@lagaiacustode.it</a>
+  </p>
+
+  <h2>11. Aggiornamenti</h2>
+  <p>
+    La presente informativa può essere aggiornata. Ultimo aggiornamento: <strong>2026</strong>.
+  </p>
+</main>
+
+<footer>
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+  <a href="mailto:gaiav.moimas@gmail.com"
+     style="display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:1rem; padding:7px 16px; background:#6d7f5f; color:white; border-radius:22px; font-size:0.85rem; text-decoration:none;">
+     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+          alt="Email"
+          style="width:16px; height:16px; filter:invert(1);">
+     Scrivimi
+  </a>
+
+  <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy">
+    © 2026 La Gaia Custode
+  </div>
+</footer>
+
+</body>
+</html>
