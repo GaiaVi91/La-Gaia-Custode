@@ -15,6 +15,58 @@
   --grigio: #777;
   --testo: #333;
 }
+/* HEADER (identico a Chi sono e Servizi) */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar .logo {
+  height: 55px;
+  display: block;
+}
+
+.header-bar nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--salvia);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.header-bar nav a:hover {
+  opacity: 0.7;
+}
+
+.header-bar nav .active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* BANNER MORBIDO */
+.hero-small img {
+  width: 100%;
+  max-width: 900px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin: 2rem auto;
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(8px);
+  animation: bannerFade 1.6s ease-out forwards;
+}
+
+@keyframes bannerFade {
+  0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
+  50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
 
 /* BASE */
 body {
@@ -190,31 +242,34 @@ footer .footer-copy {
   font-size: 0.75rem;
   color: var(--grigio);
 }
-  /* BOTTONE WHATSAPP FISSO */
-.whatsapp-float {
+/* BOTTONE WHATSAPP FISSO – stile Home */
+.whatsapp-fixed {
   position: fixed;
   bottom: 22px;
   right: 22px;
   background: #25D366;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   z-index: 999;
   transition: 0.25s ease;
 }
 
-.whatsapp-float img {
-  width: 32px;
-  height: 32px;
+.whatsapp-fixed img {
+  width: 24px;
+  height: 24px;
   filter: invert(1);
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.08);
+.whatsapp-fixed:hover {
+  transform: scale(1.05);
   box-shadow: 0 8px 22px rgba(0,0,0,0.28);
 }
 
@@ -222,6 +277,20 @@ footer .footer-copy {
 </head>
 
 <body>
+<header class="header-bar fade-in-section">
+  <img src="nome.png" alt="La Gaia Custode" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-sono.html">Chi sono</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="un-anno-con-la-doula.html" class="active">Un anno con la Doula</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero-small fade-in-section">
+  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+</section>
 
 <header class="header-bar">
   <img src="nome.png" alt="La Gaia Custode">
@@ -335,12 +404,14 @@ footer .footer-copy {
 
   <div class="footer-copy">© 2026 La Gaia Custode</div>
 </footer>
-<a href="https://wa.me/393519722067"
-   class="whatsapp-float"
+<a href="https://wa.me/393318004383"
+   class="whatsapp-fixed"
    target="_blank"
    aria-label="Chat su WhatsApp">
-   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
+   <span>Sono qui per te</span>
 </a>
+
 
 </body>
 </html>
