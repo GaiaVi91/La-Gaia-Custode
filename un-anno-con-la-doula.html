@@ -1,417 +1,445 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Un Anno con la Doula – La Gaia Custode</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un Anno con la Doula – La Gaia Custode</title>
 
-<style>
-/* PALETTE */
-:root {
-  --salvia: #6d7f5f;
-  --sabbia: #f4efe7;
-  --avorio: #faf8f4;
-  --bianco: #ffffff;
-  --grigio: #777;
-  --testo: #333;
-}
-/* HEADER (identico a Chi sono e Servizi) */
-.header-bar {
-  background: var(--sabbia);
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+  <style>
+    :root {
+      --salvia: #6d7f5f;
+      --sabbia: #f4efe7;
+      --avorio: #faf8f4;
+      --bianco: #ffffff;
+      --testo: #333;
+      --grigio: #777;
+    }
 
-.header-bar .logo {
-  height: 55px;
-  display: block;
-}
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--sabbia);
+      color: var(--testo);
+      line-height: 1.7;
+    }
 
-.header-bar nav a {
-  margin-left: 1rem;
-  text-decoration: none;
-  color: var(--salvia);
-  font-weight: 600;
-  transition: 0.2s;
-}
+    /* HEADER come Chi sono / Servizi */
+    .header-bar {
+      background: var(--sabbia);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
 
-.header-bar nav a:hover {
-  opacity: 0.7;
-}
+    .header-bar .logo {
+      height: 55px;
+      display: block;
+    }
 
-.header-bar nav .active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+    .header-bar nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--salvia);
+      font-weight: 600;
+      transition: 0.2s;
+    }
 
-/* BANNER MORBIDO */
-.hero-small img {
-  width: 100%;
-  max-width: 900px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
-  margin: 2rem auto;
-  opacity: 0;
-  transform: translateY(25px);
-  filter: blur(8px);
-  animation: bannerFade 1.6s ease-out forwards;
-}
+    .header-bar nav a:hover {
+      opacity: 0.7;
+    }
 
-@keyframes bannerFade {
-  0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
-  50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
-  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
+    .header-bar nav .active {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-/* BASE */
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--sabbia);
-  color: var(--testo);
-  line-height: 1.7;
-}
+    /* BANNER piccolo pagine interne */
+    .hero-small img {
+      width: 100%;
+      max-width: 900px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      margin: 2rem auto;
+      opacity: 0;
+      transform: translateY(25px);
+      filter: blur(8px);
+      animation: bannerFade 1.6s ease-out forwards;
+    }
 
-/* HEADER UNIFORME */
-.header-bar {
-  background: var(--sabbia);
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+    @keyframes bannerFade {
+      0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
+      50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
 
-.header-bar img {
-  height: 70px;
-}
+    .container {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      padding: 0 1rem;
+    }
 
-/* BANNER MORBIDO */
-.hero-small img {
-  width: 100%;
-  max-width: 900px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
-  margin: 2rem auto;
-  opacity: 0;
-  transform: translateY(25px);
-  filter: blur(8px);
-  animation: bannerFade 1.6s ease-out forwards;
-}
+    h1 {
+      text-align: center;
+      color: var(--salvia);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
 
-@keyframes bannerFade {
-  0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
-  50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
-  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
+    h2 {
+      color: var(--salvia);
+      font-size: 1.5rem;
+      margin-top: 2.2rem;
+      margin-bottom: .6rem;
+      text-align: center;
+    }
 
-/* CONTENITORE */
-.container {
-  max-width: 900px;
-  margin: 0 auto 3rem auto;
-  padding: 0 1rem;
-}
+    h3 {
+      color: var(--salvia);
+      font-size: 1.2rem;
+      margin-top: 1.4rem;
+      margin-bottom: .3rem;
+    }
 
-/* TITOLI */
-h1 {
-  text-align: center;
-  color: var(--salvia);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
-}
+    p {
+      margin-bottom: 1rem;
+    }
 
-h2 {
-  color: var(--salvia);
-  font-size: 1.5rem;
-  margin-top: 2.2rem;
-  margin-bottom: .6rem;
-}
+    ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-h3 {
-  color: var(--salvia);
-  font-size: 1.2rem;
-  margin-top: 1.4rem;
-  margin-bottom: .3rem;
-}
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
+    }
 
-/* ANIMAZIONI */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s ease forwards;
-}
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes fadeIn {
-  to { opacity: 1; transform: translateY(0); }
-}
+    .pill {
+      display: block;
+      background: var(--bianco);
+      color: var(--salvia);
+      padding: .3rem .8rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      margin: 0 auto 1rem auto;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
 
-/* PILL */
-.pill {
-  display: inline-block;
-  background: var(--bianco);
-  color: var(--salvia);
-  padding: .3rem .8rem;
-  border-radius: 999px;
-  font-size: .9rem;
-  margin: 0 auto 1rem auto;
-  text-align: center;
-  display: block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
+    .centrato {
+      text-align: center;
+    }
 
-/* CARD SEZIONI */
-.section-card {
-  background: var(--bianco);
-  padding: 1.8rem 1.6rem;
-  border-radius: 16px;
-  margin-top: 2rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
+    .section-card {
+      background: var(--bianco);
+      padding: 1.8rem 1.6rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
 
-/* CTA BOX */
-.cta-box {
-  background: var(--bianco);
-  padding: 2rem;
-  border-radius: 20px;
-  margin-top: 3rem;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
+    .cta-box {
+      background: var(--bianco);
+      padding: 2rem;
+      border-radius: 20px;
+      margin-top: 3rem;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
 
-.cta-button {
-  display: inline-block;
-  background: var(--salvia);
-  color: white;
-  padding: .8rem 1.6rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: .5rem;
-  transition: .2s;
-}
+    .cta-button {
+      display: inline-block;
+      background: var(--salvia);
+      color: white;
+      padding: .8rem 1.6rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: .5rem;
+      transition: .2s;
+    }
 
-.cta-button:hover {
-  background: #5a6d52;
-}
+    .cta-button:hover {
+      background: #5a6d52;
+    }
 
-.note {
-  font-size: .9rem;
-  color: var(--grigio);
-  margin-top: .6rem;
-}
+    .note {
+      font-size: .9rem;
+      color: var(--grigio);
+      margin-top: .6rem;
+    }
 
-/* FOOTER */
-footer {
-  background: var(--sabbia);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  color: var(--salvia);
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(0,0,0,0.05);
-}
+    footer {
+      background: var(--sabbia);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--salvia);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
 
-footer .footer-logo {
-  height: 70px;
-  opacity: 0.9;
-  margin: 0 auto 1rem auto;
-  display: block;
-}
+    footer .footer-logo {
+      height: 70px;
+      opacity: 0.9;
+      margin: 0 auto 1rem auto;
+      display: block;
+    }
 
-footer .footer-links a {
-  color: var(--salvia);
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 10px;
-  transition: 0.2s;
-}
+    footer .footer-links a {
+      color: var(--salvia);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: 0.2s;
+    }
 
-footer .footer-links a:hover { opacity: 0.7; }
+    footer .footer-links a:hover {
+      opacity: 0.7;
+    }
 
-footer .footer-copy {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  color: var(--grigio);
-}
-/* BOTTONE WHATSAPP FISSO – stile Home */
-.whatsapp-fixed {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  background: #25D366;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  z-index: 999;
-  transition: 0.25s ease;
-}
+    footer .footer-copy {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--grigio);
+    }
 
-.whatsapp-fixed img {
-  width: 24px;
-  height: 24px;
-  filter: invert(1);
-}
+    /* Bottone WhatsApp fisso */
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      z-index: 999;
+      transition: 0.25s ease;
+    }
 
-.whatsapp-fixed:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
-}
+    .whatsapp-fixed img {
+      width: 24px;
+      height: 24px;
+      filter: invert(1);
+    }
 
-</style>
+    .whatsapp-fixed:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .header-bar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .header-bar nav a {
+        margin-left: 0;
+        margin-right: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .hero-small img {
+        height: 160px;
+        margin: 1.5rem auto;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .section-card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .cta-box {
+        padding: 1.6rem 1.2rem;
+      }
+
+      .whatsapp-fixed {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+
+      .whatsapp-fixed img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<header class="header-bar fade-in-section">
-  <img src="nome.png" alt="La Gaia Custode" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="chi-sono.html">Chi sono</a>
-    <a href="servizi.html">Servizi</a>
-    <a href="un-anno-con-la-doula.html" class="active">Un anno con la Doula</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
-</header>
 
-<section class="hero-small fade-in-section">
-  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
-</section>
+  <header class="header-bar fade-in-section">
+    <img src="nome.png" alt="La Gaia Custode" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="un-anno-con-la-doula.html" class="active">Un anno con la Doula</a>
+    </nav>
+  </header>
 
-<header class="header-bar">
-  <img src="nome.png" alt="La Gaia Custode">
-</header>
+  <section class="hero-small fade-in-section">
+    <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+  </section>
 
-<section class="hero-small fade-in-section">
-  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
-</section>
+  <main class="container">
 
-<main class="container">
+    <h1 class="fade-in-section">Un Anno con la Doula</h1>
+    <p class="pill fade-in-section">Supporto continuo per il primo anno di vita</p>
 
-  <h1 class="fade-in-section">Un Anno con la Doula</h1>
-  <p class="pill fade-in-section">Supporto continuo per il primo anno di vita</p>
+    <!-- INTRO -->
+    <div class="section-card fade-in-section">
+      <p class="centrato">
+        Il primo anno di vita è un viaggio intenso: cambiamenti rapidi, nuove scoperte, dubbi, emozioni forti.
+        “Un Anno con la Doula” è un percorso pensato per accompagnarti mese dopo mese,
+        con presenza, competenza e delicatezza, così che tu non ti senta mai sola.
+      </p>
+    </div>
 
-  <!-- INTRO -->
-  <div class="section-card fade-in-section">
-    <p>
-      Il primo anno di vita è un viaggio intenso: cambiamenti rapidi, nuove scoperte, dubbi, emozioni forti.
-      “Un Anno con la Doula” è un percorso pensato per accompagnarti mese dopo mese,
-      con presenza, competenza e delicatezza, così che tu non ti senta mai sola.
-    </p>
-  </div>
+    <!-- PERCHÉ NASCE -->
+    <div class="section-card fade-in-section">
+      <h2>Perché nasce questo pacchetto</h2>
+      <p>
+        Molte famiglie sentono il bisogno di avere accanto una figura calma e competente, capace di offrire:
+      </p>
+      <ul>
+        <li>informazioni chiare e aggiornate</li>
+        <li>supporto pratico nella quotidianità</li>
+        <li>ascolto autentico, senza giudizio</li>
+        <li>continuità nel tempo</li>
+      </ul>
+      <p>
+        Questo pacchetto nasce proprio per questo: per camminare insieme, passo dopo passo,
+        durante tutto il primo anno di vita del tuo bambino.
+      </p>
+    </div>
 
-  <!-- PERCHÉ NASCE -->
-  <div class="section-card fade-in-section">
-    <h2>Perché nasce questo pacchetto</h2>
-    <p>Molte famiglie sentono il bisogno di avere accanto una figura calma e competente, capace di offrire:</p>
-    <ul>
-      <li>informazioni chiare e aggiornate</li>
-      <li>supporto pratico nella quotidianità</li>
-      <li>ascolto autentico, senza giudizio</li>
-      <li>continuità nel tempo</li>
-    </ul>
-    <p>
-      Questo pacchetto nasce proprio per questo: per camminare insieme, passo dopo passo,
-      durante tutto il primo anno di vita del tuo bambino.
-    </p>
-  </div>
+    <!-- COSA INCLUDE -->
+    <div class="section-card fade-in-section">
+      <h2>Cosa include il pacchetto</h2>
 
-  <!-- COSA INCLUDE -->
-  <div class="section-card fade-in-section">
-    <h2>Cosa include il pacchetto</h2>
+      <h3>📬 Email mensili sullo sviluppo del bambino</h3>
+      <p>
+        Ogni mese riceverai una guida semplice e completa su ciò che sta accadendo nel corpo,
+        nella mente e nelle emozioni del tuo bambino.
+      </p>
 
-    <h3>📬 Email mensili sullo sviluppo del bambino</h3>
-    <p>Ogni mese riceverai una guida semplice e completa su ciò che sta accadendo nel corpo, nella mente e nelle emozioni del tuo bambino.</p>
+      <h3>🌸 Una consulenza a scelta</h3>
+      <p>Puoi scegliere tra:</p>
+      <ul>
+        <li>Massaggio infantile</li>
+        <li>Legatura Babywearing</li>
+        <li>Sonno infantile</li>
+        <li>Autosvezzamento</li>
+      </ul>
 
-    <h3>🌸 Una consulenza a scelta</h3>
-    <p>Hai un anno di tempo per scegliere una consulenza tra:</p>
-    <ul>
-      <li>Massaggio infantile</li>
-      <li>Legatura Babywearing</li>
-      <li>Sonno infantile</li>
-      <li>Autosvezzamento</li>
-    </ul>
+      <h3>💬 Reperibilità telefonica e WhatsApp</h3>
+      <p>
+        Dal lunedì al venerdì, dalle <strong>9:00 alle 18:00</strong>, puoi contattarmi per dubbi veloci
+        e piccole difficoltà quotidiane.
+      </p>
 
-    <h3>💬 Reperibilità telefonica e WhatsApp</h3>
-    <p>Dal lunedì al venerdì, dalle <strong>9:00 alle 18:00</strong>, puoi contattarmi per dubbi veloci e piccole difficoltà quotidiane.</p>
+      <h3>🎁 Sconto del 15% sulle consulenze aggiuntive</h3>
+      <p>
+        Se durante l’anno sentirai il bisogno di ulteriori incontri, potrai usufruire di uno
+        <strong>sconto del 15%</strong>.
+      </p>
+    </div>
 
-    <h3>🎁 Sconto del 15% sulle consulenze aggiuntive</h3>
-    <p>Se durante l’anno sentirai il bisogno di ulteriori incontri, potrai usufruire di uno sconto del 15%.</p>
-  </div>
+    <!-- COME FUNZIONA -->
+    <div class="section-card fade-in-section">
+      <h2>Come funziona il percorso</h2>
+      <ul>
+        <li>Ti iscrivi al pacchetto “Un Anno con la Doula”.</li>
+        <li>Ricevi subito una prima email introduttiva.</li>
+        <li>Ogni mese ricevi una guida dedicata allo sviluppo del tuo bambino.</li>
+        <li>Puoi contattarmi negli orari indicati.</li>
+        <li>Puoi prenotare la tua consulenza quando ne senti il bisogno.</li>
+        <li>Hai accesso allo sconto del 15% per tutto l’anno.</li>
+      </ul>
+    </div>
 
-  <!-- COME FUNZIONA -->
-  <div class="section-card fade-in-section">
-    <h2>Come funziona il percorso</h2>
-    <ul>
-      <li>Ti iscrivi al pacchetto “Un Anno con la Doula”.</li>
-      <li>Ricevi subito una prima email introduttiva.</li>
-      <li>Ogni mese ricevi una guida dedicata allo sviluppo del tuo bambino.</li>
-      <li>Puoi contattarmi negli orari indicati.</li>
-      <li>Puoi prenotare la tua consulenza quando ne senti il bisogno.</li>
-      <li>Hai accesso allo sconto del 15% per tutto l’anno.</li>
-    </ul>
-  </div>
+    <!-- PER CHI È -->
+    <div class="section-card fade-in-section">
+      <h2>Per chi è pensato</h2>
+      <p>Questo pacchetto è ideale per:</p>
+      <ul>
+        <li>neogenitori al primo figlio</li>
+        <li>famiglie che desiderano continuità e presenza</li>
+        <li>chi vuole crescere con consapevolezza e serenità</li>
+        <li>chi sente il bisogno di una figura competente e accogliente accanto</li>
+      </ul>
+    </div>
 
-  <!-- PER CHI È -->
-  <div class="section-card fade-in-section">
-    <h2>Per chi è pensato</h2>
-    <p>Questo pacchetto è ideale per:</p>
-    <ul>
-      <li>neogenitori al primo figlio</li>
-      <li>famiglie che desiderano continuità e presenza</li>
-      <li>chi vuole crescere con consapevolezza e serenità</li>
-      <li>chi sente il bisogno di una figura competente e accogliente accanto</li>
-    </ul>
-  </div>
+    <!-- CTA -->
+    <div class="cta-box fade-in-section">
+      <h2>Vuoi iniziare il tuo percorso?</h2>
+      <p>
+        “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.
+        Scrivimi per ricevere tutte le informazioni pratiche e prenotare il tuo pacchetto.
+      </p>
+      <a class="cta-button" href="mailto:gaiav.moimas@gmail.com?subject=Informazioni%20pacchetto%20Un%20Anno%20con%20la%20Doula">
+        Scrivimi per il pacchetto
+      </a>
+    </div>
 
-  <!-- CTA -->
-  <div class="cta-box fade-in-section">
-    <h2>Vuoi iniziare il tuo percorso?</h2>
-    <p>
-      “Un Anno con la Doula” è il supporto continuo che meriti nel primo anno di vita del tuo bambino.
-      Scrivimi per ricevere tutte le informazioni pratiche e prenotare il tuo pacchetto.
-    </p>
-    <a class="cta-button" href="mailto:gaiav.moimas@gmail.com?subject=Informazioni%20pacchetto%20Un%20Anno%20con%20la%20Doula">
-      Scrivimi per il pacchetto
-    </a>
-    <p class="note">Puoi anche contattarmi su Instagram: @gaiadoula_sonno_e_babywearing</p>
-  </div>
+  </main>
 
-</main>
+  <footer>
+    <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
-<footer>
-  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a> •
+      <a href="cookie.html">Cookie</a> •
+      <a href="note-legali.html">Note Legali</a>
+    </div>
 
-  <div class="footer-links">
-    <a href="privacy.html">Privacy</a> •
-    <a href="cookie.html">Cookie</a> •
-    <a href="note-legali.html">Note Legali</a>
-  </div>
+    <div class="footer-copy">© 2026 La Gaia Custode</div>
+  </footer>
 
-  <div class="footer-copy">© 2026 La Gaia Custode</div>
-</footer>
-<a href="https://wa.me/393318004383"
-   class="whatsapp-fixed"
-   target="_blank"
-   aria-label="Chat su WhatsApp">
-   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
-   <span>Sono qui per te</span>
-</a>
-
+  <!-- Bottone WhatsApp fisso -->
+  <a href="https://wa.me/393318004383"
+     class="whatsapp-fixed"
+     target="_blank"
+     aria-label="Chat su WhatsApp">
+     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
+     <span>Sono qui per te</span>
+  </a>
 
 </body>
 </html>
