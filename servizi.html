@@ -318,7 +318,7 @@ h1, h2 {
 }
 
 
-/* FOOTER VELLUTATO */
+/* FOOTER VELLUTATO UNIVERSALE */
 footer {
   background: var(--sabbia);
   padding: 2.5rem 1.5rem;
@@ -347,6 +347,28 @@ footer .footer-logo {
   display: block;
 }
 
+/* Icone social */
+.footer-social {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: 0.25s ease;
+  opacity: 0.9;
+}
+
+.footer-social img:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+/* Link legali */
 footer .footer-links a {
   color: var(--salvia);
   text-decoration: none;
@@ -355,7 +377,9 @@ footer .footer-links a {
   transition: 0.2s;
 }
 
-footer .footer-links a:hover { opacity: 0.7; }
+footer .footer-links a:hover {
+  opacity: 0.7;
+}
 
 footer .footer-copy {
   margin-top: 1rem;
@@ -590,27 +614,37 @@ footer .footer-copy {
   </form>
 </div>
 
-<footer class="fade-in-section">
+<footer>
   <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
-  <a href="mailto:gaiav.moimas@gmail.com"
-     style="display:inline-flex; align-items:center; justify-content:center; gap:6px; margin-top:1rem; padding:7px 16px; background:#6d7f5f; color:white; border-radius:22px; font-size:0.85rem; text-decoration:none;">
-     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
-          alt="Email"
-          style="width:16px; height:16px; filter:invert(1);">
-     Scrivimi
-  </a>
+  <!-- Icone social -->
+  <div class="footer-social">
+    <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank" aria-label="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
 
-  <div class="footer-links" style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="https://www.facebook.com/gaiacustode/" target="_blank" aria-label="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+
+    <a href="https://wa.me/393318004383" target="_blank" aria-label="WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <a href="mailto:gaiav.moimas@gmail.com" aria-label="Email">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+    </a>
+  </div>
+
+  <div class="footer-links">
     <a href="privacy.html">Privacy</a> •
     <a href="cookie.html">Cookie</a> •
     <a href="note-legali.html">Note Legali</a>
   </div>
 
-  <div class="footer-copy" style="margin-top: 1rem; font-size: 0.75rem;">
-    © 2026 La Gaia Custode
-  </div>
+  <div class="footer-copy">© 2026 La Gaia Custode</div>
 </footer>
+
 
 </body>
 </html>
