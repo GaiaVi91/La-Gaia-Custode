@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog – La Gaia Custode</title>
+
+<style>
+
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--salvia);
+}
+
+/* HEADER */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar .logo {
+  height: 55px;
+  display: block;
+}
+
+.header-bar nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--salvia);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.header-bar nav a:hover { opacity: 0.7; }
+
+.header-bar nav .active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* BANNER */
+.hero-small img {
+  width: 100%;
+  max-width: 900px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 2rem auto;
+}
+
+/* TITOLO */
+.blog-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+/* CARD BLOG */
+.blog-container {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.blog-card {
+  background: var(--bianco);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(109,127,95,0.15);
+  transition: 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-card-content {
+  padding: 1.2rem 1.4rem;
+}
+
+.blog-card-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card-content p {
+  color: var(--grigio);
+  margin-bottom: 1rem;
+}
+
+.blog-card-content a {
+  color: var(--salvia);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-card-content a:hover {
+  opacity: 0.7;
+}
+
+/* FOOTER */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.footer-social {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--grigio);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header-bar">
+  <img src="nome.png" alt="La Gaia Custode" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-sono.html">Chi sono</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="blog.html" class="active">Blog</a>
+  </nav>
+</header>
+
+<!-- BANNER -->
+<section class="hero-small">
+  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+</section>
+
+<!-- TITOLO -->
+<h1 class="blog-title">Blog</h1>
+
+<!-- CARD BLOG -->
+<section class="blog-container">
+
+  <!-- ARTICOLO 1 -->
+  <div class="blog-card">
+    <img src="blog1.jpg" alt="">
+    <div class="blog-card-content">
+      <h3>Titolo dell’articolo</h3>
+      <p>Una breve introduzione che racconta di cosa parla l’articolo...</p>
+      <a href="articolo-1.html">Leggi di più →</a>
+    </div>
+  </div>
+
+  <!-- ARTICOLO 2 -->
+  <div class="blog-card">
+    <img src="blog2.jpg" alt="">
+    <div class="blog-card-content">
+      <h3>Titolo dell’articolo</h3>
+      <p>Una breve introduzione che racconta di cosa parla l’articolo...</p>
+      <a href="articolo-2.html">Leggi di più →</a>
+    </div>
+  </div>
+
+  <!-- ARTICOLO 3 -->
+  <div class="blog-card">
+    <img src="blog3.jpg" alt="">
+    <div class="blog-card-content">
+      <h3>Titolo dell’articolo</h3>
+      <p>Una breve introduzione che racconta di cosa parla l’articolo...</p>
+      <a href="articolo-3.html">Leggi di più →</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/gaiacustode/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://wa.me/393318004383" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+    <a href="mailto:gaiav.moimas@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy">© 2026 La Gaia Custode</div>
+</footer>
+
+</body>
+</html>
