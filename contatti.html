@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatti – La Gaia Custode</title>
+
+<style>
+
+/* PALETTE */
+:root {
+  --salvia: #6d7f5f;
+  --sabbia: #f4efe7;
+  --grigio: #777;
+  --bianco: #ffffff;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--sabbia);
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--salvia);
+}
+
+/* FADE-IN */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HEADER */
+.header-bar {
+  background: var(--sabbia);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-bar .logo {
+  height: 55px;
+  display: block;
+}
+
+.header-bar nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--salvia);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.header-bar nav a:hover { opacity: 0.7; }
+
+.header-bar nav .active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* BANNER */
+.hero-small img {
+  width: 100%;
+  max-width: 900px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 2rem auto;
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(8px);
+  animation: bannerFade 1.6s ease-out forwards;
+}
+
+@keyframes bannerFade {
+  0% { opacity: 0; transform: translateY(25px); filter: blur(8px); }
+  50% { opacity: 0.5; transform: translateY(12px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* HERO CONTATTI */
+.contatti-hero {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.contatti-hero h1 {
+  font-size: 2.2rem;
+}
+
+.contatti-hero p {
+  color: var(--grigio);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* BOX CONTATTI */
+.contatti-info {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contatto-box {
+  text-align: center;
+}
+
+.contatto-box h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contatto-box a {
+  color: var(--salvia);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contatto-box a:hover {
+  opacity: 0.7;
+}
+
+/* FORM */
+.contatti-form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: var(--bianco);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(109,127,95,0.15);
+}
+
+.contatti-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--salvia);
+  font-weight: 600;
+}
+
+.contatti-form input,
+.contatti-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.contatti-form button {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--salvia);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contatti-form button:hover {
+  opacity: 0.85;
+}
+
+/* FOOTER */
+footer {
+  background: var(--sabbia);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--salvia);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer .footer-logo {
+  height: 70px;
+  opacity: 0.9;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.footer-social {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.footer-links a {
+  color: var(--salvia);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--grigio);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header-bar fade-in-section">
+  <img src="nome.png" alt="La Gaia Custode" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-sono.html">Chi sono</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="un-anno-con-la-doula.html">Un anno con la Doula</a>
+    <a href="contatti.html" class="active">Contatti</a>
+  </nav>
+</header>
+
+<!-- BANNER -->
+<section class="hero-small fade-in-section">
+  <img src="BannerGaia.png" alt="Banner La Gaia Custode">
+</section>
+
+<!-- HERO CONTATTI -->
+<section class="contatti-hero fade-in-section">
+  <h1>Contattami</h1>
+  <p>Scrivimi per informazioni, richieste o per iniziare un percorso insieme.</p>
+</section>
+
+<!-- INFO CONTATTI -->
+<section class="contatti-info fade-in-section">
+  <div class="contatto-box">
+    <h3>Email</h3>
+    <a href="mailto:gaiav.moimas@gmail.com">gaiav.moimas@gmail.com</a>
+  </div>
+
+  <div class="contatto-box">
+    <h3>WhatsApp</h3>
+    <a href="https://wa.me/393318004383" target="_blank">+39 331 800 4383</a>
+  </div>
+
+  <div class="contatto-box">
+    <h3>Instagram</h3>
+    <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank">@gaiadoula_sonno_e_babywearing</a>
+  </div>
+</section>
+<section class="contatti-intro fade-in-section">
+  <p><strong>Prendiamoci il tempo di incontrarci</strong></p>
+
+  <p>La maternità e i primi anni di vita sono un viaggio fatto di emozioni, cambiamenti, domande e scoperte.</p>
+
+  <p>A volte serve solo qualcuno che ascolti, altre volte una guida, un sostegno o uno spazio sicuro in cui sentirsi accolti.</p>
+
+  <p>Se senti che posso accompagnarti in questo cammino, scrivimi. Sarà un piacere conoscerti.</p>
+</section>
+
+<!-- FORM -->
+<section class="contatti-form fade-in-section">
+  <form action="https://formsubmit.co/gaiav.moimas@gmail.com" method="POST">
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <label>Nome e Cognome</label>
+    <input type="text" name="nome" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Messaggio</label>
+    <textarea name="messaggio" rows="5" required></textarea>
+
+    <button type="submit">Invia Messaggio</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/gaiacustode/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://wa.me/393318004383" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+    <a href="mailto:gaiav.moimas@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy">© 2026 La Gaia Custode</div>
+</footer>
+
+</body>
+</html>
