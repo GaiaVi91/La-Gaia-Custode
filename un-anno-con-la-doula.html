@@ -225,7 +225,26 @@ footer .footer-copy {
   font-size: 0.75rem;
   color: var(--grigio);
 }
+/* Footer social icons */
+.footer-social {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
 
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: 0.25s ease;
+  opacity: 0.9;
+}
+
+.footer-social img:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
 
     /* Bottone WhatsApp fisso */
     .whatsapp-fixed {
@@ -432,17 +451,37 @@ footer .footer-copy {
 
   </main>
 
-  <footer>
-    <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
+<footer>
+  <img src="nome.png" alt="La Gaia Custode" class="footer-logo">
 
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a> •
-      <a href="cookie.html">Cookie</a> •
-      <a href="note-legali.html">Note Legali</a>
-    </div>
+  <!-- Icone social -->
+  <div class="footer-social">
+    <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank" aria-label="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
 
-    <div class="footer-copy">© 2026 La Gaia Custode</div>
-  </footer>
+    <a href="https://www.facebook.com/gaiacustode/" target="_blank" aria-label="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+
+    <a href="https://wa.me/393318004383" target="_blank" aria-label="WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <a href="mailto:gaiav.moimas@gmail.com" aria-label="Email">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a> •
+    <a href="cookie.html">Cookie</a> •
+    <a href="note-legali.html">Note Legali</a>
+  </div>
+
+  <div class="footer-copy">© 2026 La Gaia Custode</div>
+</footer>
+
 
   <!-- Bottone WhatsApp fisso -->
   <a href="https://wa.me/393318004383"
