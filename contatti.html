@@ -222,6 +222,27 @@ footer .footer-logo {
   font-size: 0.75rem;
   color: var(--grigio);
 }
+.contatti-icone {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 2rem auto 2rem;
+}
+
+.contatti-icone img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sabbia);
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(109,127,95,0.25);
+  transition: 0.25s ease;
+}
+
+.contatti-icone img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
 
 </style>
 </head>
@@ -247,36 +268,29 @@ footer .footer-logo {
 
 <!-- HERO CONTATTI -->
 <section class="contatti-hero fade-in-section">
-  <h1>Contattami</h1>
-  <p>Scrivimi per informazioni, richieste o per iniziare un percorso insieme.</p>
-</section>
-
-<!-- INFO CONTATTI -->
-<section class="contatti-info fade-in-section">
-  <div class="contatto-box">
-    <h3>Email</h3>
-    <a href="mailto:gaiav.moimas@gmail.com">gaiav.moimas@gmail.com</a>
-  </div>
-
-  <div class="contatto-box">
-    <h3>WhatsApp</h3>
-    <a href="https://wa.me/393318004383" target="_blank">+39 331 800 4383</a>
-  </div>
-
-  <div class="contatto-box">
-    <h3>Instagram</h3>
-    <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank">@gaiadoula_sonno_e_babywearing</a>
-  </div>
-</section>
-<section class="contatti-intro fade-in-section">
-  <p><strong>Prendiamoci il tempo di incontrarci</strong></p>
-
+  <h1>Prendiamoci il tempo di incontrarci</h1>
   <p>La maternità e i primi anni di vita sono un viaggio fatto di emozioni, cambiamenti, domande e scoperte.</p>
 
   <p>A volte serve solo qualcuno che ascolti, altre volte una guida, un sostegno o uno spazio sicuro in cui sentirsi accolti.</p>
 
   <p>Se senti che posso accompagnarti in questo cammino, scrivimi. Sarà un piacere conoscerti.</p>
 </section>
+
+<!-- INFO CONTATTI -->
+<section class="contatti-icone fade-in-section">
+  <a href="mailto:gaiav.moimas@gmail.com">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+  </a>
+
+  <a href="https://wa.me/393318004383" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://www.instagram.com/gaiadoula_sonno_e_babywearing/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
+</section>
+
 
 <!-- FORM -->
 <section class="contatti-form fade-in-section">
