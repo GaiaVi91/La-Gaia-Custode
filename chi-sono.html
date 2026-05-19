@@ -494,6 +494,26 @@ footer .footer-copy {
 
   <div class="footer-copy">© 2026 La Gaia Custode</div>
 </footer>
+</footer>
+
+<script>
+const attestati = document.querySelectorAll('.attestati-slider img');
+
+function revealAttestati() {
+  attestati.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      img.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealAttestati);
+window.addEventListener('load', revealAttestati);
+</script>
+
+</body>
+</html>
 
 
 </body>
