@@ -577,6 +577,15 @@ section {
 .footer__nav li {
   margin: 0;
 }
+/* Disattivo il footer vecchio */
+.footer,
+.footer__content,
+.footer__section,
+.footer__nav,
+.social-links,
+.social-link {
+  display: none !important;
+}
 
 /* ==============================================
    LINK STYLES
@@ -693,4 +702,18 @@ section {
     color: black;
     text-decoration: underline;
   }
+}
+/* Protezione footer nuovo */
+.footer-social img {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  opacity: 0.9 !important;
+}
+
+.footer-social {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  margin: 1rem 0 1.5rem 0 !important;
 }
